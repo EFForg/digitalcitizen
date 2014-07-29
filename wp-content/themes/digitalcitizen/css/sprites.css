@@ -1,0 +1,34 @@
+.s-7iber-medium, .access-medium, .eff-medium, .gv-medium, .smex-medium{
+	background: url(sprites.png) no-repeat;
+}
+
+.s-7iber-medium{
+	background-position: 0 -161px ;
+	width: 199px;
+	height: 100px;
+}
+
+.access-medium{
+	background-position: -102px -84px ;
+	width: 321px;
+	height: 75px;
+}
+
+.eff-medium{
+	background-position: 0 -88px ;
+	width: 100px;
+	height: 68px;
+}
+
+.gv-medium{
+	background-position: -213px 0;
+	width: 230px;
+	height: 75px;
+}
+
+.smex-medium{
+	background-position: 0 0;
+	width: 206px;
+	height: 80px;
+}
+

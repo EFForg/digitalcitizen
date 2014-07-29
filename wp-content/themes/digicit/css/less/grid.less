@@ -1,0 +1,103 @@
+/* 	How this works:
+*	Set breakpoints IN HERE for all your grid classes. LESS
+*	will spit out a media query for each element that'll shrink it.
+*	TODO: Define a "breakpoint" variable in here? Can we do multiple
+*	arg values in LESS?
+*/
+
+.grid ( @columns, @margin : .038, @width : .0485 ) {
+	margin-right: percentage(@margin);
+	float: left;
+	min-height: 1px;
+	width: percentage( (@width * @columns) + (@margin * (@columns - 1) ) );
+}
+.push ( @columns, @margin : .038, @width : .0485 ) {
+	margin-right: percentage(@margin);
+	float: left;
+	min-height: 1px;
+	margin-left: percentage( (@width * @columns) + (@margin * (@columns) ) );
+}
+.container {
+	padding-left: 20px;
+	padding-right: 20px;
+	width:100%;
+	box-sizing:border-box;
+}
+.row {
+	max-width: 960px;
+	margin: 0 auto;
+	float:none!important;
+}
+.grid-1 {
+	.grid(1);
+}
+.grid-2 {
+	.grid(2);
+}
+.grid-3 {
+	.grid(3);
+}
+.grid-4 {
+	.grid(4);
+}
+.grid-5 {
+	.grid(5);
+}
+.grid-6 {
+	.grid(6);
+}
+.grid-7 {
+	.grid(7);
+}
+.grid-8 {
+	.grid(8);
+}
+.grid-9 {
+	.grid(9);
+}
+.grid-10 {
+	.grid(10);
+}
+.grid-11 {
+	.grid(11);
+}
+.grid-12 {
+	.grid(12);
+}
+.push-1 {
+	.push(1);
+}
+.push-2 {
+	.push(2);
+}
+.push-3 {
+	.push(3);
+}
+.push-4 {
+	.push(4);
+}
+.last {
+	margin-right: 0px;
+}
+img, iframe, embed {
+	max-width:100%;
+}
+
+@media only screen and (max-width:755px) {
+	.grid {
+		margin-right: 0;
+		float: left;
+		min-height: 1px;
+		width: 100%;
+	}
+	.push {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.grid-1,.grid-2,.grid-3,.grid-4,.grid-5,.grid-6,.grid-7,.grid-8,.grid-9,.grid-10,.grid-11,.grid-12 {
+		.grid;
+	}
+	.push-1, .push-2, .push-3, .push-4 {
+		.push;
+	}
+}

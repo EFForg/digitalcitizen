@@ -1,0 +1,556 @@
+@import url('less/grid.less');
+@import url('less/text.less');
+
+@black : #171717;
+@blue : #00adee;
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.1 Links
+--------------------------------------------------------------*/
+a {
+    color: @blue;
+}
+a:visited {
+    color: purple;
+}
+a:hover,
+a:focus,
+a:active {
+    color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+#page:before {
+    content:' ';
+    display:block;
+    height:122px;
+    width:100%;
+    position:absolute;
+    z-index:-1;
+    left:0;
+    right:0;
+}
+.main-navigation {
+    float:left;
+    width:100%;
+    position:relative;
+}
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+}
+.main-navigation ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    display: none;
+    float: left;
+    left: 0;
+    position: absolute;
+    top: 1.5em;
+    z-index: 99999;
+}
+.main-navigation ul ul ul {
+    left: 100%;
+    top: 0;
+}
+.main-navigation ul ul a {
+    width: 200px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+    display: block;
+}
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
+}
+
+#toggle-main-menu, h1.current-page {
+    display:none;
+}
+h1.current-page {
+    font-family:'Bebas Neue';
+    color:@black;
+    font-size:28px;
+    line-height: 41px;
+    margin-bottom:0;
+    margin-left:5px;
+}
+/* Small menu */
+#toggle-main-menu {
+    border:none;
+    outline:none;
+    background:none;
+    color:@black;
+    font-size:41px;
+    width:41px;
+    overflow:hidden;
+}
+.site-branding {
+    text-align:center;
+}
+@media screen and (min-width:600px) {
+    .main-navigation ul {
+        text-align:justify;
+        height:45px;
+    }
+    .main-navigation ul:after {
+        content:' ';
+        display:inline-block;
+        width: 100%;
+        height: 0;
+        line-height:0;
+    }
+    .main-navigation ul li {
+        float:none;
+        display: inline-block;
+        padding:0 10px;
+    }
+}
+@media screen and (min-width:800px) {
+    .main-navigation ul {
+        width:auto;
+    }
+}
+@media screen and (min-width:1024px) {
+    .site-branding {
+        text-align:left;
+    }
+    .main-navigation {
+        position: absolute;
+        display: block;
+        left:512px;
+        top:135px;
+        right:0;
+        height:45px;
+        width:auto;
+    }
+}
+@media screen and (max-width: 600px) {
+    #toggle-main-menu,
+    .main-navigation.toggled .nav-menu {
+        display: block;
+    }
+
+    h1.current-page {
+        float:left;
+        width:auto;
+        display:block;
+    }
+
+    .main-navigation.toggled h1.current-page {
+        display:none;
+    }
+
+    .main-navigation ul li {
+        width:100%;
+    }
+
+    .main-navigation ul {
+        width:100%;
+        display: none;
+        position:absolute;
+        top:100%;
+        left:0;
+        z-index:2;
+        background:white;
+    }
+}
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+}
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+    float: left;
+    width: 50%;
+}
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px; 
+    overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+    content: '';
+    display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+    clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+    margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+    max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+    display: none;
+}
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+#masthead {
+    width:100%;
+    max-width:1140px;
+    margin:0 auto;
+    position:relative;
+}
+.site-branding {
+    width:100%;
+    position:relative;
+}
+.site-branding img {
+    position:relative;
+    margin-bottom:@body_line_height/2;
+}
+.site-branding img {
+    max-width:500px;
+}
+
+#site-navigation .menu-toggle {
+    position:absolute;
+    top:-62px;
+    right:-3px;
+}
+
+#site-navigation .menu {
+    max-width:1140px;
+}
+.site-branding .site-title {
+    background:url('../img/logo-small.png');
+    width:280px;
+    height:103px;
+    background-size:contain;
+}
+
+.site-branding .site-description {
+    display:none;
+}
+.site-branding {
+    width:100%;
+}
+.site-branding img{
+    width:100%;
+}
+#site-navigation {
+    background:white;
+}
+#site-navigation:after {
+    content:' ';
+    position:absolute;
+    width:100%;
+    border-bottom:4px solid #00adee;
+    bottom:-20px;
+    left:0;
+}
+#site-navigation .menu {
+    font-size: 2em;
+    font-family: "Bebas Neue";
+}
+#site-navigation li a{
+    color:@black;
+}
+#site-navigation li.current_page_item {
+    border-bottom:3px solid white;
+}
+#site-navigation li.current_page_item a {
+    color:#00adee;
+}
+#main {
+    max-width:800px;
+    margin:0 auto;
+}
+#main p:first-of-type {
+    font-size:1.5em;
+    font-style: italic;
+}
+#colophon {
+    width:100%;
+    background:@black;
+    min-height:100px;
+}
+#logo-salad a {
+    color:transparent;
+    display:inline-block;
+}
+#seveniber{
+}
+#eff{
+    background-image:url(../img/logos/eff.png);
+    width:87px;
+    height:60px;
+}
+#accessnow{
+    background-image:url(../img/logos/access.png);
+    width:166px;
+    height:39px;
+}
+#globalvoices{
+    background-image:url(../img/logos/advocacy.png);
+    width:221px;
+    height:50px;
+}
+#social-media-exchange{
+    background-image:url(../img/logos/smex.png);
+    width:205px;
+    height:81px;
+}
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+}
+.hentry {
+    margin: 0 0 1.5em;
+}
+.byline,
+.updated {
+    display: none;
+}
+.single .byline,
+.group-blog .byline {
+    display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+.entry-header {
+    position:relative;
+}
+.entry-header-inner {
+    position:absolute;
+    left:0;
+    top:0;
+    background:rgba(255,255,255,0.5);
+    font-size:1.5em;
+    .line_height(@factor_p);
+    .headline-font();
+    h1 {
+        font-size:1em;
+        margin-bottom:0;
+    }
+    h1:after {
+        content:' ';
+        background:url(../img/bullet.png) no-repeat center center;
+        background-size: contain;
+        width:40px;
+        height:30px;
+        display:inline-block;
+    }
+}
+
+.entry-title, .entry-meta {
+    float:left;
+    margin-right:20px;
+}
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+    display: none;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+    word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+12.0 Media
+--------------------------------------------------------------*/
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+}
+.wp-caption-text {
+    text-align: center;
+}
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
+    margin-bottom: 1.5em;
+}
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+.gallery-caption {}

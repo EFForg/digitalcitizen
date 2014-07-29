@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/* Default text colors, can be overloaded */
+@body : #222;
+@headline : @body;
+@link : #0B7DBA;
+@link-hover : darken(@link, 10%);
+@link-visited : lighten(@link, 20%);
+@highlight : #EDD900;
+
+@import url(../font/baskerville/stylesheet.css);
+@import url(../font/din/stylesheet.css);
+
+/* Default font stack, can be overloaded */
+.body-font() { font-family: "Baskerville", Georgia, serif; }
+.headline-font() { font-family: "DINWeb-CondBold", sans-serif; text-transform:uppercase}
+.form-font() { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.condensed-font() { font-family: "Arial Narrow", Arial, sans-serif; }
+
+html,
+button,
+input,
+select,
+textarea,
+label,
+form {
+    color: @body;
+}
+
+button,
+input,
+select,
+textarea,
+label,
+form {
+	.form-font();
+}
+
+html, body {
+	.body-font();
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color:@body;
+	font-weight:bold;
+	.headline-font();
+}
+
+a {
+	color: @link;
+	text-decoration:none!important;
+	&:hover, &:active {
+		color: @link-hover;
+	}
+	&:visited {
+		color:@link-visited;
+	}
+}
+
+/* Font Sizes and Baseline Grid */
+
+/* Settings */
+/* font sizes in pixels - only used for body; will be converted to ems */
+@body_font_size:18px;
+/* The vertical rhythym is phi. It should never be anything other than phi because it is perfect. End of story. */
+@body_line_height: @body_font_size * 1.6;
+
+@factor_h1:16;
+@factor_h2:12;
+@factor_h3:8;
+@factor_h4:4;
+@factor_p:0;
+@factor_small:-2;
+
+.font_size (@size) {
+	font-size: 0em + (@body_font_size + @size) / @body_font_size;
+}
+.line_height (@size) {
+	/*line-height: 0em + @body_line_height / (@body_font_size + @size);*/
+    line-height:0em + (@body_line_height/@body_font_size);
+}
+.margin_top() {
+	margin-top: 0;	
+}
+.margin_bottom (@size: 0) {
+	margin-bottom: 0em + @body_line_height / (@body_font_size + @size);
+}
+
+body {
+	font-size: @body_font_size;
+	.line_height(@factor_p);
+}
+
+h1 {
+	.font_size(@factor_h1);
+	.line_height(@factor_h1);
+    .margin_bottom(@factor_h1);
+	margin-top: 0;
+}
+h2 {
+	.font_size(@factor_h2);
+	.line_height(@factor_h2);
+    .margin_bottom(@factor_h2);
+	margin-top: 0;
+}
+h3 {
+	.font_size(@factor_h3);
+	.line_height(@factor_h3);
+    .margin_bottom(@factor_h3);
+	margin-top: 0;	
+}
+h4 {
+	.font_size(@factor_h4);
+	.line_height(@factor_h4);
+    .margin_bottom(@factor_h4);
+	margin-top: 0;
+}
+blockquote, h5, h6, iframe, label, p, pre, address, td, th, ul, ol, dl, dd, hr,
+table {
+	.font_size(@factor_p);
+	.line_height(@factor_p);
+	margin-top: 0;	
+	.margin_bottom(@factor_p);
+}
+.small {
+	.font_size(@factor_small);
+	.line_height(@factor_small);
+	margin-top: 0;	
+	.margin_bottom(@factor_small);
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: @highlight;
+    text-shadow: none;
+}
+
+::selection {
+    background: @highlight;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
