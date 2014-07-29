@@ -118,7 +118,7 @@ function digitalcitizen_scripts() {
 
 	wp_enqueue_style( 'digitalcitizen-style-less', get_template_directory_uri() . '/css/style.less' );
 
-	wp_enqueue_script( 'prefixfree', get_template_directory_uri() . '/js/vendor/prefix-free.min.js',)
+	wp_enqueue_script( 'prefixfree', get_template_directory_uri() . '/js/vendor/prefix-free.min.js', array(), '12345', true);
 
 	wp_enqueue_script( 'digitalcitizen-scrollspy', get_template_directory_uri() . '/js/effects.js', array('jquery'), '20120206', true );
 
