@@ -440,6 +440,37 @@ a:active {
     margin: 0 0 1.5em;
 }
 
+.entry-meta {
+    position:absolute;
+    left:0;
+    bottom:@body_line_height*2;
+    background:rgba(255,255,255,0.5);
+    font-size:1.6em;
+    margin:0;
+    .line_height(@factor_p);
+    .headline-font();
+    body.rtl & {
+        right:0;
+        left:auto;
+    }
+
+    @media screen and (min-width:768px) {
+        font-size:2em;
+    }
+    h1 {
+        font-size:1em;
+        margin-bottom:0;
+    }
+    h1:after {
+        content:' ';
+        background:url(../img/bullet.png) no-repeat center center;
+        background-size: contain;
+        width:40px;
+        height:30px;
+        display:inline-block;
+    }
+}
+
 .single, .home {
     #main article {
         position:static;
@@ -457,36 +488,6 @@ a:active {
         background-attachment: fixed;
         background-size:cover;
         background-position:center center;
-    }
-    .entry-meta {
-        position:absolute;
-        left:0;
-        bottom:@body_line_height*2;
-        background:rgba(255,255,255,0.5);
-        font-size:1.6em;
-        margin:0;
-        .line_height(@factor_p);
-        .headline-font();
-        body.rtl & {
-            right:0;
-            left:auto;
-        }
-
-        @media screen and (min-width:768px) {
-            font-size:2em;
-        }
-        h1 {
-            font-size:1em;
-            margin-bottom:0;
-        }
-        h1:after {
-            content:' ';
-            background:url(../img/bullet.png) no-repeat center center;
-            background-size: contain;
-            width:40px;
-            height:30px;
-            display:inline-block;
-        }
     }
 
     .entry-title, {
@@ -557,6 +558,27 @@ a:active {
     #comments {
         float:left;
         width:100%;
+    }
+}
+
+.blog {
+    #main {
+        margin-top:102px;
+        @media screen and (min-width:768px) {
+            margin-top:162px;
+        }
+    }
+    #main article {
+        max-width: 800px;
+        margin:0 auto @body_line_height auto;
+    }
+    .entry-header {
+        height:200px;
+        background-size:cover;
+        position: relative;
+    }
+    .entry-meta {
+        bottom:@body_line_height/2;
     }
 }
 
