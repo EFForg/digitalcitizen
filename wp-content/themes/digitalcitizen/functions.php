@@ -72,6 +72,11 @@ function digitalcitizen_setup() {
 	array_unshift( $buttons, 'styleselect' );
 	    return $buttons;
 	}
+
+	add_image_size( 'archive-thumb', 800, 200, true );
+	add_image_size( 'mobile-fullscreen-portrait', 500, 900, true );
+	add_image_size( 'mobile-fullscreen-landscape', 500, 900, true );
+	add_image_size( 'widescreen-fullscreen', 1000, 562, true );
 }
 endif; // digitalcitizen_setup
 add_action( 'after_setup_theme', 'digitalcitizen_setup' );

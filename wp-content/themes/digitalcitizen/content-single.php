@@ -7,13 +7,38 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
 		$image_id = get_post_thumbnail_id();
-		$image_url = wp_get_attachment_image_src(
+		$image_url_large = wp_get_attachment_image_src(
 			$image_id,
-			'large', 
+			'widescreen-fullscreen', 
+			true
+		);
+		$image_url_small_portrait = wp_get_attachment_image_src(
+			$image_id,
+			'mobile-fullscreen-portrait', 
+			true
+		);
+		$image_url_small_landscape = wp_get_attachment_image_src(
+			$image_id,
+			'mobile-fullscreen-landscape', 
 			true
 		);
 	?>
-	<header class="entry-header" style="background-image:url('<?php echo $image_url[0]; ?>');">
+	<style>
+		.entry-header {
+			background-image:url('<?php echo $image_url_small_portrait[0]; ?>');
+		}
+		@media screen and (orientation:'landscape') and (max-width: 768px) {
+			.entry-header {
+				background-image:url('<?php echo $image_url_small_landscape[0]; ?>');
+			}
+		}
+		@media screen and (min-width: 768px) {
+			.entry-header {
+				background-image:url('<?php echo $image_url_large[0]; ?>');
+			}
+		}
+	</style>
+	<header class="entry-header">
 			<div class="entry-meta">
 				<?php the_title( '<span class="entry-title">', '</span>' ); ?>
 				<?php digitalcitizen_posted_on(); ?>
