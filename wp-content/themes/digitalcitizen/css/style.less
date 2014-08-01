@@ -62,10 +62,21 @@ a:active {
     z-index:3;
     font-family:"DINWeb-CondBold";
     text-transform:uppercase;
+    .big {
+        display:none;
+    }
     body.rtl & {
         left:0;
         right:auto;
         text-align:left;
+    }
+    @media screen and (min-width:600px) {
+        .big{
+            display:inline;
+        }
+        .small {
+            display:none;
+        }
     }
 }
 

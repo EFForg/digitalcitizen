@@ -133,7 +133,7 @@ function digitalcitizen_language_switcher() {
 ?>
 	<div id="language_menu">
 		<input type="checkbox" id="language_menu--checkbox" />
-		<label id="language_menu--label" class="icon-earth" for="language_menu--checkbox" ><?php echo pll_current_language('name'); ?><?php echo pll_current_language('slug'); ?></label>
+		<label id="language_menu--label" class="icon-earth" for="language_menu--checkbox" ><span class="big"><?php echo pll_current_language('name'); ?></span><span class="small"><?php echo pll_current_language('slug'); ?></span></label>
 		<ul id="language_menu--list"><?php pll_the_languages();?></ul>
 	</div>
 <?php
