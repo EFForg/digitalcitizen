@@ -579,13 +579,15 @@ a:active {
         @media screen and (min-width:768px) {
             margin-top:162px;
         }
+        article {
+            max-width:800px;
+            margin:0 auto @body_line_height auto;
+        }
     }
 }
 
 .blog {
     #main article {
-        max-width: 800px;
-        margin:0 auto @body_line_height auto;
         border-bottom: 2px solid @blue;
     }
     .entry-header {
