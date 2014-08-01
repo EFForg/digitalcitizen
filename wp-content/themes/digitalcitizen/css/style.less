@@ -220,9 +220,10 @@ a:active {
         position:absolute;
         right:0;
         top:-44px;
-        width:32px;
+        padding-right:32px;
         font-size:32px;
         overflow:hidden;
+        width:0;
         @media screen and (min-width:768px) {
             font-family: "DINWeb-CondBold";
             .font_size(10);
@@ -246,6 +247,8 @@ a:active {
         body.rtl & {
             left:0;
             right:auto;
+            padding-left:0;
+            top:-40px;
             &.icon-menu:before {
                 position:absolute;
                 right:0;
