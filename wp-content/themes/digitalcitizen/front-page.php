@@ -26,8 +26,6 @@ get_header(); ?>
 
             <?php endwhile; ?>
 
-            <?php digitalcitizen_paging_nav(); ?>
-
         <?php else : ?>
 
             <?php get_template_part( 'content', 'none' ); ?>
