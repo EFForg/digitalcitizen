@@ -125,11 +125,11 @@ function digitalcitizen_scripts() {
 
 	wp_enqueue_script( 'prefixfree', get_template_directory_uri() . '/js/vendor/prefix-free.min.js', array(), '12345', true);
 
-	wp_enqueue_script( 'digitalcitizen-scrollspy', get_template_directory_uri() . '/js/effects.js', array('jquery'), '20120206', true );
+	wp_enqueue_script( 'digitalcitizen-scrollspy', get_template_directory_uri() . '/js/vendor/bootstrap-scrollspy.js', array('jquery'), '20120206', true );
 
-	wp_enqueue_script( 'digitalcitizen-affix', get_template_directory_uri() . '/js/effects.js', array('jquery'), '20120206', true );
+	wp_enqueue_script( 'digitalcitizen-affix', get_template_directory_uri() . '/js/vendor/affix.js', array('jquery'), '20120206', true );
 	
-	wp_enqueue_script( 'digitalcitizen-effects', get_template_directory_uri() . '/js/effects.js', array(), '20120206', true );
+	wp_enqueue_script( 'digitalcitizen-effects', get_template_directory_uri() . '/js/effects.js', array('jquery','digitalcitizen-affix','digitalcitizen-scrollspy'), '20120206', true );
 
 	wp_enqueue_script( 'digitalcitizen-vh-polyfill', get_template_directory_uri() . '/js/vendor/vh-polyfill.js', array('prefixfree'), '20120206', true );
 

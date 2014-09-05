@@ -16,12 +16,12 @@ a {
     color: @blue;
 }
 a:visited {
-    color: purple;
+    color: darken(@blue, 10%);
 }
 a:hover,
 a:focus,
 a:active {
-    color: midnightblue;
+    color: lighten(@blue, 10%);
 }
 
 /*--------------------------------------------------------------
@@ -511,6 +511,20 @@ a:active {
         margin-right:20px;
     }
 
+    .entry-summary {
+        .font_size(3);
+        .line_height(3);
+        font-style:italic;
+        text-align:justify;
+        p:first-letter {
+            font-family:"DINWeb-CondBold";
+            float:left;
+            .font_size(70);
+            line-height:.8em;
+            margin-right:.125em;
+        }
+    }
+
     .entry-content {
         padding-top:2em;
         position:relative;
@@ -529,41 +543,13 @@ a:active {
                 margin:0 2em 0 0;
             }
         }
-
-        #toc_container {
-            font-family: "DINWeb-CondBold";
-            background:whiteSmoke;
-            .font_size(-1);
-            @media screen and (min-width:1000px) {
-                margin-top: 2em;
-                position:absolute;
-                left:100%;
-                margin-left:2em;
-                .grid(6); 
-                top:0;
-            }
-        }
     }
 
-    .entry-content>p:first-of-type {
-        .font_size(3);
-        .line_height(3);
-        font-style:italic;
-        text-align:justify;
-        &:first-letter {
-            font-family:"DINWeb-CondBold";
-            float:left;
-            .font_size(70);
-            line-height:.8em;
-            margin-right:.125em;
-        }
-
-        body.rtl & {
-            &:first-word {
-                float:right;
-                margin-left:.125em;
-            }
-        }
+    .entry-aside {
+        .grid(5);
+        .last();
+        float:right;
+        position:relative;
     }
 
     .entry-footer {
@@ -601,6 +587,36 @@ a:active {
     }
     .entry-meta {
         bottom:@body_line_height/2;
+    }
+}
+
+.toc_widget {
+    font-family: "DINWeb-CondBold";
+    background:whiteSmoke;
+    .font_size(1);
+
+    &.affix {
+        position: fixed;
+        top:168px;
+    }
+    li {
+        display:inline-block;
+        list-style-type: none;
+        padding-right:5px;
+        text-transform:uppercase;
+        font-style:italic;
+    }
+    li a:after {
+        content:', ';
+    }
+    li:last-child a:after {
+        content:none;
+    }
+    li.active {
+        border-bottom:1px solid @blue;
+    }
+    @media screen and (min-width:1000px) {
+        margin-top: 2em;
     }
 }
 

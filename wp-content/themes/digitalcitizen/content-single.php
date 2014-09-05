@@ -38,12 +38,21 @@
 			}
 		}
 	</style>
+
 	<header class="entry-header">
 			<div class="entry-meta">
 				<?php the_title( '<span class="entry-title">', '</span>' ); ?>
 				<?php digitalcitizen_posted_on(); ?>
 			</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div>
+
+	<aside class="entry-aside">
+			<?php get_sidebar(); ?>
+	</aside><!-- .entry-aside -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
