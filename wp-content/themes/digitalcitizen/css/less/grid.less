@@ -11,6 +11,14 @@
 	min-height: 1px;
 	width: percentage( (@width * @columns) + (@margin * (@columns - 1) ) );
 }
+
+.grid-px ( @columns, @margin : .038, @width : .0485, @total_width : 1140px ) {
+	margin-right: percentage(@margin);
+	float: left;
+	min-height: 1px;
+	width: @total_width * ( (@width * @columns) + (@margin * (@columns - 1) ) );
+}
+
 .push ( @columns, @margin : .038, @width : .0485 ) {
 	margin-right: percentage(@margin);
 	float: left;

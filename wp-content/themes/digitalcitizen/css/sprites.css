@@ -1,34 +1,66 @@
-.s-7iber-medium, .access-medium, .eff-medium, .gv-medium, .smex-medium{
-	background: url(sprites.png) no-repeat;
+.eff, .gv, .smex, .s-7iber, .access {
+	background: url(../img/logos/sprites.png) no-repeat;
 }
 
-.s-7iber-medium{
-	background-position: 0 -161px ;
-	width: 199px;
-	height: 100px;
+.eff{
+	background-position: -470px -99px ;
+	width: 50px;
+	height: 34px;
 }
 
-.access-medium{
-	background-position: -102px -84px ;
-	width: 321px;
-	height: 75px;
+.s-7iber{
+	background-position: -389px -153px ;
+	width: 95px;
+	height: 35px;
 }
 
-.eff-medium{
-	background-position: 0 -88px ;
-	width: 100px;
-	height: 68px;
+.access{
+	background-position: -259px -161px ;
+	width: 113px;
+	height: 26px;
 }
 
-.gv-medium{
-	background-position: -213px 0;
-	width: 230px;
-	height: 75px;
+.gv{
+	background-position: -120px -153px ;
+	width: 115px;
+	height: 38px;
 }
 
-.smex-medium{
-	background-position: 0 0;
-	width: 206px;
-	height: 80px;
+.smex{
+	background-position: -6px -152px ;
+	width: 103px;
+	height: 40px;
+}
+
+@media screen and (max-width:1000px) {
+	.eff{
+		background-position: 0 -1px ;
+		width: 100px;
+		height: 68px;
+	}
+	`
+	.gv{
+		background-position: -96px 0;
+		width: 230px;
+		height: 75px;
+	}
+
+	.smex{
+		background-position: -333px 0;
+		width: 206px;
+		height: 80px;
+	}
+
+	.s-7iber{
+		background-position: 0 -77px ;
+		width: 190px;
+		height: 69px;
+	}
+
+	.access{
+		background-position: -214px -93px ;
+		width: 225px;
+		height: 52px;
+	}
 }
 

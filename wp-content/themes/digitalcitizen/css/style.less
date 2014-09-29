@@ -4,8 +4,10 @@
 @import url('less/util.less');
 @import url('../font/style.css');
 
-@black : #171717;
+@black: #171717;
 @blue : #00adee;
+@grey : #EEEEEE;
+
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
@@ -31,24 +33,25 @@ a:active {
     width:100%;
     position:relative;
     position:fixed;
-    height:102px;
+    height:91px;
     background:white;
     @media screen and (min-width:768px) {
         .clearfix();
-        height:162px;
+        height:147px;
     }
     &:after {
         content:' ';
         display:block;
-        background:@blue;
-        height:69px;
+        background:url(../img/bluebar-small.png);
+        height:58px;
         width:100%;
         z-index:0;
         position:absolute;
         top:0;
         left:0;
         @media screen and (min-width:768px) {
-            height:91px;
+            background:url(../img/bluebar-400.png);
+            height:83px;
         }
     }
 }
@@ -149,11 +152,11 @@ a:active {
 }
 #masthead--branding--title {
     background-image:url('../img/logo-small.png');
-    background-size:280px 102px;
+    background-size:280px 91px;
     text-indent:100%;
     overflow:hidden;
     width:280px;
-    height:102px;
+    height:91px;
     position:relative;
     z-index:1;
     display: block;
@@ -162,18 +165,18 @@ a:active {
     @media screen and (min-width:768px) {
         float:left;
         display: inline-block;
-        background-image:url('../img/logo.png');
-        background-size:400px 162px;
+        background-image:url('../img/logo-400.png');
+        background-size:400px 147px;
         text-indent:100%;
         overflow:hidden;
         width:400px;
-        height:162px;
+        height:147px;
     }
 
     body.rtl & {
         background-image:url('../img/logo-small-rtl.png');
         @media screen and (min-width:768px) {
-            background-image:url('../img/logo-rtl.png');
+            background-image:url('../img/logo-rtl-400.png');
         }
     }
 }
@@ -514,7 +517,7 @@ a:active {
         margin-right:20px;
     }
 
-    .entry-summary {
+    &:not(.rtl) .entry-summary {
         .font_size(3);
         .line_height(3);
         font-style:italic;
@@ -534,25 +537,33 @@ a:active {
         @media screen and (min-width:600px) {
             .grid(10);
             .push(1);
-            margin:0 auto;
         }
         @media screen and (min-width:1000px) {
+            margin:0 auto;
             .grid(7);
         }
+    }
 
-        body.rtl & {
-            @media screen and (min-width:1000px) {
-                float:right;
-                margin:0 2em 0 0;
-            }
+    &.rtl .entry-content {
+        @media screen and (min-width:1000px) {
+            float:right;
+            margin:0 2em 0 0;
         }
     }
 
     .entry-aside {
-        .grid(5);
-        .last();
-        float:right;
-        position:relative;
+        @media screen and (min-width:1000px) {
+            .grid(4);
+            .last();
+            float:right;
+            position:relative;
+            .toc_widget {
+                .grid-px(4, @total_width:1000px)
+            }
+        }
+    }
+    &.rtl .entry-aside {
+        float:left;
     }
 
     .entry-footer {
@@ -566,7 +577,7 @@ a:active {
     }
 }
 
-.blog, .page:not(.home) {
+.blog, body:not(.home).page{
     #main {
         margin-top:102px;
         @media screen and (min-width:768px) {
@@ -575,6 +586,24 @@ a:active {
         article {
             max-width:800px;
             margin:0 auto @body_line_height auto;
+        }
+    }
+    .entry-header {
+        margin:0 1em;
+    }
+    .entry-title {
+        background:#EEEEEE;
+        display:inline-block;
+        font-size:32px;
+        padding-left:100%;
+        margin-left:-100%;
+        padding-right:1em;
+    }
+    &.rtl {
+        .entry-title {
+            padding-right:100%;
+            margin-right:-100%;
+            padding-left:1em;
         }
     }
 }
@@ -599,8 +628,10 @@ a:active {
     .font_size(1);
 
     &.affix {
-        position: fixed!important;
-        top:168px;
+        @media screen and (min-width:1000px) {
+            position: fixed!important;
+            top:168px;
+        }
     }
     li {
         display:inline-block;
@@ -628,58 +659,120 @@ a:active {
     background:@black;
     text-align: center;
     padding-top:@body_line_height;
-    .s-7iber-medium, .access-medium, .eff-medium, .gv-medium, .smex-medium{
-        background: url(../img/logos/sprites-medium.png) no-repeat;
+
+    .eff, .gv, .smex, .s-7iber, .access {
+        background: url(../img/logos/sprites.png) no-repeat;
         display:inline-block;
-        box-sizing:border-box;
-        overflow:hidden;
+        white-space:nowrap;
         text-indent:100%;
-        white-space: nowrap;
-        vertical-align: top;
+        vertical-align:middle;
+        overflow:hidden;
     }
 
-    .s-7iber-medium{
-        background-position: 0 -161px ;
-        width: 199px;
-        height: 100px;
+    .eff{
+        background-position: -470px -99px ;
+        width: 50px;
+        height: 34px;
     }
 
-    .access-medium{
-        background-position: -102px -84px ;
-        width: 321px;
-        height: 75px;
+    .s-7iber{
+        background-position: -389px -153px ;
+        width: 95px;
+        height: 35px;
     }
 
-    .eff-medium{
-        background-position: 0 -88px ;
-        width: 100px;
-        height: 68px;
+    .access{
+        background-position: -259px -161px ;
+        width: 113px;
+        height: 26px;
     }
 
-    .gv-medium{
-        background-position: -213px 0;
-        width: 230px;
-        height: 75px;
+    .gv{
+        background-position: -120px -153px ;
+        width: 115px;
+        height: 38px;
     }
 
-    .smex-medium{
-        background-position: 0 0;
-        width: 206px;
-        height: 80px;
+    .smex{
+        background-position: -6px -152px ;
+        width: 103px;
+        height: 40px;
+    }
+
+    @media screen and (min-width:1000px) {
+        .eff{
+            background-position: 0 -1px ;
+            width: 100px;
+            height: 68px;
+        }
+        .gv{
+            background-position: -96px 0;
+            width: 230px;
+            height: 75px;
+        }
+        .smex{
+            background-position: -333px 0;
+            width: 206px;
+            height: 80px;
+        }
+        .s-7iber{
+            background-position: 0 -77px ;
+            width: 190px;
+            height: 69px;
+        }
+        .access{
+            background-position: -214px -93px ;
+            width: 225px;
+            height: 52px;
+        }
     }
     .site-info {
         float:left;
         width:100%;
         font-family:"DINWeb-CondBold";
         text-transform:uppercase;
-        text-align:right;
+        text-align:center;
         .font_size(-2);
+        margin-top:1em;
+        .icon {
+            font-size:20px;
+            width:20px;
+            white-space:nowrap;
+            overflow:hidden;
+            display:inline-block;
+            vertical-align:middle;
+        }
+        p {
+            display:inline-block;
+            margin-left:10px;
+        }
         a, & {
-            color:lighten(@black,4%);
+            color:#4e4e4e;
+        }
+        a:hover {
+            color:@blue;
         }
     }
 }
 
+#social-bar {
+    margin-top:2em;
+    width:1em;
+    .grid-px(1, @total_width:1000px)
+}
+
+.twitter-share {
+    font-size:2.4em;
+    width:1em;
+    display:inline-block;
+    overflow:hidden;
+}
+.facebook-share {
+    font-size:2.4em;
+    width:1em;
+    display:inline-block;
+    overflow:hidden;
+}
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -784,3 +877,50 @@ object {
     max-width: 11.11%;
 }
 .gallery-caption {}
+
+/*--------------------------------------------------------------
+12.3 Forms
+--------------------------------------------------------------*/
+form {
+    * {
+        font-family:"DINWeb-CondBold";
+    }
+
+    div {
+        .grid(12);
+        margin-bottom:.5em;
+    }
+
+    label {
+        font-family:"DINWeb-CondBold";
+        .grid(3);
+        text-align:right;
+        text-transform:uppercase;
+        padding:.5em 0;
+        font-size:1.5em;
+        line-height:1.5em;
+        vertical-align:middle;
+    }
+
+    input, textarea, select {
+        box-sizing:border-box;
+        .grid(9);
+        .last();
+        &:focus {
+            background: lighten(@blue,30%);
+        }
+    }
+
+    input, textarea {
+        background: @grey;
+        border:none;
+        padding:.5em;
+        font-size:1.5em;
+    }
+
+    input[type="submit"] {
+        .grid(4);
+        .last();
+        float:right;
+    }
+}

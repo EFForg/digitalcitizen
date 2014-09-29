@@ -1,0 +1,1 @@
+<?php echo wp_get_form('digitalcitizen-subscribe-form'); ?>

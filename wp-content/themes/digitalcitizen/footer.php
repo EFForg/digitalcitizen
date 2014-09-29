@@ -12,16 +12,24 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <div id="logo-salad">
-            <a class="s-7iber-medium" href="http://7iber.com">7iber</a>
-            <a class="eff-medium" href="http://EFF.org">EFF</a>
-            <a class="access-medium" href="http://accessnow.org">Access Now</a>
-            <a class="gv-medium" href="http://advocacy.globalvoicesonline.org">Global Voices Advocacy</a>
-            <a class="smex-medium" href="http://smex.org">Social Media Exchange</a>
+            <a class="s-7iber" href="http://7iber.com">7iber</a>
+            <a class="eff" href="http://EFF.org">EFF</a>
+            <a class="access" href="http://accessnow.org">Access Now</a>
+            <a class="gv" href="http://advocacy.globalvoicesonline.org">Global Voices Advocacy</a>
+            <a class="smex" href="http://smex.org">Social Media Exchange</a>
         </div>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'digitalcitizen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'digitalcitizen' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'digitalcitizen' ), 'Digital Citizen', '<a href="http://matthewgerring.com" rel="designer">Matthew Gerring</a>' ); ?>
+			<p>Some rights reserved <a href=""><span class="icon icon-cc">CC</span> <span class="icon icon-by">BY</span></a></p>
+
+			<p>Follow us:
+				<a href="https://www.facebook.com/muwatenraqamy" class="icon icon-facebook">Facebook</a>
+				<a href="https://twitter.com/MuwatenRaqamy" class="icon icon-twitter">Twitter</a>
+				<a href="https://github.com/EFForg/digitalcitizen" class="icon icon-github">Github</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'digitalcitizen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'digitalcitizen' ), 'WordPress' ); ?></a>
+			</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

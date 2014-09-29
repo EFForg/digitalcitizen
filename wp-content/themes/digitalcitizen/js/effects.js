@@ -2,38 +2,62 @@ jQuery(function($){
     var previousScroll = $(this).scrollTop(),
         masthead = $('#masthead'),
         up = false,
-        down = false;
+        down = false,
+        currentScroll,
+        direction,
+        previousDirection;
 
-    $(window).scroll(function () {
-        var currentScroll = $(this).scrollTop();
-        if (currentScroll > ($(window).height()/4) ) {
-            if (currentScroll > previousScroll && !down) {
-                lastDelta = currentScroll;
-                masthead.removeClass('down').addClass('up');
-                down = true;
-                up = false;
-                return true;
-            }
-            if  (currentScroll < previousScroll && !up) {
-                lastDelta = currentScroll;
-                masthead.removeClass('up').addClass('down');
-                up = true;
-                down = false;
-            }
+    $(window).scroll(function(e) {
+        //Cache current scroll location
+        currentScroll = $(this).scrollTop();
+        
+        //Are we going up or down?
+        direction = currentScroll > previousScroll ? 'down' : 'up';
+
+        //Did the direction change?
+        if(direction != previousDirection) {
+            nav_toggle_listener(direction, currentScroll);
         }
+       
         previousScroll = currentScroll;
+        previousDirection = direction;
     });
 
-    $('body').scrollspy({ target: '#toc_container' });
+    function nav_toggle_listener(direction, start_position) {
+        //Remove any existing listener
+        $(window).off('scroll.nav_listener');
+        //Reset scroll counter
+        var start_position = start_position;
+        console.log(start_position);
+        //Make our direction available to the anonymous function running on scroll
+        var direction = direction;
+
+        $(window).on('scroll.nav_listener',function(e){
+            if( Math.abs($(this).scrollTop() - start_position) > 200 ) {
+                //do the thing
+                toggle_header(direction);
+                //kill the listener
+                $(window).off('scroll.nav_listener');
+            }
+        });
+    }
+
+    function toggle_header(direction) {
+        if(direction == 'down') {
+            masthead.removeClass('down').addClass('up');
+        } else {
+            masthead.removeClass('up').addClass('down');
+        }
+    }
 
     $(window).load(function(){
         var toc_offset = $(".toc_widget").offset();
         $(".toc_widget").affix({
             offset: {
-                top:toc_offset.top - 168,
+                top:toc_offset.top - 147,
                 bottom:500
             }
-        }).on('affix.bs.affix',function(e){ console.log(e) });
+        });
     });
 });
 
