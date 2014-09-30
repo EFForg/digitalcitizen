@@ -19,9 +19,9 @@
             <a class="smex" href="http://smex.org">Social Media Exchange</a>
         </div>
 		<div class="site-info">
-			<p>Some rights reserved <a href=""><span class="icon icon-cc">CC</span> <span class="icon icon-by">BY</span></a></p>
+			<p><?php _e('Some rights reserved','digitalcitizen'); ?> <a href=""><span class="icon icon-cc">CC</span> <span class="icon icon-by">BY</span></a></p>
 
-			<p>Follow us:
+			<p><?php _e('Follow us:','digitalcitizen'); ?>
 				<a href="https://www.facebook.com/muwatenraqamy" class="icon icon-facebook">Facebook</a>
 				<a href="https://twitter.com/MuwatenRaqamy" class="icon icon-twitter">Twitter</a>
 				<a href="https://github.com/EFForg/digitalcitizen" class="icon icon-github">Github</a>

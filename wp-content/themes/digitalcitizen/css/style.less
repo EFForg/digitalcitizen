@@ -517,18 +517,19 @@ a:active {
         margin-right:20px;
     }
 
-    &:not(.rtl) .entry-summary {
+    .entry-summary {
         .font_size(3);
         .line_height(3);
         font-style:italic;
         text-align:justify;
-        p:first-letter {
-            font-family:"DINWeb-CondBold";
-            float:left;
-            .font_size(70);
-            line-height:.8em;
-            margin-right:.125em;
-        }
+    }
+
+    &:not(.rtl) .entry-summary p:first-letter {
+        font-family:"DINWeb-CondBold";
+        float:left;
+        .font_size(70);
+        line-height:.8em;
+        margin-right:.125em;
     }
 
     .entry-content {
@@ -570,11 +571,11 @@ a:active {
     .entry-footer {
         float:left;
         width:100%;
+        max-width:1140px;
     }
 
     #comments {
-        float:left;
-        width:100%;
+        display: none;
     }
 }
 
@@ -634,7 +635,7 @@ body:not(.home).page {
     &.affix {
         @media screen and (min-width:1000px) {
             position: fixed!important;
-            top:168px;
+            top:160px;
         }
     }
     h1 {
@@ -660,9 +661,6 @@ body:not(.home).page {
     }
     li.active {
         border-bottom:1px solid @blue;
-    }
-    @media screen and (min-width:1000px) {
-        margin-top: 2em;
     }
 }
 
@@ -753,6 +751,9 @@ body:not(.home).page {
             overflow:hidden;
             display:inline-block;
             vertical-align:middle;
+            .rtl & {
+                direction: ltr;
+            }
         }
         p {
             display:inline-block;
@@ -769,8 +770,19 @@ body:not(.home).page {
 
 #social-bar {
     margin-top:2em;
-    .grid(12);
+    .grid(10);
+    .push(1);
+    .share-text {
+        vertical-align: middle;
+        font-family:"DINWeb-CondBold";
+        text-transform:uppercase;
+        .font_size(3);
+    }
     @media screen and (min-width:1000px) {
+        .share-text {
+            display: none;
+        }
+        margin:0;
         .grid-px(1, @total_width:1000px);
     }
     .rtl &{
@@ -781,10 +793,11 @@ body:not(.home).page {
     &.affix {
         @media screen and (min-width:1000px) {
             position: fixed!important;
-            top:168px;
+            top:160px;
         }
     }
     a {
+        vertical-align: middle;
         font-size:3rem;
         width:3rem;
         height:3rem;
@@ -802,34 +815,18 @@ body:not(.home).page {
     }
 }
 
+.post-navigation {
+    .grid(10);
+    float:none;
+    margin:0 auto;
+}
+
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
     display: none;
-}
-
-/*--------------------------------------------------------------
-10.3 Comments
---------------------------------------------------------------*/
-.comment-content a {
-    word-wrap: break-word;
-}
-.bypostauthor {
-}
-
-/*--------------------------------------------------------------
-11.0 Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-    display: none;
-}
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending .site-footer {
-    display: block;
 }
 
 /*--------------------------------------------------------------
