@@ -21,16 +21,28 @@ function subscribe_form_callback( $form ) {
         )
         ->add_element(
             WP_form_Element::create('email')
-                ->set_name('email')
+                ->set_name('email-Primary')
                 ->set_label('Email Address')
         )
         ->add_element(
             WP_form_Element::create('submit')
                 ->set_name('submit')
                 ->set_value('Submit')
+        )
+        ->add_element(
+            WP_form_Element::create('hidden')
+                ->set_name('gid')
+                ->set_value('51')
+        )
+        ->add_element(
+            WP_form_Element::create('hidden')
+                ->set_name('entryURL')
+                ->set_value('https://supporters.eff.org/civicrm/profile/create?gid=51&amp;reset=1/field/add?reset=1&amp;amp;action=add&amp;amp;gid=51')
         );
 
     $form->add_validator('subscribe_form_validator', 10);
+
+    $form->set_action('https://supporters.eff.org/civicrm/profile/create?gid=51&reset=1');
 }
 
 function subscribe_form_validator($submission, $form) {
@@ -64,6 +76,11 @@ function contribute_form_callback( $form ) {
             WP_form_Element::create('email')
                 ->set_name('email')
                 ->set_label('Email Address')
+        )
+        ->add_element(
+            WP_form_Element::create('text')
+                ->set_name('url')
+                ->set_label('Submission URL')
         )
         ->add_element(
             WP_form_Element::create('select')

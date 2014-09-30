@@ -541,12 +541,13 @@ a:active {
         @media screen and (min-width:1000px) {
             margin:0 auto;
             .grid(7);
+            float:right;
         }
     }
 
     &.rtl .entry-content {
         @media screen and (min-width:1000px) {
-            float:right;
+            float:left;
             margin:0 2em 0 0;
         }
     }
@@ -591,6 +592,16 @@ a:active {
     .entry-header {
         margin:0 1em;
     }
+    &.rtl {
+        .entry-title {
+            padding-right:100%;
+            margin-right:-100%;
+            padding-left:1em;
+        }
+    }
+}
+
+body:not(.home).page {
     .entry-title {
         background:#EEEEEE;
         display:inline-block;
@@ -598,13 +609,6 @@ a:active {
         padding-left:100%;
         margin-left:-100%;
         padding-right:1em;
-    }
-    &.rtl {
-        .entry-title {
-            padding-right:100%;
-            margin-right:-100%;
-            padding-left:1em;
-        }
     }
 }
 
@@ -633,10 +637,18 @@ a:active {
             top:168px;
         }
     }
+    h1 {
+        padding-left:1rem;
+        padding-top:1rem;
+        margin-bottom:0;
+    }
+    ul {
+        padding-left:1rem;
+    }
     li {
         display:inline-block;
         list-style-type: none;
-        padding-right:5px;
+        padding-right:.5em;
         text-transform:uppercase;
         font-style:italic;
     }
@@ -757,21 +769,37 @@ a:active {
 
 #social-bar {
     margin-top:2em;
-    width:1em;
-    .grid-px(1, @total_width:1000px)
-}
-
-.twitter-share {
-    font-size:2.4em;
-    width:1em;
-    display:inline-block;
-    overflow:hidden;
-}
-.facebook-share {
-    font-size:2.4em;
-    width:1em;
-    display:inline-block;
-    overflow:hidden;
+    .grid(12);
+    @media screen and (min-width:1000px) {
+        .grid-px(1, @total_width:1000px);
+    }
+    .rtl &{
+        @media screen and (min-width:1000px) {
+            float:right;
+        }
+    }
+    &.affix {
+        @media screen and (min-width:1000px) {
+            position: fixed!important;
+            top:168px;
+        }
+    }
+    a {
+        font-size:3rem;
+        width:3rem;
+        height:3rem;
+        display:inline-block;
+        overflow:hidden;
+        &.twitter-share {
+            color:#55acee;
+        }
+        &.facebook-share {
+            color:#3b5998;
+        }
+        .rtl & {
+            direction:ltr;
+        }
+    }
 }
 
 /*--------------------------------------------------------------

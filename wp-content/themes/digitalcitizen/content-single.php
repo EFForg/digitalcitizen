@@ -50,8 +50,6 @@
 		<?php the_excerpt(); ?>
 	</div>
 
-	<?php get_template_part('socialbar'); ?>
-
 	<aside class="entry-aside">
 			<?php get_sidebar(); ?>
 	</aside><!-- .entry-aside -->
@@ -65,6 +63,8 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+
+	<?php get_template_part('socialbar'); ?>
 
 	<footer class="entry-footer">
 		<?php
