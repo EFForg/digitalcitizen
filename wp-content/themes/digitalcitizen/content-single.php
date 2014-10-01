@@ -66,4 +66,8 @@
 
 	<?php get_template_part('socialbar'); ?>
 
+	<footer class="entry-footer">
+		<?php digitalcitizen_post_nav(); ?>
+	</footer>
+
 </article><!-- #post-## -->
