@@ -341,11 +341,78 @@ function contribute_form_callback( $form ) {
                 ->set_name('submit')
                 ->set_value('Submit')
         )
-        ->add_validator('contribute_form_validator', 10);
+        ->add_validator('contribute_form_validator', 10)
+        ->add_processor('contribute_form_processor', 10 );
 }
 
 function contribute_form_validator($submission, $form){
     //Validation logic goes here
+}
+
+function contribute_form_processor( $submission, $form ) {
+    $post = array(
+        'post_title'     => "Oh Hello There",
+        'post_status'    => 'publish',
+        'post_type'      => 'submission',
+        'post_author'    => '0'
+    );
+    $id = wp_insert_post( $post );
+    $values = [];
+    foreach( $form->get_children() as $element ) {
+        if($element->type == "hidden" || $element->type == "submit") continue;
+        add_post_meta($id, $element->get_attribute('name'), $submission->get_value($element->get_attribute('name')) );
+    }
+}
+
+add_action( 'init', 'create_my_post_types' );
+
+function create_my_post_types() {
+    global $wp_roles;
+
+    $caps = array(
+        'publish_posts' => 'publish_submissions',
+        'edit_posts' => 'edit_submissions',
+        'edit_published_posts' => 'edit_published_submissions',
+        'edit_others_posts' => 'edit_others_submissions',
+        'delete_posts' => 'delete_submissions',
+        'delete_others_posts' => 'delete_others_submissions',
+        'read_private_posts' => 'read_private_submissions',
+        'edit_post' => 'edit_submission',
+        'delete_post' => 'delete_submission',
+        'read_post' => 'read_submission',
+    );
+
+    register_post_type(
+        'submission',
+        array(
+            'public' => false,
+            'show_ui' => true,
+            'menu_position' => 10,
+            'map_meta_cap' => true,
+            'supports' => array('custom-fields'),
+            'capability_type' => 'submission',
+            'capabilities' => $caps,
+            'labels' => array(
+                'name'               => _x( 'Submission', 'post type general name' ),
+                'singular_name'      => _x( 'Submission', 'post type singular name' ),
+                'add_new'            => _x( 'Add New', 'submission' ),
+                'add_new_item'       => __( 'Add New Submission' ),
+                'edit_item'          => __( 'Edit Submission' ),
+                'new_item'           => __( 'New Submission' ),
+                'all_items'          => __( 'All Submissions' ),
+                'view_item'          => __( 'View Submission' ),
+                'search_items'       => __( 'Search Submission' ),
+                'not_found'          => __( 'No submissions found' ),
+                'not_found_in_trash' => __( 'No submissions found in the Trash' ), 
+                'parent_item_colon'  => '',
+                'menu_name'          => 'Submissions'
+            )
+        )
+    );
+
+    foreach($caps as $cap) {
+        $wp_roles->add_cap( 'administrator', $cap );
+    }
 }
 
 ?>
