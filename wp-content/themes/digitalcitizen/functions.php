@@ -119,9 +119,11 @@ function enqueue_less_styles($tag, $handle) {
 add_filter( 'style_loader_tag', 'enqueue_less_styles', 5, 2);
 
 function digitalcitizen_scripts() {
-	wp_enqueue_style( 'digitalcitizen-style', get_stylesheet_uri() );
-
-	wp_enqueue_style( 'digitalcitizen-style-less', get_template_directory_uri() . '/css/style.less' );
+	if (WP_DEBUG == true) {
+		wp_enqueue_style( 'digitalcitizen-style-less', get_template_directory_uri() . '/css/style.less' );
+	} else {
+		wp_enqueue_style( 'digitalcitizen-style', get_stylesheet_uri() );
+	}
 
 	wp_enqueue_script( 'prefixfree', get_template_directory_uri() . '/js/vendor/prefix-free.min.js', array(), '12345', true);
 
