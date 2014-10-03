@@ -4,7 +4,7 @@
 	<a href="" class="facebook-share icon-facebook">Facebook</a>
 	<?php 
 	printf(
-		__( '<a href="%1$s" rel="bookmark">Permalink</a>.', 'digitalcitizen' ),
+		__( '<a href="%1$s" class="icon-link" rel="bookmark">Permalink</a>', 'digitalcitizen' ),
 		get_permalink()
 	);
 	?>

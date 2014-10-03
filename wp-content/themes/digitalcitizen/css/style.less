@@ -2,7 +2,9 @@
 @import url('less/grid.less');
 @import url('less/text.less');
 @import url('less/util.less');
-@import url('../font/style.css');
+@import url('../font/din/stylesheet.css');
+@import url('../font/baskerville/stylesheet.css');
+@import url('../font/icomoon/style.css');
 
 @black: #171717;
 @blue : #00adee;
@@ -18,12 +20,12 @@ a {
     color: @blue;
 }
 a:visited {
-    color: darken(@blue, 10%);
+    color: lighten(@blue, 15%);
 }
 a:hover,
 a:focus,
 a:active {
-    color: lighten(@blue, 10%);
+    color: darken(@blue, 15%);
 }
 
 /*--------------------------------------------------------------
@@ -664,6 +666,22 @@ body:not(.home).page {
     }
 }
 
+.edit-link a {
+    &:before {
+        font-family: 'icomoon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\e608";
+    }
+}
+
 #colophon {
     width:100%;
     background:@black;
@@ -822,6 +840,16 @@ body:not(.home).page {
     .grid(10);
     float:none;
     margin:0 auto;
+    font-family: "DINWeb-CondBold";
+    text-transform: uppercase;
+    .font_size(2);
+    .nav-previous {
+        .grid(5);
+    }
+    .nav-next {
+        .grid(5);
+        float:right;
+    }
 }
 
 /*--------------------------------------------------------------
