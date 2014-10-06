@@ -1,5 +1,5 @@
 /*
-Theme Name: Digital Citizen
+Theme Name: Digital Citizen 2
 Theme URI: http://underscores.me/
 Author: Matthew Gerring
 Author URI: http://matthewgerring.com
@@ -20,3 +20,5 @@ Resetting and rebuilding styles have been helped along thanks to the fine work o
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
+*/
+@import url('css/style.css');
