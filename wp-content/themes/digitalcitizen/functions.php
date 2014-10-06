@@ -121,6 +121,7 @@ add_filter( 'style_loader_tag', 'enqueue_less_styles', 5, 2);
 function digitalcitizen_scripts() {
 	if (WP_DEBUG == true) {
 		wp_enqueue_style( 'digitalcitizen-style-less', get_template_directory_uri() . '/css/style.less' );
+		wp_enqueue_script( 'less', get_template_directory_uri() . '/js/vendor/less.js', array(), '20120206', false );
 	} else {
 		wp_enqueue_style( 'digitalcitizen-style', get_stylesheet_uri() );
 	}
@@ -135,11 +136,6 @@ function digitalcitizen_scripts() {
 
 	wp_enqueue_script( 'digitalcitizen-vh-polyfill', get_template_directory_uri() . '/js/vendor/vh-polyfill.js', array('prefixfree'), '20120206', true );
 
-	wp_enqueue_script( 'less', get_template_directory_uri() . '/js/vendor/less.js', array(), '20120206', false );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'digitalcitizen_scripts' );
 
