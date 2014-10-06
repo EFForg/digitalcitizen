@@ -24,8 +24,7 @@ class ManualImageCropEditorWindow {
 	}
 
 	public function renderWindow() {
-		$sizes_settings = get_option( 'mic_options' );
-		$sizesSettings = unserialize( $sizes_settings['sizes_settings'] );
+		$sizesSettings = MicSettingsPage::getSettings();
 		?>
 		<div class="mic-editor-wrapper">
             <h4><?php _e('Pick the image size:','microp'); ?></h4>
