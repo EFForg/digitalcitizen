@@ -5,13 +5,6 @@
  * @package Digital Citizen
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
 if ( ! function_exists( 'digitalcitizen_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -131,18 +124,15 @@ function digitalcitizen_scripts() {
 	wp_enqueue_script( 'digitalcitizen-scrollspy', get_template_directory_uri() . '/js/vendor/bootstrap-scrollspy.js', array('jquery'), '20120206', true );
 
 	wp_enqueue_script( 'digitalcitizen-affix', get_template_directory_uri() . '/js/vendor/affix.js', array('jquery'), '20120206', true );
-	
-	wp_enqueue_script( 'digitalcitizen-effects', get_template_directory_uri() . '/js/effects.js', array('jquery','digitalcitizen-affix','digitalcitizen-scrollspy'), '20120206', true );
 
 	wp_enqueue_script( 'digitalcitizen-vh-polyfill', get_template_directory_uri() . '/js/vendor/vh-polyfill.js', array('prefixfree'), '20120206', true );
 
+	wp_enqueue_script( 'digitalcitizen-vh-buggyfill', get_template_directory_uri() . '/js/vendor/vh-buggyfill.js', array(), '20120206', true );
+
+	wp_enqueue_script( 'digitalcitizen-effects', get_template_directory_uri() . '/js/effects.js', array('jquery','digitalcitizen-affix','digitalcitizen-scrollspy', 'digitalcitizen-vh-buggyfill'), '20120206', true );
 }
 add_action( 'wp_enqueue_scripts', 'digitalcitizen_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -153,16 +143,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Load our custom forms.

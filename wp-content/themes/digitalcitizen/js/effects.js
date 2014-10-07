@@ -1,3 +1,5 @@
+window.viewportUnitsBuggyfill.init({hacks:viewportUnitsBuggyfillHacks});
+
 jQuery(function($){
     var previousScroll = $(this).scrollTop(),
         masthead = $('#masthead'),
