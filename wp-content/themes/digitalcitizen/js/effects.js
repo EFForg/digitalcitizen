@@ -57,7 +57,7 @@ jQuery(function($){
             var toc_offset = $(".toc_widget").offset();
             $(".toc_widget, #social-bar").affix({
                 offset: {
-                    top:toc_offset.top - 147,
+                    top:(toc_offset.top - 147),
                     bottom:500
                 }
             });
