@@ -963,6 +963,9 @@ form {
 
     input, textarea, select {
         box-sizing:border-box;
+        border:none;
+        padding:.5em;
+        font-size:1.5em;
         .grid(9);
         .last();
         &:focus {
@@ -972,9 +975,6 @@ form {
 
     input, textarea {
         background: @grey;
-        border:none;
-        padding:.5em;
-        font-size:1.5em;
     }
 
     input[type="submit"] {
