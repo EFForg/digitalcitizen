@@ -30,7 +30,6 @@ jQuery(function($){
         $(window).off('scroll.nav_listener');
         //Reset scroll counter
         var start_position = start_position;
-        console.log(start_position);
         //Make our direction available to the anonymous function running on scroll
         var direction = direction;
 
@@ -54,11 +53,11 @@ jQuery(function($){
 
     $(window).load(function(){
         if( $(window).width() >= 1000 ) {
-            var toc_offset = $(".toc_widget").offset();
-            $(".toc_widget, #social-bar").affix({
+            var toc_offset = $(".entry-aside-inner").offset();
+            $(".entry-aside-inner, #social-bar").affix({
                 offset: {
-                    top:(toc_offset.top - 147),
-                    bottom:500
+                    top:toc_offset.top,
+                    bottom:0
                 }
             });
         }

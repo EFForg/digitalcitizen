@@ -51,7 +51,9 @@
 	</div>
 
 	<aside class="entry-aside">
+		<div class="entry-aside-inner">
 			<?php get_sidebar(); ?>
+		</div>
 	</aside><!-- .entry-aside -->
 
 	<div class="entry-content">

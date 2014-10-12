@@ -571,6 +571,18 @@ a:active {
     &.rtl .entry-aside {
         float:left;
     }
+    .entry-aside-inner {
+        @media screen and (min-width:1000px) {
+            margin-top:-150px;
+            padding-top:150px;
+        }
+        &.affix {
+            @media screen and (min-width:1000px) {
+                position: fixed!important;
+                top:150px;
+            }
+        }
+    }
 
     .entry-footer {
         float:left;
@@ -635,13 +647,6 @@ body:not(.home).page {
     font-family: "DINWeb-CondBold";
     background:whiteSmoke;
     .font_size(1);
-
-    &.affix {
-        @media screen and (min-width:1000px) {
-            position: fixed!important;
-            top:160px;
-        }
-    }
     h1 {
         padding-left:1rem;
         padding-top:1rem;
