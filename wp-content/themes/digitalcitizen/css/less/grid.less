@@ -21,9 +21,11 @@
 
 .push ( @columns, @margin : .038, @width : .0485 ) {
 	margin-right: percentage(@margin);
-	float: left;
-	min-height: 1px;
 	margin-left: percentage( (@width * @columns) + (@margin * (@columns) ) );
+}
+.push-right ( @columns, @margin : .038, @width : .0485 ) {
+	margin-left: percentage(@margin);
+	margin-right: percentage( (@width * @columns) + (@margin * (@columns) ) + @margin);
 }
 .container {
 	padding-left: 20px;

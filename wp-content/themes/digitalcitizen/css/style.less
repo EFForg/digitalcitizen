@@ -877,11 +877,41 @@ body:not(.home).page {
     .font_size(8);
     .nav-previous {
         .grid(5);
+        a:before {
+            float:left;
+            content:"\2190";
+        }
     }
     .nav-next {
         .grid(5);
         float: right;
         text-align: right;
+        a:before {
+            float:right;
+            content:"\2192";
+        }
+    }
+    .rtl & {
+        @media screen and (min-width:1000px) {
+            margin:0;
+            float:right;
+            .push-right(1);
+        }
+        .nav-previous {
+            float:right;
+            a:before {
+                float:right;
+                content:"\2192";
+            }
+        }
+        .nav-next {
+            float:left;
+            text-align:left;
+            a:before {
+                float:left;
+                content:"\2190";
+            }
+        }
     }
 }
 
