@@ -1,0 +1,444 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Facebook Open Graph Meta Tags for WordPress v1.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-04-19 13:31-0000\n"
+"Last-Translator: Wonderm00n <wonderm00n@gmail.com>\n"
+"Language-Team: Webdados <info@webdados.pt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: pt_PT\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ wd-fb-og
+#: includes/settings-page.php:64
+msgid ""
+"Please set some default values and which tags should, or should not, be "
+"included. It may be necessary to exclude some tags if other plugins are "
+"already including them."
+msgstr ""
+"Por favor defina alguns valores padrão e que tags devem, ou não, ser "
+"incluídas. Pode ser necessário excluir algumas tags se outros plugins já as "
+"estão a incluir."
+
+# @ wd-fb-og
+#: includes/settings-page.php:78
+msgid "Include Facebook Platform App ID (fb:app_id) tag?"
+msgstr "Incluir tag \"Facebook Platform App ID\" (fb:app_id)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:84
+msgid "Facebook Platform App ID"
+msgstr "Facebook Platform App ID"
+
+# @ wd-fb-og
+#: includes/settings-page.php:93
+msgid "Include Facebook Admin(s) ID (fb:admins) tag?"
+msgstr "Inluir tag com ID dos admin de Facebook (fb:admins)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:99
+msgid "Facebook Admin(s) ID"
+msgstr "ID do(s) Admin(s) no Facebook"
+
+# @ wd-fb-og
+#: includes/settings-page.php:103
+msgid "Comma separated if more than one"
+msgstr "Separados por vírgulas se mais do que um"
+
+# @ wd-fb-og
+#: includes/settings-page.php:110
+msgid "Include locale (fb:locale) tag?"
+msgstr "Incluir tag \"Locale\" (fb:locale)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:116
+msgid "Locale"
+msgstr "Locale"
+
+# @ wd-fb-og
+#: includes/settings-page.php:119
+msgid "WordPress current locale/language"
+msgstr "O \"locale\"/idíoma actual do WordPress"
+
+# @ wd-fb-og
+#: includes/settings-page.php:170
+msgid "List loaded from Facebook (online)"
+msgstr "Lista carregada do Facebook (online)"
+
+# @ wd-fb-og
+#: includes/settings-page.php:173
+msgid "List loaded from local cache (offline)"
+msgstr "Lista carregada da cache local (offline)"
+
+# @ wd-fb-og
+#: includes/settings-page.php:173
+msgid "You\\'l lose any changes you haven\\'t saved. Are you sure?"
+msgstr ""
+"Vai perder quaisquer modificações que não tenha gravado. Tem a certeza?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:173
+msgid "Reload from Facebook"
+msgstr "(Re)carregar a partir do Facebook"
+
+# @ wd-fb-og
+#: includes/settings-page.php:175
+msgid "List not loaded"
+msgstr "Lista não carregada"
+
+# @ wd-fb-og
+#: includes/settings-page.php:185
+msgid "Include Site Name (og:site_name) tag?"
+msgstr "Incluir tag Nome do site (og:site_name)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:194
+msgid "Include Post/Page title (og:title) tag?"
+msgstr "Incluir tag Título do artigo/página (og:title)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:200
+msgid "Also include Schema.org \"itemprop\" Name tag?"
+msgstr "Incluir também a tag \"itemprop Name\" do Schema.org?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:206 includes/settings-page.php:281
+#: includes/settings-page.php:323
+msgid ""
+"Recommended for Google+ sharing purposes if no other plugin is setting it "
+"already"
+msgstr ""
+"Recomendado para efeitos de partilha no Google+, se outro plugin ainda não a "
+"está a definir"
+
+# @ wd-fb-og
+#: includes/settings-page.php:213
+msgid "Include URL (og:url) tag?"
+msgstr "Incluir tag URL (og:url)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:219
+msgid "Also set Canonical URL"
+msgstr "Incluir também a tag URL Canónico"
+
+# @ wd-fb-og
+#: includes/settings-page.php:227
+msgid "Add trailing slash at the end"
+msgstr "Adicionar barra invertida no final"
+
+# @ wd-fb-og
+#: includes/settings-page.php:231
+msgid "On the homepage will be"
+msgstr "Na página inicial será"
+
+# @ wd-fb-og
+#: includes/settings-page.php:238
+msgid "Include Type (og:type) tag?"
+msgstr "Incluir tag Tipo (og:type)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:242
+#, php-format
+msgid ""
+"Will be \"%1$s\" for posts and pages and \"%2$s\" or \"%3$s\"; for the "
+"homepage"
+msgstr ""
+"Será \"%1$s\" para artigos e páginas, e \"%2$s\" ou \"%3$s\"; para a página "
+"inicial"
+
+# @ wd-fb-og
+#: includes/settings-page.php:246
+msgid "Homepage type"
+msgstr "Tipo para a página inicial"
+
+# @ wd-fb-og
+#: includes/settings-page.php:248 includes/settings-page.php:295
+msgid "Use"
+msgstr "Utilizar"
+
+# @ wd-fb-og
+#: includes/settings-page.php:259
+msgid "Include Description (og:description) tag?"
+msgstr "Incluir tag Descrição (og:description)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:265
+msgid "Also include Meta Description tag?"
+msgstr "Incluir também a tag \"Meta Description\"?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:271
+msgid "Recommended for SEO purposes if no other plugin is setting it already"
+msgstr ""
+"Recomendado para efeitos de Optimização para Motores de Busca, se outro "
+"plugin ainda não a está a definir"
+
+# @ wd-fb-og
+#: includes/settings-page.php:275
+msgid "Also include Schema.org \"itemprop\" Description tag?"
+msgstr "Incluir também a tag \"itemprop Description\" do Schema.org?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:285
+msgid "Description maximum length"
+msgstr "Comprimento máximo da descrição"
+
+# @ wd-fb-og
+#: includes/settings-page.php:289
+msgid "0 or blank for no maximum length"
+msgstr "0 ou em branco para não definir máximo"
+
+# @ wd-fb-og
+#: includes/settings-page.php:293
+msgid "Homepage description"
+msgstr "Descrição da página inicial"
+
+# @ wd-fb-og
+#: includes/settings-page.php:297
+msgid "Website tagline"
+msgstr "Descrição do site"
+
+# @ wd-fb-og
+#: includes/settings-page.php:298
+msgid "Custom text"
+msgstr "Texto personalizado"
+
+# @ wd-fb-og
+#: includes/settings-page.php:309
+msgid "Include Image (og:image) tag?"
+msgstr "Incluir tag Imagem (og:image)?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:313
+msgid ""
+"All images MUST have at least 200px on both dimensions in order to Facebook "
+"to load them at all. Minimum of 600x315px is recommended."
+msgstr ""
+"Todas as imagens TÊM de ter pelo menos 200px em ambas as dimensões para que "
+"o Facebook as carregue. Um mínimo de 600x315px é recomendado."
+
+# @ wd-fb-og
+#: includes/settings-page.php:317
+msgid "Also include Schema.org \"itemprop\" Image tag?"
+msgstr "Incluir também a tag \"itemprop Image\" do Schema.org?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:327
+msgid "Default image"
+msgstr "Imagem por omissão"
+
+# @ wd-fb-og
+#: includes/settings-page.php:332
+msgid "Full URL with http://"
+msgstr "URL completo com http://"
+
+# @ wd-fb-og
+#: includes/settings-page.php:334 wonderm00n-open-graph.php:520
+msgid "Recommended size: 1200x630px"
+msgstr "Tamanho recomendado: 1200x630px"
+
+# @ wd-fb-og
+#: includes/settings-page.php:338
+msgid "Also add image to RSS/RSS2 feeds?"
+msgstr "Incluir também a imagem aos feeds RSS/RSS2?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:342
+msgid "For auto-posting apps like RSS Graffiti, twitterfeed, ..."
+msgstr ""
+"Para aplicação de posts automáticos como o RSS Graffitti, twitterfeed, etc..."
+
+# @ wd-fb-og
+#: includes/settings-page.php:346
+msgid "On posts/pages"
+msgstr "Nos artigos/páginas"
+
+# @ wd-fb-og
+#: includes/settings-page.php:350
+msgid ""
+"Image will be fetched from the specific \"Open Graph Image\" custom field on "
+"the post"
+msgstr ""
+"A imagem utilizada será a definida no campo específico \"Open Graph Image\" "
+"no artigo"
+
+# @ wd-fb-og
+#: includes/settings-page.php:354
+msgid ""
+"If it's not set, image will be fetched from post/page featured/thumbnail "
+"picture"
+msgstr ""
+"Se não definida, a imagem utilizada será a imagem de destaque do artigo/"
+"página"
+
+# @ wd-fb-og
+#: includes/settings-page.php:358
+msgid "If it doesn't exist, use the first image from the post/page content"
+msgstr ""
+"Se não existir, será utilizada a primeira imagem no conteúdo do artigo/página"
+
+# @ wd-fb-og
+#: includes/settings-page.php:362
+msgid "If it doesn't exist, use first image from the post/page media gallery"
+msgstr ""
+"Se não existir, será usada a primeira imagem na galeria multimédia do artigo/"
+"página"
+
+# @ wd-fb-og
+#: includes/settings-page.php:366
+msgid "If it doesn't exist, use the default image above"
+msgstr "Se não existir, utilizar a imagem por omissão em cima"
+
+# @ wd-fb-og
+#: includes/settings-page.php:374
+msgid "3rd Party Integration"
+msgstr "Integração com outros plugins"
+
+# @ wd-fb-og
+#: includes/settings-page.php:402
+msgid "Add SubHeading to Post/Page title?"
+msgstr "Adicionar \"SubHeading\" ao título do artigo/página?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:417
+msgid "Use BDP listing contents as OG tags?"
+msgstr "Utilizar o conteúdo dos anúncios BDP como tags OG?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:421
+msgid ""
+"Setting \"Include URL\", \"Also set Canonical URL\", \"Include Description\" "
+"and \"Include Image\" options above is HIGHLY recommended"
+msgstr ""
+"Activar as opções \"Incluir tag URL (og:url)\", \"Incluir também a tag URL "
+"Canónico\", \"Incluir tag Descrição (og:description)\" e  \"Incluir tag "
+"Imagem (og:image)\" é ALTAMENTE recomendado"
+
+# @ wd-fb-og
+#: includes/settings-page.php:429
+msgid "You don't have any compatible 3rd Party plugin installed/active."
+msgstr "Não tem nenhum plugin compatível instalado/activo."
+
+# @ wd-fb-og
+#: includes/settings-page.php:430
+msgid "This plugin is currently compatible with:"
+msgstr "Este plugin é actualmente compatível com:"
+
+# @ wd-fb-og
+#: includes/settings-page.php:450
+msgid "Test your URLs at Facebook URL Linter / Debugger"
+msgstr "Teste os seus URLs no \"Facebook URL Linter / Debugger\""
+
+# @ wd-fb-og
+#: includes/settings-page.php:453
+msgid "About the Open Graph Protocol (on Facebook)"
+msgstr "Sobre o Protocolo Open Graph (no Facebook)"
+
+# @ wd-fb-og
+#: includes/settings-page.php:456
+msgid "The Open Graph Protocol (official website)"
+msgstr "O Protocolo Open Graph (website oficial)"
+
+# @ wd-fb-og
+#: includes/settings-page.php:459
+msgid "Plugin official URL"
+msgstr "URL oficial do plugin"
+
+# @ wd-fb-og
+#: includes/settings-page.php:462
+msgid "Author's website: Webdados"
+msgstr "Website do autor: Webdados"
+
+# @ wd-fb-og
+#: includes/settings-page.php:465
+msgid "Author's Facebook page: Webdados"
+msgstr "Página Facebook do autor: Webdados"
+
+# @ wd-fb-og
+#: includes/settings-page.php:468
+msgid "Author's Twitter account: @Wonderm00n<br/>(Webdados founder)"
+msgstr "Conta Twitter do autor: @Wonderm00n<br/>(fundador da Webdados)"
+
+# @ wd-fb-og
+#: includes/settings-page.php:475
+msgid "Rate this plugin"
+msgstr "Avalie este plugin"
+
+# @ wd-fb-og
+#: includes/settings-page.php:477
+msgid "If you like this plugin,"
+msgstr "Se gosta deste plugin,"
+
+# @ wd-fb-og
+#: includes/settings-page.php:477
+msgid "please give it a high Rating"
+msgstr "dê-lhe uma nota elevada"
+
+# @ wd-fb-og
+#: includes/settings-page.php:484
+msgid "Useful links"
+msgstr "Links úteis"
+
+# @ wd-fb-og
+#: includes/settings-page.php:497
+msgid "Donate"
+msgstr "Doar"
+
+# @ wd-fb-og
+#: includes/settings-page.php:499
+msgid ""
+"If you find this plugin useful and want to make a contribution towards "
+"future development please consider making a small, or big ;-), donation."
+msgstr ""
+"Se pensa que este plugin é útil e quer fazer uma contribuição para o "
+"desenvolvimento no futuro, considere fazer uma pequena, ou grande ;-), "
+"doação."
+
+# @ wd-fb-og
+#: wonderm00n-open-graph.php:516
+msgid "Use this image:"
+msgstr "Utilizar esta imagem:"
+
+# @ wd-fb-og
+#: wonderm00n-open-graph.php:519
+msgid "Upload/Choose Open Graph Image"
+msgstr "Carregar/Escolher Imagem Open Graph"
+
+# @ wd-fb-og
+#: wonderm00n-open-graph.php:599
+msgid "Use as Image Open Graph Tag"
+msgstr "Utilizar como Imagem Open Graph"
+
+# @ wd-fb-og
+#: includes/settings-page.php:385
+msgid "Use title, url (canonical) and description from WPSEO?"
+msgstr "Utilizar título, url (canónico) e descrição do WPSEO?"
+
+# @ wd-fb-og
+#: includes/settings-page.php:389
+msgid ""
+"It's HIGHLY recommended to go to <a href=\"admin.php?page=wpseo_social\">SEO "
+"&gt; Social</a> and disable \"Add Open Graph meta data\""
+msgstr ""
+"É ALTAMENTE recomendado ir a <a href=\"admin.php?page=wpseo_social\">SEO "
+"&gt; Social</a> e desactivar \"Adiciona meta dados Open Graph \""
+
+# @ wd-fb-og
+#: wonderm00n-open-graph.php:519
+msgid "Clear field"
+msgstr "Limpar campo"
+
+# @ wd-fb-og
+#: includes/settings-page.php:299
+msgid "The description of your front page:"
+msgstr "A descrição da sua página inicial:"
