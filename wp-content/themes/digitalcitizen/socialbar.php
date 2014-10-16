@@ -1,8 +1,8 @@
 <aside id="social-bar">
 	<div id="share-links">
 		<span class="share-text">Share this article:</span>
-		<a href="" class="share twitter-share icon-twitter">Twitter</a>
-		<a href="" class="share facebook-share icon-facebook">Facebook</a>
+		<a href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=MuwatenRaqamy" class="share twitter-share icon-twitter">Twitter</a>
+		<a href="https://facebook.com/sharer.php?u=<?php the_permalink(); ?>" class="share facebook-share icon-facebook">Facebook</a>
 	</div>
 
 	<?php 
