@@ -31,7 +31,7 @@ function digitalcitizen_newsletter_html_metabox() {
 	global $polylang; 
 	$post_ids = $polylang->model->get_translations('post', $post->ID);
 	
-	$html = "<p class='lead callout'>" . apply_filters('the_excerpt', $post->post_excerpt) . "</p>";
+	$html = "<p class='lead callout'>" . $post->post_excerpt . "</p>";
 	$html .= apply_filters('the_content', $post->post_content);
 
 	foreach($post_ids as $id) {
