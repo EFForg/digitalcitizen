@@ -148,3 +148,8 @@ require get_template_directory() . '/inc/extras.php';
  * Load our custom forms.
  */
 require get_template_directory() . '/inc/forms.php';
+
+/**
+ * Load the meta box that displays the newsletter HTML.
+ */
+require get_template_directory() . '/inc/meta-boxes.php';
