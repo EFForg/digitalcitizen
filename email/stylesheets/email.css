@@ -94,7 +94,14 @@ table.head-wrap { width: 100%; border-collapse: collapse; background:url('../bg.
 		BODY 
 ------------------------------------- */
 table.body-wrap { width: 100%;}
-
+.img-with-caption {
+	margin:0 0 10px 0;
+}
+.caption {
+	font-size:12px;
+	font-style: italic;
+	color:#777777;
+}
 
 /* ------------------------------------- 
 		FOOTER 

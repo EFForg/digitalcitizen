@@ -70,6 +70,7 @@ function digitalcitizen_setup() {
 	add_image_size( 'mobile-fullscreen-portrait', 500, 900, true );
 	add_image_size( 'mobile-fullscreen-landscape', 900, 500, true );
 	add_image_size( 'widescreen-fullscreen', 1000, 562, true );
+	add_image_size( 'email', 600, 450, false );
 }
 endif; // digitalcitizen_setup
 add_action( 'after_setup_theme', 'digitalcitizen_setup' );
