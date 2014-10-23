@@ -26,7 +26,7 @@ function subscribe_form_callback( $form ) {
         )
         ->add_element(
             WP_form_Element::create('submit')
-                ->set_name('submit')
+                ->set_name('_qf_Edit_next')
                 ->set_value('Submit')
         )
         ->add_element(
