@@ -34,13 +34,6 @@ function digitalcitizen_newsletter_html_metabox() {
 
 	$html = "<div class='img-with-caption'>" . wp_get_attachment_image( $image_id, 'email' );
 	$html .= "<span class='caption'>" . $image_data->post_excerpt . "</span></div>";
-	$html .= "<p class='lead callout'>" . $post->post_excerpt . "</p>";
-	$html .= apply_filters('the_content', $post->post_content);
-
-	$text = wpautop($post->post_excerpt);
-	$text .= wpautop($post->post_content);
-
-	$markdown_output = $converter->parseString($text);
 
 	foreach($post_ids as $id) {
 		$converter = new Markdownify\Converter;
