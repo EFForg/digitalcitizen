@@ -43,6 +43,7 @@ function digitalcitizen_newsletter_html_metabox() {
 	$markdown_output = $converter->parseString($text);
 
 	foreach($post_ids as $id) {
+		$converter = new Markdownify\Converter;
 		$the_post = get_post($id);
 		$html .= "<p class='lead callout'>" . $the_post->post_excerpt . "</p>";
 		$html .= apply_filters('the_content', $the_post->post_content);
