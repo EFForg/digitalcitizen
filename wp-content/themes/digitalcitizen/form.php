@@ -20,6 +20,7 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
+						<?php the_content(); ?>
 						<?php get_template_part( 'form', $form_name ); ?>
 					</div><!-- .entry-content -->
 
