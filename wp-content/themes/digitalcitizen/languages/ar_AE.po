@@ -1,0 +1,1618 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Digital Citizen 2 v1.0-wpcom\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-11-07 18:40:59+0000\n"
+"Last-Translator: admin <test@example.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: U.A.E.\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:15
+#@ digitalcitizen
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+#@ digitalcitizen
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+#@ digitalcitizen
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:44
+#, php-format
+#@ digitalcitizen
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:27
+#, php-format
+#@ digitalcitizen
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:30
+#, php-format
+#@ digitalcitizen
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:33
+#, php-format
+#@ digitalcitizen
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:33
+#@ digitalcitizen
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:36
+#, php-format
+#@ digitalcitizen
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:36
+#@ digitalcitizen
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:39
+#@ digitalcitizen
+msgid "Asides"
+msgstr ""
+
+#: archive.php:42
+#@ digitalcitizen
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:45
+#@ digitalcitizen
+msgid "Images"
+msgstr ""
+
+#: archive.php:48
+#@ digitalcitizen
+msgid "Videos"
+msgstr ""
+
+#: archive.php:51
+#@ digitalcitizen
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:54
+#@ digitalcitizen
+msgid "Links"
+msgstr ""
+
+#: archive.php:57
+#@ digitalcitizen
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:60
+#@ digitalcitizen
+msgid "Audios"
+msgstr ""
+
+#: archive.php:63
+#@ digitalcitizen
+msgid "Chats"
+msgstr ""
+
+#: archive.php:66
+#: sidebar.php:15
+#@ digitalcitizen
+msgid "Archives"
+msgstr ""
+
+#: comments.php:28
+#, php-format
+#@ digitalcitizen
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: comments.php:35
+#: comments.php:52
+#@ digitalcitizen
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:36
+#: comments.php:53
+#@ digitalcitizen
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:37
+#: comments.php:54
+#@ digitalcitizen
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:64
+#@ digitalcitizen
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:13
+#@ digitalcitizen
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+#, php-format
+#@ digitalcitizen
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+#@ digitalcitizen
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: content-none.php:28
+#@ digitalcitizen
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: content-page.php:18
+#: content-single.php:63
+#@ digitalcitizen
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:24
+#: form.php:28
+#: socialbar.php:14
+#@ digitalcitizen
+msgid "Edit"
+msgstr ""
+
+#: footer.php:22
+#@ digitalcitizen
+msgid "Some rights reserved"
+msgstr ""
+
+#: footer.php:24
+#@ digitalcitizen
+msgid "Follow us:"
+msgstr ""
+
+#: footer.php:31
+#@ digitalcitizen
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:31
+#, php-format
+#@ digitalcitizen
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: functions.php:38
+#@ digitalcitizen
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:85
+#@ digitalcitizen
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:33
+#@ digitalcitizen
+msgid "menu"
+msgstr ""
+
+#: inc/extras.php:63
+#, php-format
+#@ digitalcitizen
+msgid "Page %s"
+msgstr ""
+
+#: inc/forms.php:88
+#@ digitalcitizen
+msgid "Country"
+msgstr ""
+
+#: inc/forms.php:89
+#@ digitalcitizen
+msgid "Afghanistan"
+msgstr ""
+
+#: inc/forms.php:90
+#@ digitalcitizen
+msgid "Åland Islands"
+msgstr ""
+
+#: inc/forms.php:91
+#@ digitalcitizen
+msgid "Albania"
+msgstr ""
+
+#: inc/forms.php:92
+#@ digitalcitizen
+msgid "Algeria"
+msgstr ""
+
+#: inc/forms.php:93
+#@ digitalcitizen
+msgid "American Samoa"
+msgstr ""
+
+#: inc/forms.php:94
+#@ digitalcitizen
+msgid "Andorra"
+msgstr ""
+
+#: inc/forms.php:95
+#@ digitalcitizen
+msgid "Angola"
+msgstr ""
+
+#: inc/forms.php:96
+#@ digitalcitizen
+msgid "Anguilla"
+msgstr ""
+
+#: inc/forms.php:97
+#@ digitalcitizen
+msgid "Antarctica"
+msgstr ""
+
+#: inc/forms.php:98
+#@ digitalcitizen
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: inc/forms.php:99
+#@ digitalcitizen
+msgid "Argentina"
+msgstr ""
+
+#: inc/forms.php:100
+#@ digitalcitizen
+msgid "Armenia"
+msgstr ""
+
+#: inc/forms.php:101
+#@ digitalcitizen
+msgid "Aruba"
+msgstr ""
+
+#: inc/forms.php:102
+#@ digitalcitizen
+msgid "Australia"
+msgstr ""
+
+#: inc/forms.php:103
+#@ digitalcitizen
+msgid "Austria"
+msgstr ""
+
+#: inc/forms.php:104
+#@ digitalcitizen
+msgid "Azerbaijan"
+msgstr ""
+
+#: inc/forms.php:105
+#@ digitalcitizen
+msgid "Bahamas"
+msgstr ""
+
+#: inc/forms.php:106
+#@ digitalcitizen
+msgid "Bahrain"
+msgstr ""
+
+#: inc/forms.php:107
+#@ digitalcitizen
+msgid "Bangladesh"
+msgstr ""
+
+#: inc/forms.php:108
+#@ digitalcitizen
+msgid "Barbados"
+msgstr ""
+
+#: inc/forms.php:109
+#@ digitalcitizen
+msgid "Belarus"
+msgstr ""
+
+#: inc/forms.php:110
+#@ digitalcitizen
+msgid "Belgium"
+msgstr ""
+
+#: inc/forms.php:111
+#@ digitalcitizen
+msgid "Belize"
+msgstr ""
+
+#: inc/forms.php:112
+#@ digitalcitizen
+msgid "Benin"
+msgstr ""
+
+#: inc/forms.php:113
+#@ digitalcitizen
+msgid "Bermuda"
+msgstr ""
+
+#: inc/forms.php:114
+#@ digitalcitizen
+msgid "Bhutan"
+msgstr ""
+
+#: inc/forms.php:115
+#@ digitalcitizen
+msgid "Bolivia, Plurinational State of"
+msgstr ""
+
+#: inc/forms.php:116
+#@ digitalcitizen
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr ""
+
+#: inc/forms.php:117
+#@ digitalcitizen
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: inc/forms.php:118
+#@ digitalcitizen
+msgid "Botswana"
+msgstr ""
+
+#: inc/forms.php:119
+#@ digitalcitizen
+msgid "Bouvet Island"
+msgstr ""
+
+#: inc/forms.php:120
+#@ digitalcitizen
+msgid "Brazil"
+msgstr ""
+
+#: inc/forms.php:121
+#@ digitalcitizen
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: inc/forms.php:122
+#@ digitalcitizen
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: inc/forms.php:123
+#@ digitalcitizen
+msgid "Bulgaria"
+msgstr ""
+
+#: inc/forms.php:124
+#@ digitalcitizen
+msgid "Burkina Faso"
+msgstr ""
+
+#: inc/forms.php:125
+#@ digitalcitizen
+msgid "Burundi"
+msgstr ""
+
+#: inc/forms.php:126
+#@ digitalcitizen
+msgid "Cambodia"
+msgstr ""
+
+#: inc/forms.php:127
+#@ digitalcitizen
+msgid "Cameroon"
+msgstr ""
+
+#: inc/forms.php:128
+#@ digitalcitizen
+msgid "Canada"
+msgstr ""
+
+#: inc/forms.php:129
+#@ digitalcitizen
+msgid "Cape Verde"
+msgstr ""
+
+#: inc/forms.php:130
+#@ digitalcitizen
+msgid "Cayman Islands"
+msgstr ""
+
+#: inc/forms.php:131
+#@ digitalcitizen
+msgid "Central African Republic"
+msgstr ""
+
+#: inc/forms.php:132
+#@ digitalcitizen
+msgid "Chad"
+msgstr ""
+
+#: inc/forms.php:133
+#@ digitalcitizen
+msgid "Chile"
+msgstr ""
+
+#: inc/forms.php:134
+#@ digitalcitizen
+msgid "China"
+msgstr ""
+
+#: inc/forms.php:135
+#@ digitalcitizen
+msgid "Christmas Island"
+msgstr ""
+
+#: inc/forms.php:136
+#@ digitalcitizen
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: inc/forms.php:137
+#@ digitalcitizen
+msgid "Colombia"
+msgstr ""
+
+#: inc/forms.php:138
+#@ digitalcitizen
+msgid "Comoros"
+msgstr ""
+
+#: inc/forms.php:139
+#@ digitalcitizen
+msgid "Congo"
+msgstr ""
+
+#: inc/forms.php:140
+#@ digitalcitizen
+msgid "Congo, the Democratic Republic of the"
+msgstr ""
+
+#: inc/forms.php:141
+#@ digitalcitizen
+msgid "Cook Islands"
+msgstr ""
+
+#: inc/forms.php:142
+#@ digitalcitizen
+msgid "Costa Rica"
+msgstr ""
+
+#: inc/forms.php:143
+#@ digitalcitizen
+msgid "Côte d'Ivoire"
+msgstr ""
+
+#: inc/forms.php:144
+#@ digitalcitizen
+msgid "Croatia"
+msgstr ""
+
+#: inc/forms.php:145
+#@ digitalcitizen
+msgid "Cuba"
+msgstr ""
+
+#: inc/forms.php:146
+#@ digitalcitizen
+msgid "Curaçao"
+msgstr ""
+
+#: inc/forms.php:147
+#@ digitalcitizen
+msgid "Cyprus"
+msgstr ""
+
+#: inc/forms.php:148
+#@ digitalcitizen
+msgid "Czech Republic"
+msgstr ""
+
+#: inc/forms.php:149
+#@ digitalcitizen
+msgid "Denmark"
+msgstr ""
+
+#: inc/forms.php:150
+#@ digitalcitizen
+msgid "Djibouti"
+msgstr ""
+
+#: inc/forms.php:151
+#@ digitalcitizen
+msgid "Dominica"
+msgstr ""
+
+#: inc/forms.php:152
+#@ digitalcitizen
+msgid "Dominican Republic"
+msgstr ""
+
+#: inc/forms.php:153
+#@ digitalcitizen
+msgid "Ecuador"
+msgstr ""
+
+#: inc/forms.php:154
+#@ digitalcitizen
+msgid "Egypt"
+msgstr ""
+
+#: inc/forms.php:155
+#@ digitalcitizen
+msgid "El Salvador"
+msgstr ""
+
+#: inc/forms.php:156
+#@ digitalcitizen
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: inc/forms.php:157
+#@ digitalcitizen
+msgid "Eritrea"
+msgstr ""
+
+#: inc/forms.php:158
+#@ digitalcitizen
+msgid "Estonia"
+msgstr ""
+
+#: inc/forms.php:159
+#@ digitalcitizen
+msgid "Ethiopia"
+msgstr ""
+
+#: inc/forms.php:160
+#@ digitalcitizen
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: inc/forms.php:161
+#@ digitalcitizen
+msgid "Faroe Islands"
+msgstr ""
+
+#: inc/forms.php:162
+#@ digitalcitizen
+msgid "Fiji"
+msgstr ""
+
+#: inc/forms.php:163
+#@ digitalcitizen
+msgid "Finland"
+msgstr ""
+
+#: inc/forms.php:164
+#@ digitalcitizen
+msgid "France"
+msgstr ""
+
+#: inc/forms.php:165
+#@ digitalcitizen
+msgid "French Guiana"
+msgstr ""
+
+#: inc/forms.php:166
+#@ digitalcitizen
+msgid "French Polynesia"
+msgstr ""
+
+#: inc/forms.php:167
+#@ digitalcitizen
+msgid "French Southern Territories"
+msgstr ""
+
+#: inc/forms.php:168
+#@ digitalcitizen
+msgid "Gabon"
+msgstr ""
+
+#: inc/forms.php:169
+#@ digitalcitizen
+msgid "Gambia"
+msgstr ""
+
+#: inc/forms.php:170
+#@ digitalcitizen
+msgid "Georgia"
+msgstr ""
+
+#: inc/forms.php:171
+#@ digitalcitizen
+msgid "Germany"
+msgstr ""
+
+#: inc/forms.php:172
+#@ digitalcitizen
+msgid "Ghana"
+msgstr ""
+
+#: inc/forms.php:173
+#@ digitalcitizen
+msgid "Gibraltar"
+msgstr ""
+
+#: inc/forms.php:174
+#@ digitalcitizen
+msgid "Greece"
+msgstr ""
+
+#: inc/forms.php:175
+#@ digitalcitizen
+msgid "Greenland"
+msgstr ""
+
+#: inc/forms.php:176
+#@ digitalcitizen
+msgid "Grenada"
+msgstr ""
+
+#: inc/forms.php:177
+#@ digitalcitizen
+msgid "Guadeloupe"
+msgstr ""
+
+#: inc/forms.php:178
+#@ digitalcitizen
+msgid "Guam"
+msgstr ""
+
+#: inc/forms.php:179
+#@ digitalcitizen
+msgid "Guatemala"
+msgstr ""
+
+#: inc/forms.php:180
+#@ digitalcitizen
+msgid "Guernsey"
+msgstr ""
+
+#: inc/forms.php:181
+#@ digitalcitizen
+msgid "Guinea"
+msgstr ""
+
+#: inc/forms.php:182
+#@ digitalcitizen
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: inc/forms.php:183
+#@ digitalcitizen
+msgid "Guyana"
+msgstr ""
+
+#: inc/forms.php:184
+#@ digitalcitizen
+msgid "Haiti"
+msgstr ""
+
+#: inc/forms.php:185
+#@ digitalcitizen
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: inc/forms.php:186
+#@ digitalcitizen
+msgid "Holy See (Vatican City State)"
+msgstr ""
+
+#: inc/forms.php:187
+#@ digitalcitizen
+msgid "Honduras"
+msgstr ""
+
+#: inc/forms.php:188
+#@ digitalcitizen
+msgid "Hong Kong"
+msgstr ""
+
+#: inc/forms.php:189
+#@ digitalcitizen
+msgid "Hungary"
+msgstr ""
+
+#: inc/forms.php:190
+#@ digitalcitizen
+msgid "Iceland"
+msgstr ""
+
+#: inc/forms.php:191
+#@ digitalcitizen
+msgid "India"
+msgstr ""
+
+#: inc/forms.php:192
+#@ digitalcitizen
+msgid "Indonesia"
+msgstr ""
+
+#: inc/forms.php:193
+#@ digitalcitizen
+msgid "Iran, Islamic Republic of"
+msgstr ""
+
+#: inc/forms.php:194
+#@ digitalcitizen
+msgid "Iraq"
+msgstr ""
+
+#: inc/forms.php:195
+#@ digitalcitizen
+msgid "Ireland"
+msgstr ""
+
+#: inc/forms.php:196
+#@ digitalcitizen
+msgid "Isle of Man"
+msgstr ""
+
+#: inc/forms.php:197
+#@ digitalcitizen
+msgid "Israel"
+msgstr ""
+
+#: inc/forms.php:198
+#@ digitalcitizen
+msgid "Italy"
+msgstr ""
+
+#: inc/forms.php:199
+#@ digitalcitizen
+msgid "Jamaica"
+msgstr ""
+
+#: inc/forms.php:200
+#@ digitalcitizen
+msgid "Japan"
+msgstr ""
+
+#: inc/forms.php:201
+#@ digitalcitizen
+msgid "Jersey"
+msgstr ""
+
+#: inc/forms.php:202
+#@ digitalcitizen
+msgid "Jordan"
+msgstr ""
+
+#: inc/forms.php:203
+#@ digitalcitizen
+msgid "Kazakhstan"
+msgstr ""
+
+#: inc/forms.php:204
+#@ digitalcitizen
+msgid "Kenya"
+msgstr ""
+
+#: inc/forms.php:205
+#@ digitalcitizen
+msgid "Kiribati"
+msgstr ""
+
+#: inc/forms.php:206
+#@ digitalcitizen
+msgid "Korea, Democratic People's Republic of"
+msgstr ""
+
+#: inc/forms.php:207
+#@ digitalcitizen
+msgid "Korea, Republic of"
+msgstr ""
+
+#: inc/forms.php:208
+#@ digitalcitizen
+msgid "Kuwait"
+msgstr ""
+
+#: inc/forms.php:209
+#@ digitalcitizen
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: inc/forms.php:210
+#@ digitalcitizen
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: inc/forms.php:211
+#@ digitalcitizen
+msgid "Latvia"
+msgstr ""
+
+#: inc/forms.php:212
+#@ digitalcitizen
+msgid "Lebanon"
+msgstr ""
+
+#: inc/forms.php:213
+#@ digitalcitizen
+msgid "Lesotho"
+msgstr ""
+
+#: inc/forms.php:214
+#@ digitalcitizen
+msgid "Liberia"
+msgstr ""
+
+#: inc/forms.php:215
+#@ digitalcitizen
+msgid "Libya"
+msgstr ""
+
+#: inc/forms.php:216
+#@ digitalcitizen
+msgid "Liechtenstein"
+msgstr ""
+
+#: inc/forms.php:217
+#@ digitalcitizen
+msgid "Lithuania"
+msgstr ""
+
+#: inc/forms.php:218
+#@ digitalcitizen
+msgid "Luxembourg"
+msgstr ""
+
+#: inc/forms.php:219
+#@ digitalcitizen
+msgid "Macao"
+msgstr ""
+
+#: inc/forms.php:220
+#@ digitalcitizen
+msgid "Macedonia, the former Yugoslav Republic of"
+msgstr ""
+
+#: inc/forms.php:221
+#@ digitalcitizen
+msgid "Madagascar"
+msgstr ""
+
+#: inc/forms.php:222
+#@ digitalcitizen
+msgid "Malawi"
+msgstr ""
+
+#: inc/forms.php:223
+#@ digitalcitizen
+msgid "Malaysia"
+msgstr ""
+
+#: inc/forms.php:224
+#@ digitalcitizen
+msgid "Maldives"
+msgstr ""
+
+#: inc/forms.php:225
+#@ digitalcitizen
+msgid "Mali"
+msgstr ""
+
+#: inc/forms.php:226
+#@ digitalcitizen
+msgid "Malta"
+msgstr ""
+
+#: inc/forms.php:227
+#@ digitalcitizen
+msgid "Marshall Islands"
+msgstr ""
+
+#: inc/forms.php:228
+#@ digitalcitizen
+msgid "Martinique"
+msgstr ""
+
+#: inc/forms.php:229
+#@ digitalcitizen
+msgid "Mauritania"
+msgstr ""
+
+#: inc/forms.php:230
+#@ digitalcitizen
+msgid "Mauritius"
+msgstr ""
+
+#: inc/forms.php:231
+#@ digitalcitizen
+msgid "Mayotte"
+msgstr ""
+
+#: inc/forms.php:232
+#@ digitalcitizen
+msgid "Mexico"
+msgstr ""
+
+#: inc/forms.php:233
+#@ digitalcitizen
+msgid "Micronesia, Federated States of"
+msgstr ""
+
+#: inc/forms.php:234
+#@ digitalcitizen
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: inc/forms.php:235
+#@ digitalcitizen
+msgid "Monaco"
+msgstr ""
+
+#: inc/forms.php:236
+#@ digitalcitizen
+msgid "Mongolia"
+msgstr ""
+
+#: inc/forms.php:237
+#@ digitalcitizen
+msgid "Montenegro"
+msgstr ""
+
+#: inc/forms.php:238
+#@ digitalcitizen
+msgid "Montserrat"
+msgstr ""
+
+#: inc/forms.php:239
+#@ digitalcitizen
+msgid "Morocco"
+msgstr ""
+
+#: inc/forms.php:240
+#@ digitalcitizen
+msgid "Mozambique"
+msgstr ""
+
+#: inc/forms.php:241
+#@ digitalcitizen
+msgid "Myanmar"
+msgstr ""
+
+#: inc/forms.php:242
+#@ digitalcitizen
+msgid "Namibia"
+msgstr ""
+
+#: inc/forms.php:243
+#@ digitalcitizen
+msgid "Nauru"
+msgstr ""
+
+#: inc/forms.php:244
+#@ digitalcitizen
+msgid "Nepal"
+msgstr ""
+
+#: inc/forms.php:245
+#@ digitalcitizen
+msgid "Netherlands"
+msgstr ""
+
+#: inc/forms.php:246
+#@ digitalcitizen
+msgid "New Caledonia"
+msgstr ""
+
+#: inc/forms.php:247
+#@ digitalcitizen
+msgid "New Zealand"
+msgstr ""
+
+#: inc/forms.php:248
+#@ digitalcitizen
+msgid "Nicaragua"
+msgstr ""
+
+#: inc/forms.php:249
+#@ digitalcitizen
+msgid "Niger"
+msgstr ""
+
+#: inc/forms.php:250
+#@ digitalcitizen
+msgid "Nigeria"
+msgstr ""
+
+#: inc/forms.php:251
+#@ digitalcitizen
+msgid "Niue"
+msgstr ""
+
+#: inc/forms.php:252
+#@ digitalcitizen
+msgid "Norfolk Island"
+msgstr ""
+
+#: inc/forms.php:253
+#@ digitalcitizen
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: inc/forms.php:254
+#@ digitalcitizen
+msgid "Norway"
+msgstr ""
+
+#: inc/forms.php:255
+#@ digitalcitizen
+msgid "Oman"
+msgstr ""
+
+#: inc/forms.php:256
+#@ digitalcitizen
+msgid "Pakistan"
+msgstr ""
+
+#: inc/forms.php:257
+#@ digitalcitizen
+msgid "Palau"
+msgstr ""
+
+#: inc/forms.php:258
+#@ digitalcitizen
+msgid "Palestinian Territory, Occupied"
+msgstr ""
+
+#: inc/forms.php:259
+#@ digitalcitizen
+msgid "Panama"
+msgstr ""
+
+#: inc/forms.php:260
+#@ digitalcitizen
+msgid "Papua New Guinea"
+msgstr ""
+
+#: inc/forms.php:261
+#@ digitalcitizen
+msgid "Paraguay"
+msgstr ""
+
+#: inc/forms.php:262
+#@ digitalcitizen
+msgid "Peru"
+msgstr ""
+
+#: inc/forms.php:263
+#@ digitalcitizen
+msgid "Philippines"
+msgstr ""
+
+#: inc/forms.php:264
+#@ digitalcitizen
+msgid "Pitcairn"
+msgstr ""
+
+#: inc/forms.php:265
+#@ digitalcitizen
+msgid "Poland"
+msgstr ""
+
+#: inc/forms.php:266
+#@ digitalcitizen
+msgid "Portugal"
+msgstr ""
+
+#: inc/forms.php:267
+#@ digitalcitizen
+msgid "Puerto Rico"
+msgstr ""
+
+#: inc/forms.php:268
+#@ digitalcitizen
+msgid "Qatar"
+msgstr ""
+
+#: inc/forms.php:269
+#@ digitalcitizen
+msgid "Réunion"
+msgstr ""
+
+#: inc/forms.php:270
+#@ digitalcitizen
+msgid "Romania"
+msgstr ""
+
+#: inc/forms.php:271
+#@ digitalcitizen
+msgid "Russian Federation"
+msgstr ""
+
+#: inc/forms.php:272
+#@ digitalcitizen
+msgid "Rwanda"
+msgstr ""
+
+#: inc/forms.php:273
+#@ digitalcitizen
+msgid "Saint Barthélemy"
+msgstr ""
+
+#: inc/forms.php:274
+#@ digitalcitizen
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr ""
+
+#: inc/forms.php:275
+#@ digitalcitizen
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: inc/forms.php:276
+#@ digitalcitizen
+msgid "Saint Lucia"
+msgstr ""
+
+#: inc/forms.php:277
+#@ digitalcitizen
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: inc/forms.php:278
+#@ digitalcitizen
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: inc/forms.php:279
+#@ digitalcitizen
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: inc/forms.php:280
+#@ digitalcitizen
+msgid "Samoa"
+msgstr ""
+
+#: inc/forms.php:281
+#@ digitalcitizen
+msgid "San Marino"
+msgstr ""
+
+#: inc/forms.php:282
+#@ digitalcitizen
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: inc/forms.php:283
+#@ digitalcitizen
+msgid "Saudi Arabia"
+msgstr ""
+
+#: inc/forms.php:284
+#@ digitalcitizen
+msgid "Senegal"
+msgstr ""
+
+#: inc/forms.php:285
+#@ digitalcitizen
+msgid "Serbia"
+msgstr ""
+
+#: inc/forms.php:286
+#@ digitalcitizen
+msgid "Seychelles"
+msgstr ""
+
+#: inc/forms.php:287
+#@ digitalcitizen
+msgid "Sierra Leone"
+msgstr ""
+
+#: inc/forms.php:288
+#@ digitalcitizen
+msgid "Singapore"
+msgstr ""
+
+#: inc/forms.php:289
+#@ digitalcitizen
+msgid "Sint Maarten (Dutch part)"
+msgstr ""
+
+#: inc/forms.php:290
+#@ digitalcitizen
+msgid "Slovakia"
+msgstr ""
+
+#: inc/forms.php:291
+#@ digitalcitizen
+msgid "Slovenia"
+msgstr ""
+
+#: inc/forms.php:292
+#@ digitalcitizen
+msgid "Solomon Islands"
+msgstr ""
+
+#: inc/forms.php:293
+#@ digitalcitizen
+msgid "Somalia"
+msgstr ""
+
+#: inc/forms.php:294
+#@ digitalcitizen
+msgid "South Africa"
+msgstr ""
+
+#: inc/forms.php:295
+#@ digitalcitizen
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: inc/forms.php:296
+#@ digitalcitizen
+msgid "South Sudan"
+msgstr ""
+
+#: inc/forms.php:297
+#@ digitalcitizen
+msgid "Spain"
+msgstr ""
+
+#: inc/forms.php:298
+#@ digitalcitizen
+msgid "Sri Lanka"
+msgstr ""
+
+#: inc/forms.php:299
+#@ digitalcitizen
+msgid "Sudan"
+msgstr ""
+
+#: inc/forms.php:300
+#@ digitalcitizen
+msgid "Suriname"
+msgstr ""
+
+#: inc/forms.php:301
+#@ digitalcitizen
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: inc/forms.php:302
+#@ digitalcitizen
+msgid "Swaziland"
+msgstr ""
+
+#: inc/forms.php:303
+#@ digitalcitizen
+msgid "Sweden"
+msgstr ""
+
+#: inc/forms.php:304
+#@ digitalcitizen
+msgid "Switzerland"
+msgstr ""
+
+#: inc/forms.php:305
+#@ digitalcitizen
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: inc/forms.php:306
+#@ digitalcitizen
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: inc/forms.php:307
+#@ digitalcitizen
+msgid "Tajikistan"
+msgstr ""
+
+#: inc/forms.php:308
+#@ digitalcitizen
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: inc/forms.php:309
+#@ digitalcitizen
+msgid "Thailand"
+msgstr ""
+
+#: inc/forms.php:310
+#@ digitalcitizen
+msgid "Timor-Leste"
+msgstr ""
+
+#: inc/forms.php:311
+#@ digitalcitizen
+msgid "Togo"
+msgstr ""
+
+#: inc/forms.php:312
+#@ digitalcitizen
+msgid "Tokelau"
+msgstr ""
+
+#: inc/forms.php:313
+#@ digitalcitizen
+msgid "Tonga"
+msgstr ""
+
+#: inc/forms.php:314
+#@ digitalcitizen
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: inc/forms.php:315
+#@ digitalcitizen
+msgid "Tunisia"
+msgstr ""
+
+#: inc/forms.php:316
+#@ digitalcitizen
+msgid "Turkey"
+msgstr ""
+
+#: inc/forms.php:317
+#@ digitalcitizen
+msgid "Turkmenistan"
+msgstr ""
+
+#: inc/forms.php:318
+#@ digitalcitizen
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: inc/forms.php:319
+#@ digitalcitizen
+msgid "Tuvalu"
+msgstr ""
+
+#: inc/forms.php:320
+#@ digitalcitizen
+msgid "Uganda"
+msgstr ""
+
+#: inc/forms.php:321
+#@ digitalcitizen
+msgid "Ukraine"
+msgstr ""
+
+#: inc/forms.php:322
+#@ digitalcitizen
+msgid "United Arab Emirates"
+msgstr ""
+
+#: inc/forms.php:323
+#@ digitalcitizen
+msgid "United Kingdom"
+msgstr ""
+
+#: inc/forms.php:324
+#@ digitalcitizen
+msgid "United States"
+msgstr ""
+
+#: inc/forms.php:325
+#@ digitalcitizen
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: inc/forms.php:326
+#@ digitalcitizen
+msgid "Uruguay"
+msgstr ""
+
+#: inc/forms.php:327
+#@ digitalcitizen
+msgid "Uzbekistan"
+msgstr ""
+
+#: inc/forms.php:328
+#@ digitalcitizen
+msgid "Vanuatu"
+msgstr ""
+
+#: inc/forms.php:329
+#@ digitalcitizen
+msgid "Venezuela, Bolivarian Republic of"
+msgstr ""
+
+#: inc/forms.php:330
+#@ digitalcitizen
+msgid "Viet Nam"
+msgstr ""
+
+#: inc/forms.php:331
+#@ digitalcitizen
+msgid "Virgin Islands, British"
+msgstr ""
+
+#: inc/forms.php:332
+#@ digitalcitizen
+msgid "Virgin Islands, U.S."
+msgstr ""
+
+#: inc/forms.php:333
+#@ digitalcitizen
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: inc/forms.php:334
+#@ digitalcitizen
+msgid "Western Sahara"
+msgstr ""
+
+#: inc/forms.php:335
+#@ digitalcitizen
+msgid "Yemen"
+msgstr ""
+
+#: inc/forms.php:336
+#@ digitalcitizen
+msgid "Zambia"
+msgstr ""
+
+#: inc/forms.php:337
+#@ digitalcitizen
+msgid "Zimbabwe"
+msgstr ""
+
+#: inc/forms.php:396
+#@ default
+msgctxt "post type general name"
+msgid "Submission"
+msgstr ""
+
+#: inc/forms.php:397
+#@ default
+msgctxt "post type singular name"
+msgid "Submission"
+msgstr ""
+
+#: inc/forms.php:398
+#@ default
+msgctxt "submission"
+msgid "Add New"
+msgstr ""
+
+#: inc/forms.php:399
+#@ default
+msgid "Add New Submission"
+msgstr ""
+
+#: inc/forms.php:400
+#@ default
+msgid "Edit Submission"
+msgstr ""
+
+#: inc/forms.php:401
+#@ default
+msgid "New Submission"
+msgstr ""
+
+#: inc/forms.php:402
+#@ default
+msgid "All Submissions"
+msgstr ""
+
+#: inc/forms.php:403
+#@ default
+msgid "View Submission"
+msgstr ""
+
+#: inc/forms.php:404
+#@ default
+msgid "Search Submission"
+msgstr ""
+
+#: inc/forms.php:405
+#@ default
+msgid "No submissions found"
+msgstr ""
+
+#: inc/forms.php:406
+#@ default
+msgid "No submissions found in the Trash"
+msgstr ""
+
+#: inc/meta-boxes.php:57
+#@ digitalcitizen
+msgid "Copy and paste this into the HTML template"
+msgstr ""
+
+#: inc/meta-boxes.php:60
+#@ digitalcitizen
+msgid "Copy and paste this into the 'text only' box"
+msgstr ""
+
+#: inc/template-tags.php:21
+#@ digitalcitizen
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:25
+#@ digitalcitizen
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:29
+#@ digitalcitizen
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:52
+#@ digitalcitizen
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:55
+#, php-format
+#@ digitalcitizen
+msgctxt "Previous post link"
+msgid "%title"
+msgstr ""
+
+#: inc/template-tags.php:56
+#, php-format
+#@ digitalcitizen
+msgctxt "Next post link"
+msgid "%title"
+msgstr ""
+
+#: inc/template-tags.php:81
+#, php-format
+#@ digitalcitizen
+msgid "<span class=\"posted-on\">%1$s</span>"
+msgstr ""
+
+#: search.php:16
+#, php-format
+#@ digitalcitizen
+msgid "Search Results for: %s"
+msgstr ""
+
+#: sidebar.php:22
+#@ digitalcitizen
+msgid "Meta"
+msgstr ""
+
+#: socialbar.php:10
+#, php-format
+#@ digitalcitizen
+msgid "<a href=\"%1$s\" class=\"icon-link permalink\" rel=\"bookmark\">Permalink</a>"
+msgstr ""
+
