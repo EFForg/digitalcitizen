@@ -149,6 +149,7 @@ body.rtl #language_menu--label:before{margin-left:10px}
 @media screen and (min-width:1000px){.single .entry-aside,.home .entry-aside{margin-right:3.8%;float:left;min-height:1px;width:30.8%;margin-right:0;float:right;position:relative}.single .entry-aside .toc_widget,.home .entry-aside .toc_widget{margin-right:3.8%;float:left;min-height:1px;width:308px}}
 .single.rtl .entry-aside,.home.rtl .entry-aside{float:left}
 @media screen and (min-width:1000px){.single .entry-aside-inner,.home .entry-aside-inner{margin-top:-150px;padding-top:150px}}@media screen and (min-width:1000px){.single .entry-aside-inner.affix,.home .entry-aside-inner.affix{position:fixed !important;top:150px}}
+@media screen and (min-width:1000px){.single.rtl .entry-aside-inner.affix,.home.rtl .entry-aside-inner.affix{margin-right:1.9%}}
 .single .entry-footer,.home .entry-footer{float:left;width:100%;max-width:1140px}
 .single #comments,.home #comments{display:none}
 .blog #main,body:not(.home).page #main{margin-top:102px}@media screen and (min-width:768px){.blog #main,body:not(.home).page #main{margin-top:162px}}.blog #main article,body:not(.home).page #main article{max-width:800px;margin:0 auto 25.6px auto}
@@ -176,7 +177,7 @@ body:not(.home).page .entry-title{background:#eee;display:inline-block;font-size
 #colophon .site-info a,#colophon .site-info{color:#4e4e4e}
 #colophon .site-info a:hover{color:#00adee}
 #social-bar{font-family:"DINWeb-CondBold";text-transform:uppercase}#social-bar .share-text{vertical-align:middle;font-size:1.25em}
-@media screen and (min-width:600px){#social-bar{float:left;min-height:1px;width:82.69999999999999%;margin-right:3.8%;margin-left:8.649999999999999%}}@media screen and (min-width:1000px){#social-bar{margin:0;margin-top:-150px;padding-top:150px;margin-right:3.8%;float:left;min-height:1px;width:48.5px}#social-bar .share-text{display:none}}@media screen and (min-width:1000px){.rtl #social-bar{float:right}}
+@media screen and (min-width:600px){#social-bar{float:left;min-height:1px;width:82.69999999999999%;margin-right:3.8%;margin-left:8.649999999999999%}}@media screen and (min-width:1000px){#social-bar{margin:0;margin-top:-150px;padding-top:150px;margin-right:3.8%;float:left;min-height:1px;width:48.5px}#social-bar .share-text{display:none}}@media screen and (min-width:1000px){.rtl #social-bar{float:right;margin-right:0}}
 @media screen and (min-width:1000px){#social-bar.affix{position:fixed !important;top:160px}}
 #social-bar a{vertical-align:middle;margin-bottom:10px}#social-bar a.post-edit-link,#social-bar a.permalink{display:block;color:#171717;font-size:1.25em}#social-bar a.post-edit-link:hover,#social-bar a.permalink:hover{color:#00adee}
 #social-bar a.post-edit-link:before,#social-bar a.permalink:before{margin-right:.25em}

@@ -583,6 +583,13 @@ a:active {
             }
         }
     }
+    &.rtl .entry-aside-inner {
+        &.affix {
+            @media screen and (min-width:1000px) {
+                margin-right:1.9%;
+            }
+        }
+    }
 
     .entry-footer {
         float:left;
@@ -817,6 +824,7 @@ body:not(.home).page {
     .rtl &{
         @media screen and (min-width:1000px) {
             float:right;
+            margin-right:0;
         }
     }
     &.affix {
