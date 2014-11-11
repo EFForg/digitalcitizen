@@ -28,6 +28,7 @@ function digitalcitizen_newsletter_html_metabox() {
 	global $polylang;
 	$converter = new Markdownify\Converter;
 	$post_ids = $polylang->model->get_translations('post', $post->ID);
+	$markdown_output = "";
 	
 	$image_id = get_post_thumbnail_id( $post->ID );
 	$image_data = get_post($image_id);

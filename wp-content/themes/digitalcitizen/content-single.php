@@ -46,9 +46,11 @@
 			</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
+	<?php if($post->post_excerpt): ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
+	<?php endif; ?>
 
 	<aside class="entry-aside">
 		<div class="entry-aside-inner">
