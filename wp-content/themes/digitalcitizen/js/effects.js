@@ -52,7 +52,7 @@ jQuery(function($){
     }
 
     $(window).load(function(){
-        if( $(window).width() >= 1000 ) {
+        if( $(window).width() >= 1000 & $(".toc_widget").length ) {
             var toc_offset = $(".entry-aside-inner").offset();
             $(".entry-aside-inner, #social-bar").affix({
                 offset: {
