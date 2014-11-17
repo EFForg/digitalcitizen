@@ -602,13 +602,13 @@ a:active {
     }
 }
 
-.blog, body:not(.home).page{
+.blog, body:not(.home).page, body.error404{
     #main {
         margin-top:102px;
         @media screen and (min-width:768px) {
             margin-top:162px;
         }
-        article {
+        & > article, & > section {
             max-width:800px;
             margin:0 auto @body_line_height auto;
         }
@@ -625,8 +625,8 @@ a:active {
     }
 }
 
-body:not(.home).page {
-    .entry-title {
+body:not(.home).page, body.error404 {
+    .entry-title, .page-title {
         background:#EEEEEE;
         display:inline-block;
         font-size:32px;
@@ -647,6 +647,17 @@ body:not(.home).page {
     }
     .entry-meta {
         bottom:@body_line_height/2;
+    }
+}
+
+.search-form {
+    .clearfix();
+    label, input {
+        box-sizing:border-box;
+        width:100%;
+    }
+    input[type=submit] {
+        margin-right:0;
     }
 }
 
