@@ -1,5 +1,5 @@
 <?php
-add_action( 'load-post.php', 'digitalcitizen_meta_boxes_setup' );
+/*add_action( 'load-post.php', 'digitalcitizen_meta_boxes_setup' );
 add_action( 'load-post-new.php', 'digitalcitizen_meta_boxes_setup' );
 
 function digitalcitizen_meta_boxes_setup() {
@@ -13,6 +13,16 @@ function digitalcitizen_add_post_meta_boxes() {
 		'digitalcitizen_newsletter_html_metabox', 
 		'post', 
 		$context = 'advanced', 
+		$priority = 'default', 
+		$callback_args = null 
+	);
+
+	add_meta_box( 
+		'send-newsletter', 
+		'Send Newsletter', 
+		'digitalcitizen_send_newsletter_metabox', 
+		'post', 
+		$context = 'side', 
 		$priority = 'default', 
 		$callback_args = null 
 	);
@@ -62,6 +72,14 @@ function digitalcitizen_newsletter_html_metabox() {
     <textarea id="newsletter_text" name="newsletter_text" readonly="readonly" class="widefat"><?php echo $markdown_output; ?></textarea>
   </p>
 
+<?php
+}
+
+function digitalcitizen_send_newsletter_metabox() {
+?>
+  <p>
+  	<button disabled class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
+  </p>
 <?php
 }
 

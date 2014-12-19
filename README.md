@@ -1,9 +1,10 @@
 Digital Citizen
 ===============
 
-This repository contains WordPress as well as the themes and plugins needed by Digital Citizen.
+This repository contains themes and plugins needed by Digital Citizen. 
+
+It's set up to assume that WordPress core is kept in a folder called "wp" in the root directory.
 
 TODO:
 -----
-*Use [WP-Stack](https://github.com/markjaquith/WP-Stack) and [Mark Jaquith's preferred WordPress directory structure](https://github.com/markjaquith/WordPress-Skeleton)
 *Add more documentation!
