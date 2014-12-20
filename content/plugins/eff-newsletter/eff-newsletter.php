@@ -26,67 +26,64 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+// Loads this plugin only on the post editor page.
 add_action( 'load-post.php', 'eff_newsletter_meta_boxes_setup' );
 add_action( 'load-post-new.php', 'eff_newsletter_meta_boxes_setup' );
 
 add_action('load-post.php','eff_newsletter_handler');
 add_action('load-post-new.php','eff_newsletter_handler');
 
-function eff_newsletter_action_handler() {
-	add_action('wp','eff_newsletter_handler');
-}
-
+// Actually handles sending the newsletter
 function eff_newsletter_handler(){
 	if(isset($_POST['send_email']) && $_POST['send_email'] == 'go') {
-		//include 'Converter.php';
-		//include 'ConverterExtra.php';
-		//include 'Parser.php';
+		// We include classes here so we only load them if
+		// we need to send the newsletter
 		include 'Html2Text.php';
 		include 'emogrify.php';
+
+		// Get the posts
 		$posts = eff_newsletter_maybe_get_translations($_POST['post_ID']);
 
-		//Manually writing the UTF8 byte-order mark because PHP is banaynay
+		// Manually writing the UTF8 byte-order mark because PHP is banaynay
 		$text = "\xEF\xBB\xBF";
-		//Maybe we don't need this when it gets pushed to email
+		// Maybe we don't need this when it gets pushed to email
 
 		$html = '';
 
+		// Loop through the posts
 		foreach($posts as $post) {
-			 $text .= eff_newsletter_markdown($post);
+			 $text .= eff_newsletter_text($post);
+			 $text .= "\n\n";
 
 			 $html .= eff_newsletter_html($post);
 		}
 
+		// Get a timestamp to give the test emails a unique
+		// filename. We don't need this once the contents
+		// are being sent to CiviCRM.
 		$timestamp = time();
 
 		//Write Text
-		$text_email = fopen(ABSPATH . "../email/". $timestamp .".txt", "w");
+		$text_email = fopen(ABSPATH . "../email/test_emails/". $timestamp .".txt", "w");
 		fwrite($text_email, $text);
 		fclose($text_email);
 
 		//Do the HTML template
-		$html_email = fopen(ABSPATH . "../email/". $timestamp .".html", "w");
+		$html_email = fopen(ABSPATH . "../email/test_emails/". $timestamp .".html", "w");
 		fwrite($html_email, $html);
 		fclose($html_email);
+
+		eff_newsletter_set_newsletter_sent($posts);
 	}
 }
 
-function eff_newsletter_meta_boxes_setup() {
-	add_action( 'add_meta_boxes', 'eff_newsletter_add_post_meta_boxes' );
+function eff_newsletter_set_newsletter_sent($posts) {
+	foreach($posts as $post) {
+		add_post_meta($post->ID, "_eff_newsletter_sent_date", time(), true);
+	}
 }
 
-function eff_newsletter_add_post_meta_boxes() {
-	add_meta_box( 
-		'send-newsletter', 
-		'Send Newsletter', 
-		'eff_newsletter_send_button_metabox', 
-		'post', 
-		$context = 'side', 
-		$priority = 'default', 
-		$callback_args = null 
-	);
-}
-
+// Get the post and all translations
 function eff_newsletter_maybe_get_translations($post_id) {
 	//Find out if we need to return more than one language.
 	//If we don't, just return the one.
@@ -105,7 +102,9 @@ function eff_newsletter_maybe_get_translations($post_id) {
 	}
 }
 
-function eff_newsletter_markdown($post) {
+// Minimally formats the post content as HTML, then converts
+// it to plain text
+function eff_newsletter_text($post) {
 	$text = wpautop($post->post_excerpt);
 	$text .= wpautop($post->post_content);
 	$converter = new \Html2Text\Html2Text($text, array('do_links'=>'table'));
@@ -113,6 +112,8 @@ function eff_newsletter_markdown($post) {
 	return $converter->getText();
 }
 
+// Formats the newsletter content as HTML, grabs the email template
+// stylesheet, and inlines all styles so the email looks right
 function eff_newsletter_html($post) {
 	$html = '';
 	$image_id = get_post_thumbnail_id( $post->ID );
@@ -129,10 +130,34 @@ function eff_newsletter_html($post) {
 	return preg_replace('~<(?:!DOCTYPE|/?(?:html|head|body))[^>]*>\s*~i', '', $content);
 }
 
+// Add the action which adds the metabox containing the "Send Newsletter" button
+function eff_newsletter_meta_boxes_setup() {
+	add_action( 'add_meta_boxes', 'eff_newsletter_add_post_meta_boxes' );
+}
+
+// Registers the meta box
+function eff_newsletter_add_post_meta_boxes() {
+	add_meta_box( 
+		'send-newsletter', 
+		'Send Newsletter', 
+		'eff_newsletter_send_button_metabox', 
+		'post', 
+		$context = 'side', 
+		$priority = 'default', 
+		$callback_args = null 
+	);
+}
+
+// Actually handle the output of the metabox with the button in it
 function eff_newsletter_send_button_metabox() {
+	global $post;
+	$newsletter_sent = get_post_meta($post->ID,"_eff_newsletter_sent_date",true);
 ?>
   <p>
-  	<button class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
+  	<button <?php if ($newsletter_sent) echo "disabled"; ?> class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
+  	<?php if ($newsletter_sent): ?>
+  	<p class="howto">You sent this newsletter as an email on <?php echo date('F j, Y, g:i:s a', $newsletter_sent); ?></p>
+  	<?php endif; ?>
   </p>
 <?php
 }
