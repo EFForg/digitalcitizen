@@ -92,11 +92,16 @@ function eff_newsletter_maybe_get_translations($post_id) {
 	global $polylang;
 
 	if($polylang) {
+		$returnarr = [];
 		$post_ids = $polylang->model->get_translations('post', $post_id);
-		foreach($post_ids as $post_id) {
-			$returnarr[] = get_post($post_id);
+		if($post_ids) {
+			foreach($post_ids as $post_id) {
+				$returnarr[] = get_post($post_id);
+			}
+			return $returnarr;
+		} else {
+			return array(get_post($post_id));
 		}
-		return $returnarr;
 	} else {
 		return array(get_post($post_id));
 	}
