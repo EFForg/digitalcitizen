@@ -58,20 +58,34 @@ function eff_newsletter_handler(){
 			 $html .= eff_newsletter_html($post);
 		}
 
-		// Get a timestamp to give the test emails a unique
-		// filename. We don't need this once the contents
-		// are being sent to CiviCRM.
-		$timestamp = time();
-
-		//Write Text
-		$text_email = fopen(ABSPATH . "../email/test_emails/". $timestamp .".txt", "w");
-		fwrite($text_email, $text);
-		fclose($text_email);
-
-		//Do the HTML template
-		$html_email = fopen(ABSPATH . "../email/test_emails/". $timestamp .".html", "w");
-		fwrite($html_email, $html);
-		fclose($html_email);
+		$url = 'https://supporters.eff.org/sites/all/modules/civicrm/extern/rest.php';
+		$params = array(
+		  'action' => 'create',
+		  'api_key' => EFF_CIVI_APIKEY,
+		  'body_html' => $html,
+		  'body_text' => $text,
+		  'created_id' => 1766707,
+		  'contact_id' => 1766707,
+		  'debug' => 1,
+		  'dedupe_email' => 1,
+		  'entity' => 'Mailing',
+		  'from_email' => 'info@digcit.org',
+		  'from_name' => 'Digital Citizen',
+		  'groups[include][]' => EFF_CIVI_GROUP,
+		  'json' => 1,
+		  'key' => EFF_CIVI_SITEKEY,
+		  'name' => "Digital Citizen: {$post->title}",
+		  'scheduled_id' => 1766707,
+		  'subject' => "Digital Citizen: {$post->title}",
+		  'version' => 3,
+		);
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_POST, TRUE);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch, CURLOPT_URL, $url);
+		$result = curl_exec($ch);
+		curl_close($ch);
 
 		eff_newsletter_set_newsletter_sent($posts);
 	}
@@ -166,5 +180,3 @@ function eff_newsletter_send_button_metabox() {
   </p>
 <?php
 }
-
-?>
