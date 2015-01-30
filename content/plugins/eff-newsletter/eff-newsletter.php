@@ -77,6 +77,7 @@ function eff_newsletter_handler(){
 		  'name' => "Digital Citizen: {$post->post_title}",
 		  'scheduled_id' => 1766707,
 		  'subject' => "Digital Citizen: {$post->post_title}",
+		  'url_tracking' => 0,
 		  'version' => 3,
 		);
 		$ch = curl_init();
