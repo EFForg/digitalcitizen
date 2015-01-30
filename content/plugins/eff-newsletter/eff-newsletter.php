@@ -74,9 +74,9 @@ function eff_newsletter_handler(){
 		  'groups[include][]' => EFF_CIVI_GROUP,
 		  'json' => 1,
 		  'key' => EFF_CIVI_SITEKEY,
-		  'name' => "Digital Citizen: {$post->title}",
+		  'name' => "Digital Citizen: {$post->post_title}",
 		  'scheduled_id' => 1766707,
-		  'subject' => "Digital Citizen: {$post->title}",
+		  'subject' => "Digital Citizen: {$post->post_title}",
 		  'version' => 3,
 		);
 		$ch = curl_init();
