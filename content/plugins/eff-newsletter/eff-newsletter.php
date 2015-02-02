@@ -69,6 +69,7 @@ function eff_newsletter_handler(){
 		  'debug' => 1,
 		  'dedupe_email' => 1,
 		  'entity' => 'Mailing',
+		  'footer_id' => 24,
 		  'from_email' => 'info@digcit.org',
 		  'from_name' => 'Digital Citizen',
 		  'groups[include][]' => EFF_CIVI_GROUP,
