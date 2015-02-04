@@ -2,13 +2,10 @@
 @import url('less/grid.less');
 @import url('less/text.less');
 @import url('less/util.less');
-@import url('../font/din/stylesheet.css');
-@import url('../font/baskerville/stylesheet.css');
-@import url('../font/icomoon/style.css');
-
-@black: #171717;
-@blue : #00adee;
-@grey : #EEEEEE;
+@import url('less/colors.less');
+@import url('../font/din/din.css');
+@import url('../font/baskerville/baskerville.css');
+@import url('../font/icomoon/icomoon.css');
 
 /*--------------------------------------------------------------
 5.0 Navigation
@@ -322,7 +319,7 @@ a:active {
             }
         }
     }
-    
+
     #masthead--navigation--toggle--checkbox {
         display:none;
         &:checked ~ ul.menu {
@@ -339,7 +336,7 @@ a:active {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
     height: 1px;
-    width: 1px; 
+    width: 1px;
     overflow: hidden;
 }
 

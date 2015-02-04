@@ -54,9 +54,12 @@ function eff_newsletter_handler(){
 		foreach($posts as $post) {
 			 $text .= eff_newsletter_text($post);
 			 $text .= "\n\n";
-
 			 $html .= eff_newsletter_html($post);
 		}
+
+		ob_start();
+		include 'templates/email_template.php';
+		$html = ob_get_clean();
 
 		$url = 'https://supporters.eff.org/sites/all/modules/civicrm/extern/rest.php';
 		$params = array(
@@ -158,14 +161,14 @@ function eff_newsletter_meta_boxes_setup() {
 
 // Registers the meta box
 function eff_newsletter_add_post_meta_boxes() {
-	add_meta_box( 
-		'send-newsletter', 
-		'Send Newsletter', 
-		'eff_newsletter_send_button_metabox', 
-		'post', 
-		$context = 'side', 
-		$priority = 'default', 
-		$callback_args = null 
+	add_meta_box(
+		'send-newsletter',
+		'Send Newsletter',
+		'eff_newsletter_send_button_metabox',
+		'post',
+		$context = 'side',
+		$priority = 'default',
+		$callback_args = null
 	);
 }
 
@@ -175,7 +178,7 @@ function eff_newsletter_send_button_metabox() {
 	$newsletter_sent = get_post_meta($post->ID,"_eff_newsletter_sent_date",true);
 ?>
   <p>
-  	<button <?php if ($newsletter_sent) echo "disabled"; ?> class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
+  	<button <?php //if ($newsletter_sent) echo "disabled"; ?> class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
   	<?php if ($newsletter_sent): ?>
   	<p class="howto">You sent this newsletter as an email on <?php echo date('F j, Y, g:i:s a', $newsletter_sent); ?></p>
   	<?php endif; ?>
