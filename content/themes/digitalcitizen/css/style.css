@@ -1,8 +1,8 @@
 @import url(../font/baskerville/stylesheet.css);
 @import url(../font/din/stylesheet.css);
-@import url('../font/din/stylesheet.css');
-@import url('../font/baskerville/stylesheet.css');
-@import url('../font/icomoon/style.css');
+@import url('../font/din/din.css');
+@import url('../font/baskerville/baskerville.css');
+@import url('../font/icomoon/icomoon.css');
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
 body{margin:0;position:relative}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
