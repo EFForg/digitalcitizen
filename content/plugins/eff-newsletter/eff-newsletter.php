@@ -48,15 +48,18 @@ function eff_newsletter_handler(){
 		$text = "\xEF\xBB\xBF";
 		// Maybe we don't need this when it gets pushed to email
 
-		$html = '';
-
+		$html = eff_newsletter_html_image($posts[0]);
 		// Loop through the posts
 		foreach($posts as $post) {
 			 $text .= eff_newsletter_text($post);
 			 $text .= "\n\n";
-
-			 $html .= eff_newsletter_html($post);
+			 $html .= eff_newsletter_html_content($post);
 		}
+		$html = eff_newsletter_inline_css($html);
+
+		ob_start();
+		include 'templates/email_template.php';
+		$html = ob_get_clean();
 
 		$url = 'https://supporters.eff.org/sites/all/modules/civicrm/extern/rest.php';
 		$params = array(
@@ -88,6 +91,13 @@ function eff_newsletter_handler(){
 		curl_setopt($ch, CURLOPT_URL, $url);
 		$result = curl_exec($ch);
 		curl_close($ch);
+		//For testing purposes
+		/*
+		$time = time();
+		$myfile = fopen(ABSPATH.'/email'.$time.'.html', 'w');
+		fwrite($myfile, $html);
+		fclose($myfile);
+		*/
 
 		eff_newsletter_set_newsletter_sent($posts);
 	}
@@ -110,9 +120,14 @@ function eff_newsletter_maybe_get_translations($post_id) {
 	if($polylang) {
 		$returnarr = [];
 		$post_ids = $polylang->model->get_translations('post', $post_id);
+		//This should be set by a plugin option
+		$lang_order = ['en','ar'];
 		if($post_ids) {
-			foreach($post_ids as $post_id) {
-				$returnarr[] = get_post($post_id);
+			foreach($lang_order as $i=>$lang) {
+				$post = get_post($post_ids[$lang]);
+				$post_lang = $polylang->model->get_post_language($post_ids[$lang]);
+				$post->dir = $post_lang->is_rtl ? 'rtl' : 'ltr';
+				$returnarr[] = $post;
 			}
 			return $returnarr;
 		} else {
@@ -133,9 +148,7 @@ function eff_newsletter_text($post) {
 	return $converter->getText();
 }
 
-// Formats the newsletter content as HTML, grabs the email template
-// stylesheet, and inlines all styles so the email looks right
-function eff_newsletter_html($post) {
+function eff_newsletter_html_image($post) {
 	$html = '';
 	$image_id = get_post_thumbnail_id( $post->ID );
 	$image_data = get_post($image_id);
@@ -143,8 +156,20 @@ function eff_newsletter_html($post) {
 		$html = "<div class='img-with-caption'>" . wp_get_attachment_image( $image_id, 'email' );
 		$html .= "<span class='caption'>" . $image_data->post_excerpt . "</span></div>";
 	}
+	return $html;
+}
+
+// Formats the newsletter content as HTML, grabs the email template
+// stylesheet, and inlines all styles so the email looks right
+function eff_newsletter_html_content($post) {
+	$html = '<div dir="'.$post->dir.'">';
 	$html .= "<p class='lead callout'>" . $post->post_excerpt . "</p>";
 	$html .= apply_filters('the_content', $post->post_content);
+	$html .= '</div>';
+	return $html;
+}
+
+function eff_newsletter_inline_css($html) {
 	$css = file_get_contents(plugin_dir_path( __FILE__ ) . 'email.css');
 	$emogrifier = new \Pelago\Emogrifier($html, $css);
 	$content = $emogrifier->emogrify();
@@ -158,14 +183,14 @@ function eff_newsletter_meta_boxes_setup() {
 
 // Registers the meta box
 function eff_newsletter_add_post_meta_boxes() {
-	add_meta_box( 
-		'send-newsletter', 
-		'Send Newsletter', 
-		'eff_newsletter_send_button_metabox', 
-		'post', 
-		$context = 'side', 
-		$priority = 'default', 
-		$callback_args = null 
+	add_meta_box(
+		'send-newsletter',
+		'Send Newsletter',
+		'eff_newsletter_send_button_metabox',
+		'post',
+		$context = 'side',
+		$priority = 'default',
+		$callback_args = null
 	);
 }
 
@@ -175,7 +200,7 @@ function eff_newsletter_send_button_metabox() {
 	$newsletter_sent = get_post_meta($post->ID,"_eff_newsletter_sent_date",true);
 ?>
   <p>
-  	<button <?php if ($newsletter_sent) echo "disabled"; ?> class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
+  	<button <?php //if ($newsletter_sent) echo "disabled"; ?> class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
   	<?php if ($newsletter_sent): ?>
   	<p class="howto">You sent this newsletter as an email on <?php echo date('F j, Y, g:i:s a', $newsletter_sent); ?></p>
   	<?php endif; ?>
