@@ -294,8 +294,8 @@ a:active {
             display:inline-block;
         }
         @media screen and (min-width:1140px) {
-            .font_size(16);
-            .line_height(16);
+            .font_size(12);
+            .line_height(12);
         }
         .menu-item {
             padding:0;
@@ -310,8 +310,22 @@ a:active {
                     color:@blue;
                 }
             }
-            &.current-menu-item a {
-                border-bottom:2px solid @blue;
+            &.current-menu-item a:hover {
+              color:@black;
+            }
+            &.current-menu-item, &.current-menu-item a {
+              position:relative;
+            }
+            &.current-menu-item:before {
+                content:' ';
+                display:block;
+                position:absolute;
+                height:16px;
+                background:@blue;
+                left:0;
+                bottom:10px;
+                width:100%;
+                z-index:0;
             }
             @media screen and (min-width:1024px) {
                 display:inline-block;
