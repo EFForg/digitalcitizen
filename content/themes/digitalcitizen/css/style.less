@@ -609,7 +609,10 @@ a:active {
     .entry-footer {
         float:left;
         width:100%;
-        max-width:1140px;
+        padding:0 1em;
+        position:relative;
+        left:-1em;
+        background:@blue;
     }
 
     #comments {
@@ -902,8 +905,10 @@ body:not(.home).page, body.error404 {
 .post-navigation {
     font-family: "DINWeb-CondBold";
     text-transform: uppercase;
-    border-top:2px solid @blue;
-    padding-top:1em;
+    padding-top:5px;
+    a {
+      color:white;
+    }
     @media screen and (min-width:1000px) {
         .grid(7);
         .push(1);
