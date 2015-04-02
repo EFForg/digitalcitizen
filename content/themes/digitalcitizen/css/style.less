@@ -15,7 +15,9 @@
 --------------------------------------------------------------*/
 a {
     color:@black;
-    border-bottom:2px solid @blue;
+    p & {
+      border-bottom:2px solid @blue;
+    }
 }
 a:visited {
     color: lighten(@blue, 15%);
