@@ -733,6 +733,17 @@ body:not(.home).page, body.error404 {
     text-align: center;
     padding-top:@body_line_height;
 
+    .logo-salad {
+        margin-bottom:1em;
+    }
+
+    .logo-salad--item {
+      .grid(3.5);
+      text-align:center;
+      float:none;
+      display:inline-block;
+    }
+
     .eff, .gv, .smex, .s-7iber, .access {
         background: url(../img/logos/sprites.png) no-repeat;
         display:inline-block;
@@ -741,63 +752,58 @@ body:not(.home).page, body.error404 {
         vertical-align:middle;
         overflow:hidden;
     }
-
-    .eff{
-        background-position: -470px -99px ;
-        width: 50px;
-        height: 34px;
-    }
-
     .s-7iber{
-        background-position: -389px -153px ;
-        width: 95px;
-        height: 35px;
+      background-position: 0 -46px ;
+      width: 95px;
+      height: 35px;
     }
-
     .access{
-        background-position: -259px -161px ;
-        width: 113px;
-        height: 26px;
+      background-position: -452px 0;
+      width: 113px;
+      height: 26px;
     }
-
+    .eff{
+      background-position: -226px 0;
+      width: 221px;
+      height: 27px;
+    }
     .gv{
-        background-position: -120px -153px ;
-        width: 115px;
-        height: 38px;
+      background-position: -108px 0;
+      width: 115px;
+      height: 38px;
     }
-
     .smex{
-        background-position: -6px -152px ;
-        width: 103px;
-        height: 40px;
+      background-position: 0 0;
+      width: 103px;
+      height: 40px;
     }
 
     @media screen and (min-width:1000px) {
-        .eff{
-            background-position: 0 -1px ;
-            width: 96px;
-            height: 68px;
-        }
-        .gv{
-            background-position: -96px 0;
-            width: 230px;
-            height: 75px;
-        }
-        .smex{
-            background-position: -333px 0;
-            width: 206px;
-            height: 80px;
-        }
-        .s-7iber{
-            background-position: 0 -77px ;
-            width: 190px;
-            height: 69px;
-        }
-        .access{
-            background-position: -214px -93px ;
-            width: 225px;
-            height: 52px;
-        }
+      .s-7iber{
+        background-position: -338px -40px ;
+        width: 190px;
+        height: 69px;
+      }
+      .access{
+        background-position: 0 -118px ;
+        width: 225px;
+        height: 52px;
+      }
+      .eff{
+        background-position: 0 -202px ;
+        width: 369px;
+        height: 45px;
+      }
+      .gv{
+        background-position: -101px -42px ;
+        width: 230px;
+        height: 75px;
+      }
+      .smex{
+        background-position: -229px -118px ;
+        width: 206px;
+        height: 80px;
+      }
     }
     .site-info {
         float:left;
@@ -806,7 +812,7 @@ body:not(.home).page, body.error404 {
         text-transform:uppercase;
         text-align:center;
         .font_size(-2);
-        margin-top:1em;
+        margin-top:1.2em;
         .icon {
             font-size:20px;
             width:20px;
@@ -825,6 +831,9 @@ body:not(.home).page, body.error404 {
         }
         a, & {
             color:#4e4e4e;
+        }
+        a {
+          border:none;
         }
         a:hover {
             color:@blue;
