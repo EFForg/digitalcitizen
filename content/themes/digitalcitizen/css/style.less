@@ -311,11 +311,12 @@ a:active {
                     color:@black;
                 }
                 &:hover {
-                    color:@blue;
+                    color:white;
                 }
             }
             &.current-menu-item a:hover {
               color:@black;
+              background:none;
             }
             &.current-menu-item, &.current-menu-item a {
               position:relative;
@@ -611,10 +612,13 @@ a:active {
     .entry-footer {
         float:left;
         width:100%;
-        padding:0 1em;
         position:relative;
-        left:-1em;
         background:@blue;
+    }
+    .entry-footer--inner {
+      margin:0 auto;
+      .clearfix();
+      max-width:1140px;
     }
 
     #comments {
@@ -837,6 +841,7 @@ body:not(.home).page, body.error404 {
         }
         a:hover {
             color:@blue;
+            background:none;
         }
     }
 }
@@ -878,18 +883,13 @@ body:not(.home).page, body.error404 {
         margin-bottom:10px;
         &.post-edit-link, &.permalink {
             display:block;
-            color:white;
-            background:@blue;
-            border-radius:50px;
+            color:@black;
             &:hover {
-                background:@black;
+              background:none;
+              color:@blue;
             }
             &:before {
-                margin-right:.25em;
-                margin-left:.25em;
-                position:relative;
-                top:.2em;
-                font-size:.7em;
+              margin-right:.6em;
             }
         }
         &.share {
@@ -910,6 +910,22 @@ body:not(.home).page, body.error404 {
             height:3rem;
             display:inline-block;
             overflow:hidden;
+            &.post-edit-link, &.permalink {
+              color:white;
+              background:@blue;
+              border-radius:50px;
+              &:before {
+                margin-right:.25em;
+                margin-left:.25em;
+                position:relative;
+                top:.2em;
+                font-size:.7em;
+              }
+              &:hover {
+                color:white;
+                background:@black;
+              }
+            }
         }
         .rtl & {
             direction:ltr;
