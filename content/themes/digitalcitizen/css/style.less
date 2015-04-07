@@ -538,20 +538,16 @@ a:active {
     }
 
     .entry-summary {
-        .font_size(3);
-        .line_height(3);
-        font-style:italic;
+        .font_size(12);
+        .line_height(12);
         text-align:justify;
+        font-family:'DINWeb-COndBold';
+        color:@blue;
+        a {
+          color:@black;
+          border:none;
+        }
     }
-
-    &:not(.rtl) .entry-summary p:first-letter {
-        font-family:"DINWeb-CondBold";
-        float:left;
-        .font_size(70);
-        line-height:.8em;
-        margin-right:.125em;
-    }
-
     .entry-content {
         padding-top:2em;
         position:relative;
@@ -868,13 +864,18 @@ body:not(.home).page, body.error404 {
         margin-bottom:10px;
         &.post-edit-link, &.permalink {
             display:block;
-            color:@black;
-            .font_size(4);
+            color:white;
+            background:@blue;
+            border-radius:50px;
             &:hover {
-                color:@blue;
+                background:@black;
             }
             &:before {
                 margin-right:.25em;
+                margin-left:.25em;
+                position:relative;
+                top:.2em;
+                font-size:.7em;
             }
         }
         &.share {
@@ -883,12 +884,11 @@ body:not(.home).page, body.error404 {
             height:3rem;
             display:inline-block;
             overflow:hidden;
-        }
-        &.twitter-share {
-            color:#55acee;
-        }
-        &.facebook-share {
-            color:#3b5998;
+            color:@blue;
+            &:hover {
+              color:@black;
+              background:white;
+            }
         }
         @media screen and (min-width:1000px) {
             font-size:3rem!important;

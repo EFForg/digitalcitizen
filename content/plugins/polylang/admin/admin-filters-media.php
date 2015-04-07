@@ -85,6 +85,9 @@ class PLL_Admin_Filters_Media extends PLL_Admin_Filters_Post_Base {
 		$x = new WP_Ajax_Response(array('what' => 'translations', 'data' => $data));
 		ob_end_clean();
 
+		// flag
+		$x->Add(array('what' => 'flag', 'data' => empty($lang->flag) ? esc_html($lang->slug) : $lang->flag));
+
 		$x->send();
 	}
 
@@ -107,12 +110,18 @@ class PLL_Admin_Filters_Media extends PLL_Admin_Filters_Post_Base {
 		add_post_meta($tr_id, '_wp_attachment_metadata', get_post_meta($post_id, '_wp_attachment_metadata', true));
 		add_post_meta($tr_id, '_wp_attached_file', get_post_meta($post_id, '_wp_attached_file', true));
 
+		// copy alternative text to be consistent with title, caption and description copied when cloning the post
+		if ($meta = get_post_meta($post_id, '_wp_attachment_image_alt', true))
+			add_post_meta($tr_id, '_wp_attachment_image_alt', $meta); 
+
 		$translations = $this->model->get_translations('post', $post_id);
 		if (!$translations && $lang = $this->model->get_post_language($post_id))
 			$translations[$lang->slug] = $post_id;
 
 		$translations[$_GET['new_lang']] = $tr_id;
 		$this->model->save_translations('post', $tr_id, $translations);
+
+		do_action('pll_translate_media', $tr_id, $post, $translations);
 
 		wp_redirect(admin_url(sprintf('post.php?post=%d&action=edit', $tr_id))); // WP 3.5+
 		exit;

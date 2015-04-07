@@ -26,43 +26,18 @@ class PLL_Widget_Languages extends WP_Widget {
 	 */
 	function widget($args, $instance) {
 		global $polylang;
+
+		// sets a unique id for dropdown
+		$instance['dropdown'] = empty($instance['dropdown']) ? 0 : $args['widget_id'];
+
 		if (!(isset($polylang) && $polylang->model->get_languages_list() && $list = pll_the_languages(array_merge($instance, array('echo' => 0)))))
 			return;
 
-		extract($args);
-		extract($instance);
-
-		echo "$before_widget\n";
-		if ($title = apply_filters('widget_title', $title, $instance, $this->id_base))
-			echo $before_title . $title . $after_title;
-		echo $dropdown ? $list : "<ul>\n" . $list . "</ul>\n";
-		echo "$after_widget\n";
-
-		// javascript to switch the language when using a dropdown list
-		if ($dropdown) {
-			foreach ($polylang->model->get_languages_list() as $language) {
-				$url = $force_home || ($url = $polylang->links->get_translation_url($language)) == null ? $polylang->links->get_home_url($language) : $url;
-				$urls[] = '"'.esc_js($language->slug).'":"'.esc_url($url).'"';
-			}
-
-			$urls = implode(',', $urls);
-
-			$js = "
-				<script type='text/javascript'>
-					//<![CDATA[
-					var urls = {{$urls}};
-					var d = document.getElementById('lang_choice');
-					d.onchange = function() {
-						for (var i in urls) {
-							if (this.value == i)
-								location.href = urls[i];
-						}
-					}
-					//]]>
-				</script>";
-
-			echo $js;
-		}
+		echo $args['before_widget'];
+		if ($title = apply_filters('widget_title', $instance['title'], $instance, $this->id_base))
+			echo $args['before_title'] . $title . $args['after_title'];
+		echo $instance['dropdown'] ? $list : "<ul>\n" . $list . "</ul>\n";
+		echo $args['after_widget'];
 	}
 
 	/*
@@ -110,8 +85,8 @@ class PLL_Widget_Languages extends WP_Widget {
 				$this->get_field_name($key),
 				$instance[$key] ? 'checked="checked"' : '',
 				esc_html($str),
-				'dropdown' == $key ? '' : 'no-dropdown-' . $this->id,
-				'dropdown' == $key || empty($instance['dropdown']) ? '' : 'style="display:none;"'
+				in_array($key, array('show_names', 'show_flags', 'hide_current')) ? 'no-dropdown-' . $this->id : '',
+				!empty($instance['dropdown']) && in_array($key, array('show_names', 'show_flags', 'hide_current')) ? 'style="display:none;"' : ''
 			);
 
 

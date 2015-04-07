@@ -6,7 +6,7 @@
  * @since 1.2
  */
 class PLL_Frontend_Filters_Search {
-	public $links;
+	public $links_model, $curlang;
 
 	/*
 	 * constructor
@@ -16,9 +16,8 @@ class PLL_Frontend_Filters_Search {
 	 * @param object $polylang
 	 */
 	public function __construct(&$polylang) {
-		$this->links = &$polylang->links;
+		$this->links_model = &$polylang->links_model;
 		$this->curlang = &$polylang->curlang;
-		$this->using_permalinks = (bool) get_option('permalink_structure'); // are we using permalinks?
 
 		// adds the language information in the search form
 		// low priority in case the search form is created using the same filter as described in http://codex.wordpress.org/Function_Reference/get_search_form
@@ -27,9 +26,9 @@ class PLL_Frontend_Filters_Search {
 		// adds the language information in admin bar search form
 		add_action('add_admin_bar_menus', array(&$this, 'add_admin_bar_menus'));
 
-		// backward compatibility WP < 3.6
 		// adds javascript at the end of the document
-		if (!$this->using_permalinks && (!defined('PLL_SEARCH_FORM_JS') || PLL_SEARCH_FORM_JS))
+		// was used for WP < 3.6. kept just in case
+		if (defined('PLL_SEARCH_FORM_JS') && PLL_SEARCH_FORM_JS)
 			add_action('wp_footer', array(&$this, 'wp_print_footer_scripts'));
 	}
 
@@ -44,11 +43,11 @@ class PLL_Frontend_Filters_Search {
 	 */
 	public function get_search_form($form) {
 		if ($form) {
-			if ($this->using_permalinks) {
+			if ($this->links_model->using_permalinks) {
 				// take care to modify only the url in the <form> tag
 				preg_match('#<form.+>#', $form, $matches);
 				$old = reset($matches);
-				$new = preg_replace('#' . $this->links->home . '\/?#', $this->links->get_home_url('', true), $old);
+				$new = preg_replace('#' . $this->links_model->home . '\/?#', $this->curlang->search_url, $old);
 				$form = str_replace($old, $new, $form);
 			}
 			else
@@ -90,8 +89,7 @@ class PLL_Frontend_Filters_Search {
 	}
 
 	/*
-	 * modifies the search form since filtering get_search_form won't work if the template uses searchform.php or the search form is hardcoded
-	 * now only for backward compatibility WP < 3.6
+	 * allows modifying the search form if it does not pass get_search_form
 	 *
 	 * @since 0.1
 	 */

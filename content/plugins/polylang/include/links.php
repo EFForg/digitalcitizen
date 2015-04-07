@@ -7,7 +7,6 @@
  */
 class PLL_Links {
 	public $links_model, $model, $options;
-	protected $_links;
 
 	/*
 	 * constructor
@@ -26,11 +25,18 @@ class PLL_Links {
 
 		// low priority on links filters to come after any other modifications
 		if ($this->options['force_lang']) {
-			foreach (array('post_link', '_get_page_link', 'post_type_link') as $filter)
-				add_filter($filter, array(&$this, 'post_link'), 20, 2);
-
-			add_filter('term_link', array(&$this, 'term_link'), 20, 3);
+			add_filter('post_link', array(&$this, 'post_link'), 20, 2);
+			add_filter('_get_page_link', array(&$this, '_get_page_link'), 20, 2);
 		}
+
+		add_filter('post_type_link', array(&$this, 'post_type_link'), 20, 2);
+		add_filter('term_link', array(&$this, 'term_link'), 20, 3);
+
+		if ($this->options['force_lang'] > 1)
+			add_filter('attachment_link', array(&$this, 'attachment_link'), 20, 2);
+
+		if (3 == $this->options['force_lang'])
+			add_filter('preview_post_link', array(&$this, 'preview_post_link'), 20);
 	}
 
 	/*
@@ -51,21 +57,62 @@ class PLL_Links {
 	 * @since 0.7
 	 *
 	 * @param string $link post link
-	 * @param object|int $post post object or post ID
+	 * @param object $post post object
 	 * @return string modified post link
 	 */
 	public function post_link($link, $post) {
-		if (isset($this->_links[$link]))
-			return $this->_links[$link];
+		// /!\ when post_status is not "publish", WP does not use pretty permalinks
+		return $post->post_status != 'publish' ? $link : $this->links_model->add_language_to_link($link, $this->model->get_post_language($post->ID));
+	}
 
-		if ('post_type_link' == current_filter() && !$this->model->is_translated_post_type($post->post_type))
-			return $this->_links[$link] = $link;
 
-		if ('_get_page_link' == current_filter()) // this filter uses the ID instead of the post object
-			$post = get_post($post);
+	/*
+	 * modifies page links
+	 *
+	 * @since 1.7
+	 *
+	 * @param string $link post link
+	 * @param int $post_id post ID
+	 * @return string modified post link
+	 */
+	public function _get_page_link($link, $post_id) {
+		$post = get_post($post_id);
 
 		// /!\ when post_status is not "publish", WP does not use pretty permalinks
-		return $this->_links[$link] = $post->post_status != 'publish' ? $link : $this->links_model->add_language_to_link($link, $this->model->get_post_language($post->ID));
+		return $post->post_status != 'publish' ? $link : $this->links_model->add_language_to_link($link, $this->model->get_post_language($post->ID));
+	}
+
+	/*
+	 * modifies attachment links
+	 *
+	 * @since 1.6.2
+	 *
+	 * @param string $link attachment link
+	 * @param int $post_id attachment link
+	 * @return string modified attachment link
+	 */
+	public function attachment_link($link, $post_id) {
+		return $this->links_model->add_language_to_link($link, $this->model->get_post_language($post_id));
+	}
+
+	/*
+	 * modifies custom posts links
+	 *
+	 * @since 1.6
+	 *
+	 * @param string $link post link
+	 * @param object $post post object
+	 * @return string modified post link
+	 */
+	public function post_type_link($link, $post) {
+		// /!\ when post_status is not "publish", WP does not use pretty permalinks
+		if ('publish' == $post->post_status && $this->model->is_translated_post_type($post->post_type)) {
+			$lang = $this->model->get_post_language($post->ID);
+			$link = $this->options['force_lang'] ? $this->links_model->add_language_to_link($link, $lang) : $link;
+			$link = apply_filters('pll_post_type_link', $link, $lang, $post);
+		}
+
+		return $link;
 	}
 
 	/*
@@ -79,11 +126,25 @@ class PLL_Links {
 	 * @return string modified term link
 	 */
 	public function term_link($link, $term, $tax) {
-		if (isset($this->_links[$link]))
-			return $this->_links[$link];
+		if ($this->model->is_translated_taxonomy($tax)) {
+			$lang = $this->model->get_term_language($term->term_id);
+			$link = $this->options['force_lang'] ? $this->links_model->add_language_to_link($link, $lang) : $link;
+			$link = apply_filters('pll_term_link', $link, $lang, $term);
+		}
 
-		return $this->_links[$link] = $this->model->is_translated_taxonomy($tax) ?
-			$this->links_model->add_language_to_link($link, $this->model->get_term_language($term->term_id)) : $link;
+		return $link;
+ 	}
+
+	/*
+	 * FIXME: keeps the preview post link on default domain when using multiple domains
+	 *
+	 * @since 1.6.1
+	 *
+	 * @param string $url
+	 * @return string modified url
+	 */
+	public function preview_post_link($url) {
+		return $this->links_model->remove_language_from_link($url);
 	}
 
 	/*

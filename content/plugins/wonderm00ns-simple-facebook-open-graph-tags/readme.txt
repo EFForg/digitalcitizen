@@ -1,12 +1,11 @@
-=== Facebook Open Graph Meta Tags for WordPress ===
+=== Facebook Open Graph, Google+ and Twitter Card Tags ===
 Contributors: webdados, wonderm00n
 Donate link: http://blog.wonderm00n.com/2011/10/14/wordpress-plugin-simple-facebook-open-graph-tags/
-Tags: facebook, open graph, open graph protocol, seo, share, social, meta, schema, google+, g+, google, google plus, image, like, meta, search engine optimization
+Tags: facebook, open graph, open graph protocol, seo, share, social, meta, twitter card, twitter, schema, google+, g+, google, google plus, image, like, meta, search engine optimization
 Requires at least: 3.5
-Tested up to: 3.9
-Stable tag: 1.1.2
-
-This plugin inserts Facebook Open Graph, Google+/Schema.org and other Meta Tags into your WordPress Website for more efficient sharing results.
+Tested up to: 4.0.1
+Stable tag: 1.5.2
+Inserts Facebook Open Graph, Google+/Schema.org, Twitter and other Meta Tags into your WordPress Website for more efficient sharing results.
 
 == Description ==
 
@@ -14,11 +13,13 @@ This plugin inserts Facebook Open Graph Tags into your WordPress Blog/Website fo
 
 It also allows you to add the Meta Description tag and Schema.org Name, Description and Image tags for more effective and efficient Google+ sharing results.
 
+It also allows you to add the Twitter Card tags for more effective and efficient Twitter sharing results.
+
 You can also choose to insert the "enclosure" and "media:content" tags to the RSS feeds, so that apps like RSS Graffiti and twitterfeed post the image to Facebook correctly.
 
 It allows the user to choose which tags are, or not, included and also the default image if the post/page doesn't have one.
 
-= The Facebook Open Graph Tags that this plugin inserts are: =
+= The (Facebook) Open Graph Tags that this plugin inserts are: =
 
 * **fb:app_id**: From settings on the options screen.
 * **fb:admins**: From settings on the options screen.
@@ -27,17 +28,35 @@ It allows the user to choose which tags are, or not, included and also the defau
 * **og:title**: From post/page/archive/tag/... title.
 * **og:url**: From the post/page permalink.
 * **og:type**: "website" or "blog" for the homepage and "article" for all the others.
+* **article:published_time**: Article published time (for posts only)
+* **article:modified_time** and **og:updated_time**: Article modified time (for posts only)
+* **article:publisher**: From settings on the options screen.
+* **article:section**: From post categories.
+* **article:author**: From the user (post author) Faceboook Profile URL.
 * **og:description**: From post/page excerpt if it exist, or from post/page content. From category/tag description on it's pages, if it exist. From tagline, or custom text, on all the others.
 * **og:image**: From a specific custom field of the post/page, or if not set from the post/page featured/thumbnail image, or if it doesn't exist from the first image in the post content, or if it doesn't exist from the first image on the post media gallery, or if it doesn't exist from the default image defined on the options menu. The same image chosen here will be used and enclosure/media:content on the RSS feed.
 
-= The Schema.org Tags that this plugin inserts are: =
+= The (Google+) Schema.org Tags that this plugin inserts are: =
 
 * **name**: Same as "og:title".
+* **author**: From the user (post author) Google+ profile URL.
 * **description**: Same as "og:description".
 * **image**: Same as "og:image".
 
+= The Twitter Card Tags that this plugin inserts are: =
+
+* **twitter:title**: Same as "og:title".
+* **twitter:url**: Sames as "ug:url".
+* **twitter:site**: The website twitter account.
+* **twitter:creator**: From the user (post author) Twitter account.
+* **twitter:description**: Same as "og:description".
+* **twitter:image:src**: Same as "og:image".
+* **twitter:card:src**: With value "summary_large_image".
+
 = Other Tags: =
 
+* **meta author**: From the user (post author) Display Name.
+* **link rel author**: From the user (post author) Google+ Profile URL.
 * **meta description**: Same as "og:description".
 * **enclosure**: On RSS feeds, same as "og:image".
 * **media:content**: On RSS feeds, same as "og:image".
@@ -52,10 +71,65 @@ It allows the user to choose which tags are, or not, included and also the defau
 == Installation ==
 
 1. Upload the `wonderm00n-open-graph` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+2. Activate the plugin through the `Plugins` menu in WordPress
 3. Got to `Options`, `Facebook Open Graph Tags` to set it up
 
 == Changelog ==
+
+= 1.5.2 =
+* Fix: Fatal error integrating with WPSEO's last version
+* Fix: Checking for post_type when saving the meta box field and updating/purging Facebook Open Graph Tags cache to avoid doing it when unnecessary 
+
+= 1.5.1 =
+* Fix: error checking and reporting when updating/purging Facebook Open Graph Tags cache to avoid fatal errors on failure
+* Fix: change Facebook cache update call from https to http to avoid errors on some server configurations
+* Updated FacebookLocales.xml
+
+= 1.5 =
+* Each time a post/page is saved we try to update/purge Facebook Open Graph Tags cache so you can share it right away from the post edit screen
+* Forced Excertps support on Pages so that it can be used as the post description
+* Added HTTP REFERER and USER AGENT to the cURL calls when trying to get image size by url
+* Fix: Some validations when trying to get image size by url
+* Fix: A lot of php notices and warnings were supressed
+
+= 1.4.2 =
+* Fix: (Another) debug message removed
+
+= 1.4.1 =
+* Fix: Debug message removed
+
+= 1.4 =
+* Added article published and modified date/time tags
+* Added "article:section" tag
+* Several fixes regarding getting the content or media gallery image size
+* Several fixes on the way the defaults and settings are loaded to avoid php warnings and notices
+* Some changes on the default values for first time users
+
+= 1.3.4 =
+* Fix getting image size when a remote image is used on the post content (thanks contemplate and Steve)
+* Change the way the default settings are load so that even settings that are not user defined will be available (like the new image minimum size which is, for now, "hardcoded")
+
+= 1.3.3 =
+* Fix where servers with allow_url_fopen disabled would not be able to get_image_size for post content or media gallery images (thanks joneiseman)
+
+= 1.3.2 =
+* Added Google+ Publisher tag
+* Fix on some Portuguese translation strings
+
+= 1.3.1 =
+* Ignore images bellow 200x200 when searching images from the post content and media gallery, because Facebook also ignores them
+
+= 1.3 =
+* Changed name to "Facebook Open Graph, Google+ and Twitter Card Tags"
+* Added Twitter Card tags
+* Added new tag "article:publisher" in order to link the article with a Facebook page
+* Added new tags "article:author", meta author and Google+ link rel in order to link the article with his author (Facebook profile, Name and Google+ profile)
+* Title, URL, Description and Image Meta/Google+/Twitter tags can now be set even if Open Graph ones aren't
+* Several HTML/CSS tweaks on the settings page
+* Fix: esc_attr on all tags
+
+= 1.2 =
+* Added filters for title, description and images, so another plugin or theme can override these values. The filters are fb_og_title, fb_og_desc and fb_og_image
 
 = 1.1.2 =
 * Fix: Specific post image was not working properly

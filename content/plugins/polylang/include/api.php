@@ -114,8 +114,8 @@ function pll_home_url($lang = '') {
  */
 function pll_register_string($name, $string, $context = 'polylang', $multiline = false) {
 	global $polylang;
-	if ($polylang instanceof PLL_Admin && !empty($polylang->settings_page))
-		$polylang->settings_page->register_string($name, $string, $context, $multiline);
+	if ($polylang instanceof PLL_Admin)
+		PLL_Admin_Strings::register_string($name, $string, $context, $multiline);
 }
 
 /*
@@ -127,7 +127,20 @@ function pll_register_string($name, $string, $context = 'polylang', $multiline =
  * @return string the string translation in the current language
  */
 function pll__($string) {
-	return __($string, 'pll_string');
+	static $cache; // cache object to avoid translating the same string several times
+
+	if (!did_action('pll_language_defined')) // no need for translation
+		return $string;
+		
+	if (empty($cache))
+		$cache = new PLL_Cache();
+
+	if (false === $str = $cache->get($string)) {
+		$str = __($string, 'pll_string');
+		$cache->set($string, $str);
+	}
+
+	return $str;
 }
 
 /*
@@ -138,7 +151,7 @@ function pll__($string) {
  * @param string $string the string to translate
  */
 function pll_e($string) {
-	_e($string, 'pll_string');
+	echo pll__($string, 'pll_string');
 }
 
 /*
@@ -153,15 +166,19 @@ function pll_e($string) {
 function pll_translate_string($string, $lang) {
 	if (pll_current_language() == $lang)
 		return pll__($string);
-		
-	static $mo = array();
-	
-	if (empty($mo[$lang])) {
-		$mo[$lang] = new PLL_MO();
-		$mo[$lang]->import_from_db($GLOBALS['polylang']->model->get_language($lang));	
+
+	static $cache; // cache object to avoid loading the same translations object several times
+
+	if (empty($cache))
+		$cache = new PLL_Cache();
+
+	if (false === $mo = $cache->get($lang)) {
+		$mo = new PLL_MO();
+		$mo->import_from_db($GLOBALS['polylang']->model->get_language($lang));
+		$cache->set($lang, $mo);
 	}
-	
-	return $mo[$lang]->translate($string);
+
+	return $mo->translate($string);
 }
 
 /*
