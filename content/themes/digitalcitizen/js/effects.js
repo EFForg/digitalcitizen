@@ -12,7 +12,7 @@ jQuery(function($){
     $(window).scroll(function(e) {
         //Cache current scroll location
         currentScroll = $(this).scrollTop();
-        
+
         //Are we going up or down?
         direction = currentScroll > previousScroll ? 'down' : 'up';
 
@@ -20,7 +20,7 @@ jQuery(function($){
         if(direction != previousDirection) {
             nav_toggle_listener(direction, currentScroll);
         }
-       
+
         previousScroll = currentScroll;
         previousDirection = direction;
     });
@@ -54,14 +54,19 @@ jQuery(function($){
     $(window).load(function(){
         if( $(window).width() >= 1000 & $(".toc_widget").length ) {
             var toc_offset = $(".entry-aside-inner").offset();
-            $(".entry-aside-inner, #social-bar").affix({
+            var social_offset = $("#social-bar").offset();
+            $(".entry-aside-inner").affix({
                 offset: {
                     top:toc_offset.top,
                     bottom:0
                 }
             });
+            $("#social-bar").affix({
+              offset: {
+                top:social_offset.top,
+                bottom:0
+              }
+            });
         }
     });
 });
-
-
