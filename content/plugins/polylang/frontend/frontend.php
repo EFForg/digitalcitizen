@@ -20,7 +20,7 @@
  */
 class PLL_Frontend extends PLL_Base {
 	public $curlang;
-	public $links, $choose_lang, $filters, $filters_search, $auto_translate;
+	public $links, $choose_lang, $filters, $filters_search, $nav_menu, $auto_translate;
 
 	/*
 	 * constructor
@@ -32,10 +32,10 @@ class PLL_Frontend extends PLL_Base {
 	public function __construct(&$links_model) {
 		parent::__construct($links_model);
 
-		add_action('pll_language_defined', array(&$this, 'pll_language_defined'), 1, 2);
+		add_action('pll_language_defined', array(&$this, 'pll_language_defined'), 1);
 
 		// filters posts by language
-		add_filter('parse_query', array(&$this, 'parse_query'), 6);
+		add_action('parse_query', array(&$this, 'parse_query'), 6);
 
 		// not before 'check_language_code_in_url'
 		if (!defined('PLL_AUTO_TRANSLATE') || PLL_AUTO_TRANSLATE)
@@ -43,7 +43,6 @@ class PLL_Frontend extends PLL_Base {
 	}
 
 	/*
-	 * setups url modifications based on the links mode
 	 * setups the language chooser based on options
 	 *
 	 * @since 1.2
@@ -52,7 +51,7 @@ class PLL_Frontend extends PLL_Base {
 		$this->links = new PLL_Frontend_Links($this);
 
 		$c = array('Content', 'Url', 'Url', 'Domain');
-		$class = 'PLL_Choose_Lang_' . $c[$this->options['force_lang'] * (get_option('permalink_structure') ? 1 : 0 )];
+		$class = 'PLL_Choose_Lang_' . $c[$this->options['force_lang']];
 		$this->choose_lang = new $class($this);
 	}
 
@@ -60,13 +59,8 @@ class PLL_Frontend extends PLL_Base {
 	 * setups filters and nav menus once the language has been defined
 	 *
 	 * @since 1.2
-	 *
-	 * @param string $slug current language slug
-	 * @param object $curlang current language object
 	 */
-	public function pll_language_defined($slug, $curlang) {
-		$this->curlang = $curlang;
-
+	public function pll_language_defined() {
 		// filters
 		$this->filters = new PLL_Frontend_Filters($this);
 		$this->filters_search = new PLL_Frontend_Filters_Search($this);
@@ -85,13 +79,8 @@ class PLL_Frontend extends PLL_Base {
 	public function parse_query($query) {
 		$qv = $query->query_vars;
 
-		// to avoid conflict beetwen taxonomies
-		// FIXME generalize post format like taxonomies (untranslated but filtered)
-		$has_tax = false;
-		if (isset($query->tax_query->queries))
-			foreach ($query->tax_query->queries as $tax)
-				if ('post_format' != $tax['taxonomy'])
-					$has_tax = true;
+		// to avoid returning an empty result if the query includes a translated taxonomy in a different language
+		$has_tax = isset($query->tax_query->queries) && $this->have_translated_taxonomy($query->tax_query->queries);
 
 		// allow filtering recent posts and secondary queries by the current language
 		// take care not to break queries for non visible post types such as nav_menu_items
@@ -103,20 +92,37 @@ class PLL_Frontend extends PLL_Base {
 
 		// modifies query vars when the language is queried
 		if (!empty($qv['lang'])) {
+			if (isset($query->tax_query->queried_terms)) {
+				$tax_query_in_and = wp_list_filter( $query->tax_query->queried_terms, array( 'operator' => 'NOT IN' ), 'NOT' );
+				$queried_taxonomies = array_keys( $tax_query_in_and );
+
+				// do we query another custom taxonomy?
+				$taxonomies = array_diff($queried_taxonomies , array('language', 'category', 'post_tag'));
+			}
+
 			// remove pages query when the language is set unless we do a search
-			if (empty($qv['post_type']) && !$query->is_search)
+			// take care not to break the single page and taxonomies queries!
+			if (empty($qv['post_type']) && !$query->is_search && !$query->is_page && empty($taxonomies))
 				$query->set('post_type', 'post');
 
 			// unset the is_archive flag for language pages to prevent loading the archive template
 			// keep archive flag for comment feed otherwise the language filter does not work
-			if (!$query->is_comment_feed && !$query->is_post_type_archive && !$query->is_date && !$query->is_author && !$query->is_category && !$query->is_tag && !$query->is_tax('post_format'))
+			if (empty($taxonomies) && !$query->is_comment_feed && !$query->is_post_type_archive && !$query->is_date && !$query->is_author && !$query->is_category && !$query->is_tag)
 				$query->is_archive = false;
 
-			// unset the is_tax flag for authors pages and post types archives
-			// FIXME Should I do this for other cases?
-			if ($query->is_author || $query->is_post_type_archive || $query->is_date || $query->is_search) {
+			// unset the is_tax flag except if another custom tax is queried
+			// reset the queried object
+			if (empty($taxonomies) && ($query->is_author || $query->is_post_type_archive || $query->is_date || $query->is_search)) {
 				$query->is_tax = false;
 				unset($query->queried_object);
+				get_queried_object();
+			} 
+					
+			// move the language tax_query at the end to avoid it being the queried object
+			if (!empty($taxonomies) && 'language' == reset( $queried_taxonomies )) {
+				$query->tax_query->queried_terms['language'] = array_shift($query->tax_query->queried_terms);
+				unset($query->queried_object);
+				get_queried_object();
 			}
 		}
 	}
@@ -143,24 +149,34 @@ class PLL_Frontend extends PLL_Base {
 			if (empty($restore_curlang))
 				$restore_curlang = $this->curlang->slug; // to always remember the current language through blogs
 
-			// FIXME need some simplification as there are too many variables storing the same value
 			$lang = $this->model->get_language($restore_curlang);
 			$this->curlang = $lang ? $lang : $this->model->get_language($this->options['default_lang']);
-			$this->choose_lang->curlang = $this->links->curlang = $this->curlang;
-
-			$this->links->home = $this->links_model->home; // set in parent class
-
-			if ('page' == get_option('show_on_front')) {
-				$this->choose_lang->page_on_front = $this->links->page_on_front = get_option('page_on_front');
-				$this->choose_lang->page_for_posts = $this->links->page_for_posts = get_option('page_for_posts');
-			}
-			else {
-				$this->choose_lang->page_on_front = $this->links->page_on_front = 0;
-				$this->choose_lang->page_for_posts = $this->links->page_for_posts = 0;
-			}
-
-			$this->filters_search->using_permalinks = $this->links->using_permalinks = (bool) get_option('permalink_structure');
+			$this->links->init_page_on_front_cache();
+			$this->load_strings_translations();
 		}
+	}
+
+	/*
+	 * check if translated taxonomy is queried
+	 * compatible with nested queries introduced in WP 4.1
+	 * @see https://wordpress.org/support/topic/tax_query-bug
+	 *
+	 * @since 1.7
+	 *
+	 * @param array $tax_queries
+	 * @return bool
+	 */
+	protected function have_translated_taxonomy($tax_queries) {
+		foreach ($tax_queries as $tax_query) {
+			if (isset($tax_query['taxonomy']) && $this->model->is_translated_taxonomy($tax_query['taxonomy']) && ! ( isset($tax_query['operator']) && 'NOT IN' === $tax_query['operator'] ) )
+				return true;
+
+			// nested queries
+			elseif (is_array($tax_query) && $this->have_translated_taxonomy($tax_query))
+				return true;
+		}
+
+		return false;
 	}
 }
 

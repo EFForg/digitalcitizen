@@ -5,21 +5,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
+	<?php
 		$image_id = get_post_thumbnail_id();
 		$image_url_large = wp_get_attachment_image_src(
 			$image_id,
-			'widescreen-fullscreen', 
+			'widescreen-fullscreen',
 			true
 		);
 		$image_url_small_portrait = wp_get_attachment_image_src(
 			$image_id,
-			'mobile-fullscreen-portrait', 
+			'mobile-fullscreen-portrait',
 			true
 		);
 		$image_url_small_landscape = wp_get_attachment_image_src(
 			$image_id,
-			'mobile-fullscreen-landscape', 
+			'mobile-fullscreen-landscape',
 			true
 		);
 	?>
@@ -46,12 +46,6 @@
 			</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<?php if($post->post_excerpt): ?>
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div>
-	<?php endif; ?>
-
 	<aside class="entry-aside">
 		<div class="entry-aside-inner">
 			<?php get_sidebar(); ?>
@@ -59,6 +53,13 @@
 	</aside><!-- .entry-aside -->
 
 	<div class="entry-content">
+		<div class="entry-summary">
+			<?php if($post->post_excerpt): ?>
+				<?php the_excerpt(); ?>
+			<?php else: ?>
+				<p><a href="http://digcit.org">Digital Citizen</a> is a biweekly review of news, policy, and research on human rights in the Arab World.</p>
+			<?php endif; ?>
+		</div>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -70,8 +71,10 @@
 
 	<?php get_template_part('socialbar'); ?>
 
-	<footer class="entry-footer">
-		<?php digitalcitizen_post_nav(); ?>
-	</footer>
-
 </article><!-- #post-## -->
+
+<footer class="entry-footer">
+	<div class="entry-footer--inner">
+		<?php digitalcitizen_post_nav(); ?>
+	</div>
+</footer>

@@ -14,7 +14,10 @@
 5.1 Links
 --------------------------------------------------------------*/
 a {
-    color: @blue;
+    color:@black;
+    p & {
+      border-bottom:2px solid @blue;
+    }
 }
 a:visited {
     color: lighten(@blue, 15%);
@@ -22,7 +25,8 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-    color: darken(@blue, 15%);
+    color:@black;
+    background:@blue;
 }
 
 /*--------------------------------------------------------------
@@ -57,7 +61,7 @@ a:active {
 
 #language_menu {
     position:absolute;
-    right:0;
+    right:20px;;
     top:0;
     z-index:1;
     text-align:right;
@@ -68,7 +72,7 @@ a:active {
         display:none;
     }
     body.rtl & {
-        left:0;
+        left:20px;
         right:auto;
         text-align:left;
     }
@@ -294,8 +298,8 @@ a:active {
             display:inline-block;
         }
         @media screen and (min-width:1140px) {
-            .font_size(16);
-            .line_height(16);
+            .font_size(12);
+            .line_height(12);
         }
         .menu-item {
             padding:0;
@@ -307,11 +311,26 @@ a:active {
                     color:@black;
                 }
                 &:hover {
-                    color:@blue;
+                    color:white;
                 }
             }
-            &.current-menu-item a {
-                border-bottom:2px solid @blue;
+            &.current-menu-item a:hover {
+              color:@black;
+              background:none;
+            }
+            &.current-menu-item, &.current-menu-item a {
+              position:relative;
+            }
+            &.current-menu-item:before {
+                content:' ';
+                display:block;
+                position:absolute;
+                height:16px;
+                background:@blue;
+                left:0;
+                bottom:10px;
+                width:100%;
+                z-index:0;
             }
             @media screen and (min-width:1024px) {
                 display:inline-block;
@@ -453,9 +472,14 @@ a:active {
     display: inline;
 }
 .page-content,
-.entry-content,
-.entry-summary {
+.entry-content {
     margin: 1.5em 0 0;
+}
+.entry-summary {
+  margin: 0;
+  p {
+    margin-bottom:1em;
+  }
 }
 .page-links {
     clear: both;
@@ -471,6 +495,7 @@ a:active {
     margin:0;
     .line_height(@factor_p);
     .headline-font();
+    padding:0 20px;
     body.rtl & {
         right:0;
         left:auto;
@@ -519,22 +544,18 @@ a:active {
     }
 
     .entry-summary {
-        .font_size(3);
-        .line_height(3);
-        font-style:italic;
+        .font_size(12);
+        .line_height(12);
         text-align:justify;
+        font-family:'DINWeb-COndBold';
+        color:@blue;
+        a {
+          color:@black;
+          border:none;
+        }
     }
-
-    &:not(.rtl) .entry-summary p:first-letter {
-        font-family:"DINWeb-CondBold";
-        float:left;
-        .font_size(70);
-        line-height:.8em;
-        margin-right:.125em;
-    }
-
     .entry-content {
-        padding-top:2em;
+        padding-top:32px;
         position:relative;
         @media screen and (min-width:600px) {
             .grid(10);
@@ -570,13 +591,13 @@ a:active {
     }
     .entry-aside-inner {
         @media screen and (min-width:1000px) {
-            margin-top:-150px;
-            padding-top:150px;
+            margin-top:-50px;
+            padding-top:200px;
         }
         &.affix {
             @media screen and (min-width:1000px) {
                 position: fixed!important;
-                top:150px;
+                top:50px;
             }
         }
     }
@@ -591,7 +612,13 @@ a:active {
     .entry-footer {
         float:left;
         width:100%;
-        max-width:1140px;
+        position:relative;
+        background:@blue;
+    }
+    .entry-footer--inner {
+      margin:0 auto;
+      .clearfix();
+      max-width:1140px;
     }
 
     #comments {
@@ -710,6 +737,17 @@ body:not(.home).page, body.error404 {
     text-align: center;
     padding-top:@body_line_height;
 
+    .logo-salad {
+        margin-bottom:1em;
+    }
+
+    .logo-salad--item {
+      .grid(3.5);
+      text-align:center;
+      float:none;
+      display:inline-block;
+    }
+
     .eff, .gv, .smex, .s-7iber, .access {
         background: url(../img/logos/sprites.png) no-repeat;
         display:inline-block;
@@ -718,63 +756,58 @@ body:not(.home).page, body.error404 {
         vertical-align:middle;
         overflow:hidden;
     }
-
-    .eff{
-        background-position: -470px -99px ;
-        width: 50px;
-        height: 34px;
-    }
-
     .s-7iber{
-        background-position: -389px -153px ;
-        width: 95px;
-        height: 35px;
+      background-position: 0 -46px ;
+      width: 95px;
+      height: 35px;
     }
-
     .access{
-        background-position: -259px -161px ;
-        width: 113px;
-        height: 26px;
+      background-position: -452px 0;
+      width: 113px;
+      height: 26px;
     }
-
+    .eff{
+      background-position: -226px 0;
+      width: 221px;
+      height: 27px;
+    }
     .gv{
-        background-position: -120px -153px ;
-        width: 115px;
-        height: 38px;
+      background-position: -108px 0;
+      width: 115px;
+      height: 38px;
     }
-
     .smex{
-        background-position: -6px -152px ;
-        width: 103px;
-        height: 40px;
+      background-position: 0 0;
+      width: 103px;
+      height: 40px;
     }
 
     @media screen and (min-width:1000px) {
-        .eff{
-            background-position: 0 -1px ;
-            width: 96px;
-            height: 68px;
-        }
-        .gv{
-            background-position: -96px 0;
-            width: 230px;
-            height: 75px;
-        }
-        .smex{
-            background-position: -333px 0;
-            width: 206px;
-            height: 80px;
-        }
-        .s-7iber{
-            background-position: 0 -77px ;
-            width: 190px;
-            height: 69px;
-        }
-        .access{
-            background-position: -214px -93px ;
-            width: 225px;
-            height: 52px;
-        }
+      .s-7iber{
+        background-position: -338px -40px ;
+        width: 190px;
+        height: 69px;
+      }
+      .access{
+        background-position: 0 -118px ;
+        width: 225px;
+        height: 52px;
+      }
+      .eff{
+        background-position: 0 -202px ;
+        width: 369px;
+        height: 45px;
+      }
+      .gv{
+        background-position: -101px -42px ;
+        width: 230px;
+        height: 75px;
+      }
+      .smex{
+        background-position: -229px -118px ;
+        width: 206px;
+        height: 80px;
+      }
     }
     .site-info {
         float:left;
@@ -783,7 +816,7 @@ body:not(.home).page, body.error404 {
         text-transform:uppercase;
         text-align:center;
         .font_size(-2);
-        margin-top:1em;
+        margin-top:1.2em;
         .icon {
             font-size:20px;
             width:20px;
@@ -803,8 +836,12 @@ body:not(.home).page, body.error404 {
         a, & {
             color:#4e4e4e;
         }
+        a {
+          border:none;
+        }
         a:hover {
             color:@blue;
+            background:none;
         }
     }
 }
@@ -826,7 +863,7 @@ body:not(.home).page, body.error404 {
         }
         margin:0;
         margin-top:-150px;
-        padding-top:150px;
+        padding-top:190px;
         .grid-px(1, @total_width:1000px);
     }
     .rtl &{
@@ -847,12 +884,12 @@ body:not(.home).page, body.error404 {
         &.post-edit-link, &.permalink {
             display:block;
             color:@black;
-            .font_size(4);
             &:hover {
-                color:@blue;
+              background:none;
+              color:@blue;
             }
             &:before {
-                margin-right:.25em;
+              margin-right:.6em;
             }
         }
         &.share {
@@ -861,12 +898,11 @@ body:not(.home).page, body.error404 {
             height:3rem;
             display:inline-block;
             overflow:hidden;
-        }
-        &.twitter-share {
-            color:#55acee;
-        }
-        &.facebook-share {
-            color:#3b5998;
+            color:@blue;
+            &:hover {
+              color:@black;
+              background:white;
+            }
         }
         @media screen and (min-width:1000px) {
             font-size:3rem!important;
@@ -874,6 +910,22 @@ body:not(.home).page, body.error404 {
             height:3rem;
             display:inline-block;
             overflow:hidden;
+            &.post-edit-link, &.permalink {
+              color:white;
+              background:@blue;
+              border-radius:50px;
+              &:before {
+                margin-right:.25em;
+                margin-left:.25em;
+                position:relative;
+                top:.2em;
+                font-size:.7em;
+              }
+              &:hover {
+                color:white;
+                background:@black;
+              }
+            }
         }
         .rtl & {
             direction:ltr;
@@ -884,8 +936,10 @@ body:not(.home).page, body.error404 {
 .post-navigation {
     font-family: "DINWeb-CondBold";
     text-transform: uppercase;
-    border-top:2px solid @blue;
-    padding-top:1em;
+    padding-top:5px;
+    a {
+      color:white;
+    }
     @media screen and (min-width:1000px) {
         .grid(7);
         .push(1);

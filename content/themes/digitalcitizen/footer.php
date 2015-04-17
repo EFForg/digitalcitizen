@@ -12,11 +12,11 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <div id="logo-salad">
-            <a class="s-7iber" href="http://7iber.com">7iber</a>
-            <a class="eff" href="http://EFF.org">EFF</a>
-            <a class="access" href="http://accessnow.org">Access Now</a>
-            <a class="gv" href="http://advocacy.globalvoicesonline.org">Global Voices Advocacy</a>
-            <a class="smex" href="http://smex.org">Social Media Exchange</a>
+            <div class="logo-salad--item"><a class="s-7iber" href="http://7iber.com">7iber</a></div>
+            <div class="logo-salad--item"><a class="eff" href="http://EFF.org">EFF</a></div>
+            <div class="logo-salad--item"><a class="access" href="http://accessnow.org">Access Now</a></div>
+            <div class="logo-salad--item"><a class="gv" href="http://advocacy.globalvoicesonline.org">Global Voices Advocacy</a></div>
+            <div class="logo-salad--item"><a class="smex" href="http://smex.org">Social Media Exchange</a></div>
         </div>
 		<div class="site-info">
 			<p><?php _e('Some rights reserved','digitalcitizen'); ?> <a href=""><span class="icon icon-cc">CC</span> <span class="icon icon-by">BY</span></a></p>

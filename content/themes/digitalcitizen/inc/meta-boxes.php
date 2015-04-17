@@ -7,24 +7,24 @@ function digitalcitizen_meta_boxes_setup() {
 }
 
 function digitalcitizen_add_post_meta_boxes() {
-	add_meta_box( 
-		'newsletter-html', 
-		'Newsletter HTML', 
-		'digitalcitizen_newsletter_html_metabox', 
-		'post', 
-		$context = 'advanced', 
-		$priority = 'default', 
-		$callback_args = null 
+	add_meta_box(
+		'newsletter-html',
+		'Newsletter HTML',
+		'digitalcitizen_newsletter_html_metabox',
+		'post',
+		$context = 'advanced',
+		$priority = 'default',
+		$callback_args = null
 	);
 
-	add_meta_box( 
-		'send-newsletter', 
-		'Send Newsletter', 
-		'digitalcitizen_send_newsletter_metabox', 
-		'post', 
-		$context = 'side', 
-		$priority = 'default', 
-		$callback_args = null 
+	add_meta_box(
+		'send-newsletter',
+		'Send Newsletter',
+		'digitalcitizen_send_newsletter_metabox',
+		'post',
+		$context = 'side',
+		$priority = 'default',
+		$callback_args = null
 	);
 }
 
@@ -39,7 +39,7 @@ function digitalcitizen_newsletter_html_metabox() {
 	$converter = new Markdownify\Converter;
 	$post_ids = $polylang->model->get_translations('post', $post->ID);
 	$markdown_output = "";
-	
+
 	$image_id = get_post_thumbnail_id( $post->ID );
 	$image_data = get_post($image_id);
 
@@ -57,7 +57,7 @@ function digitalcitizen_newsletter_html_metabox() {
 
 		$markdown_output .= $converter->parseString($text);
 	}
-	 
+
 	$css = file_get_contents(TEMPLATEPATH . '/css/email.css');
 	$emogrifier = new \Pelago\Emogrifier($html, $css);
 	$content = $emogrifier->emogrify();
@@ -81,6 +81,6 @@ function digitalcitizen_send_newsletter_metabox() {
   	<button disabled class="button button-primary" name="send_email" type="submit" value="go">Send Newsletter</button>
   </p>
 <?php
-}
+}*/
 
 ?>
