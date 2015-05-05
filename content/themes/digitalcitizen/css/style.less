@@ -628,7 +628,16 @@ a:active {
     .entry-footer--inner {
       margin:0 auto;
       .clearfix();
-      max-width:1140px;
+      @media screen and (min-width:600px) {
+        .grid(10);
+        .push(1);
+        float:none;
+        margin:0 auto;
+      }
+      @media screen and (min-width:1000px) {
+        width:100%;
+        max-width:1140px;
+      }
     }
 
     #comments {
