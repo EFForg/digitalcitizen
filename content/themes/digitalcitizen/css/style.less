@@ -645,6 +645,8 @@ a:active {
     }
 }
 
+
+
 .blog, body:not(.home).page, body.error404{
     #main {
         margin-top:102px;
@@ -959,15 +961,40 @@ body:not(.home).page, body.error404 {
 }
 
 .post-navigation {
+  @media screen and (min-width:1000px) {
+    .grid(7);
+    .push(1);
+  }
+  .rtl & {
+    @media screen and (min-width:1000px) {
+      margin:0;
+      float:right;
+      .push-right(1);
+    }
+  }
+}
+
+
+.paging-navigation {
+  float:left;
+  width:100%;
+  position:relative;
+  background:@blue;
+}
+
+.paging-navigation .nav-links {
+  @media screen and (min-width:600px) {
+    max-width:800px;
+    margin:0 auto;
+  }
+}
+
+.post-navigation, .paging-navigation .nav-links {
     font-family: "DINWeb-CondBold";
     text-transform: uppercase;
     padding-top:5px;
     a {
       color:white;
-    }
-    @media screen and (min-width:1000px) {
-        .grid(7);
-        .push(1);
     }
     .font_size(8);
     .nav-previous {
@@ -981,17 +1008,13 @@ body:not(.home).page, body.error404 {
         .grid(5);
         float: right;
         text-align: right;
+        margin-right:0;
         a:before {
             float:right;
             content:"\2192";
         }
     }
     .rtl & {
-        @media screen and (min-width:1000px) {
-            margin:0;
-            float:right;
-            .push-right(1);
-        }
         .nav-previous {
             float:right;
             a:before {
