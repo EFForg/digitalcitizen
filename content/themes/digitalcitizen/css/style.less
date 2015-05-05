@@ -648,7 +648,7 @@ a:active {
         }
     }
     .entry-header {
-        margin:0 1em;
+        margin:0 0 10px 0;
     }
     &.rtl {
         .entry-title {
@@ -673,11 +673,17 @@ body:not(.home).page, body.error404 {
 .blog {
     #main article {
         border-bottom: 2px solid @blue;
+        background:whitesmoke;
+        padding-left:2px;
+        padding-right:2px;
     }
     .entry-header {
         height:200px;
         background-size:cover;
         position: relative;
+    }
+    .entry-summary {
+      margin-bottom:15px;
     }
     .entry-meta {
         bottom:@body_line_height/2;

@@ -158,11 +158,12 @@ body.rtl #language_menu--label:before{margin-left:10px}
 .single .entry-footer--inner:after,.home .entry-footer--inner:after{clear:both}
 .single #comments,.home #comments{display:none}
 .blog #main,body:not(.home).page #main,body.error404 #main{margin-top:102px}@media screen and (min-width:768px){.blog #main,body:not(.home).page #main,body.error404 #main{margin-top:162px}}.blog #main>article,body:not(.home).page #main>article,body.error404 #main>article,.blog #main>section,body:not(.home).page #main>section,body.error404 #main>section{max-width:800px;margin:0 auto 25.6px auto}
-.blog .entry-header,body:not(.home).page .entry-header,body.error404 .entry-header{margin:0 1em}
+.blog .entry-header,body:not(.home).page .entry-header,body.error404 .entry-header{margin:0 0 10px 0}
 .blog.rtl .entry-title,body:not(.home).page.rtl .entry-title,body.error404.rtl .entry-title{padding-right:100%;margin-right:-100%;padding-left:1em}
 body:not(.home).page .entry-title,body.error404 .entry-title,body:not(.home).page .page-title,body.error404 .page-title{background:#eee;display:inline-block;font-size:32px;padding-left:100%;margin-left:-100%;padding-right:1em}
-.blog #main article{border-bottom:2px solid #00adee}
+.blog #main article{border-bottom:2px solid #00adee;background:#f5f5f5;padding-left:2px;padding-right:2px}
 .blog .entry-header{height:200px;background-size:cover;position:relative}
+.blog .entry-summary{margin-bottom:15px}
 .blog .entry-meta{bottom:12.8px}
 .search-form{zoom:1}.search-form:before,.search-form:after{content:" ";display:table}
 .search-form:after{clear:both}
