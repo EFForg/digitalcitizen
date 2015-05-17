@@ -179,7 +179,7 @@ body:not(.home).page .entry-title,body.error404 .entry-title,body:not(.home).pag
 .toc_widget li.active{border-bottom:1px solid #00adee}
 .post-edit-link:before{font-family:'icomoon';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e608"}
 #colophon{width:100%;background:#171717;text-align:center;padding-top:25.6px}#colophon .logo-salad{margin-bottom:1em}
-#colophon .logo-salad--item{margin-right:3.8%;float:left;min-height:1px;width:26.475000000000005%;text-align:center;float:none;display:inline-block}
+#colophon .logo-salad--item{min-width:33%;text-align:center;float:none;display:inline-block}
 #colophon .eff,#colophon .gv,#colophon .smex,#colophon .s-7iber,#colophon .access{background:url(../img/logos/sprites.png) no-repeat;display:inline-block;white-space:nowrap;text-indent:100%;vertical-align:middle;overflow:hidden}
 #colophon .s-7iber{background-position:0 -46px;width:95px;height:35px}
 #colophon .access{background-position:-452px 0;width:113px;height:26px}
