@@ -887,6 +887,9 @@ body:not(.home).page, body.error404 {
         vertical-align: middle;
         .font_size(4);
     }
+    #share-links {
+      display:inline-block;
+    }
     @media screen and (min-width:600px) {
         .grid(10);
         .push(1);
@@ -915,16 +918,26 @@ body:not(.home).page, body.error404 {
     a {
         vertical-align: middle;
         margin-bottom:10px;
+        font-size:3rem!important;
+        width:3rem;
+        height:3rem;
+        display:inline-block;
+        overflow:hidden;
         &.post-edit-link, &.permalink {
-            display:block;
-            color:@black;
-            &:hover {
-              background:none;
-              color:@blue;
-            }
-            &:before {
-              margin-right:.6em;
-            }
+          color:white;
+          background:@blue;
+          border-radius:50px;
+          &:before {
+            margin-right:.25em;
+            margin-left:.25em;
+            position:relative;
+            top:.2em;
+            font-size:.7em;
+          }
+          &:hover {
+            color:white;
+            background:@black;
+          }
         }
         &.share {
             font-size:3rem;
@@ -936,29 +949,6 @@ body:not(.home).page, body.error404 {
             &:hover {
               color:@black;
               background:white;
-            }
-        }
-        @media screen and (min-width:1000px) {
-            font-size:3rem!important;
-            width:3rem;
-            height:3rem;
-            display:inline-block;
-            overflow:hidden;
-            &.post-edit-link, &.permalink {
-              color:white;
-              background:@blue;
-              border-radius:50px;
-              &:before {
-                margin-right:.25em;
-                margin-left:.25em;
-                position:relative;
-                top:.2em;
-                font-size:.7em;
-              }
-              &:hover {
-                color:white;
-                background:@black;
-              }
             }
         }
         .rtl & {
