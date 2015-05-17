@@ -528,12 +528,17 @@ a:active {
     }
 }
 
+.single, .home, .page {
+  #main article {
+    padding:0 1em;
+  }
+}
+
 .single, .home {
     #main article {
-        position:static;
-        margin:100vh auto 0 auto;
-        max-width: 1140px;
-        padding:0 1em;
+      position:static;
+      margin:100vh auto 0 auto;
+      max-width: 1140px;
     }
     .entry-header {
         //box-shadow:inset 0px -2px 5px rgba(0,0,0,.2);
@@ -694,6 +699,8 @@ body:not(.home).page, body.error404 {
         position: relative;
     }
     .entry-summary {
+      margin-left:8px;
+      margin-right:8px;
       margin-bottom:15px;
     }
     .entry-meta {
@@ -1130,13 +1137,19 @@ form {
 
     label {
         font-family:"DINWeb-CondBold";
-        .grid(3);
-        text-align:right;
         text-transform:uppercase;
-        padding:.5em 0;
         font-size:1.5em;
         line-height:1.5em;
         vertical-align:middle;
+        margin-bottom:0;
+        box-sizing:border-box;
+        padding:0 .5em;
+        .grid(12);
+        @media screen and(min-width:600px){
+          .grid(3);
+          text-align:right;
+          padding:.5em 0;
+        }
     }
 
     input, textarea, select {
@@ -1144,8 +1157,11 @@ form {
         border:none;
         padding:.5em;
         font-size:1.5em;
-        .grid(9);
-        .last();
+        .grid(12);
+        @media screen and(min-width:600px){
+          .grid(9);
+          .last();
+        }
         &:focus {
             background: lighten(@blue,30%);
         }
