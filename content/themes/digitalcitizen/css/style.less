@@ -129,8 +129,6 @@ a:active {
 }
 
 #masthead {
-    //box-shadow:0px -2px 5px rgba(0,0,0,.4);
-    border-bottom:2px solid whiteSmoke;
     z-index:1;
     transition: transform .1s ease-in-out;
     -webkit-transition: opacity .05s ease-in-out, -webkit-transform .1s ease-in-out;
@@ -166,6 +164,16 @@ a:active {
     display: block;
     margin-bottom:0;
     white-space:nowrap;
+
+    a {
+      float:left;
+      width:100%;
+      height:100%;
+      &:hover {
+        background:transparent;
+      }
+    }
+
     @media screen and (min-width:768px) {
         float:left;
         display: inline-block;
@@ -518,12 +526,17 @@ a:active {
     }
 }
 
+.single, .home, .page {
+  #main article {
+    padding:0 1em;
+  }
+}
+
 .single, .home {
     #main article {
-        position:static;
-        margin:100vh auto 0 auto;
-        max-width: 1140px;
-        padding:0 1em;
+      position:static;
+      margin:100vh auto 0 auto;
+      max-width: 1140px;
     }
     .entry-header {
         //box-shadow:inset 0px -2px 5px rgba(0,0,0,.2);
@@ -618,13 +631,24 @@ a:active {
     .entry-footer--inner {
       margin:0 auto;
       .clearfix();
-      max-width:1140px;
+      @media screen and (min-width:600px) {
+        .grid(10);
+        .push(1);
+        float:none;
+        margin:0 auto;
+      }
+      @media screen and (min-width:1000px) {
+        width:100%;
+        max-width:1140px;
+      }
     }
 
     #comments {
         display: none;
     }
 }
+
+
 
 .blog, body:not(.home).page, body.error404{
     #main {
@@ -638,7 +662,7 @@ a:active {
         }
     }
     .entry-header {
-        margin:0 1em;
+        margin:0 0 10px 0;
     }
     &.rtl {
         .entry-title {
@@ -663,11 +687,19 @@ body:not(.home).page, body.error404 {
 .blog {
     #main article {
         border-bottom: 2px solid @blue;
+        background:whitesmoke;
+        padding-left:2px;
+        padding-right:2px;
     }
     .entry-header {
         height:200px;
         background-size:cover;
         position: relative;
+    }
+    .entry-summary {
+      margin-left:8px;
+      margin-right:8px;
+      margin-bottom:15px;
     }
     .entry-meta {
         bottom:@body_line_height/2;
@@ -742,7 +774,7 @@ body:not(.home).page, body.error404 {
     }
 
     .logo-salad--item {
-      .grid(3.5);
+      min-width:33%;
       text-align:center;
       float:none;
       display:inline-block;
@@ -853,6 +885,9 @@ body:not(.home).page, body.error404 {
         vertical-align: middle;
         .font_size(4);
     }
+    #share-links {
+      display:inline-block;
+    }
     @media screen and (min-width:600px) {
         .grid(10);
         .push(1);
@@ -881,16 +916,26 @@ body:not(.home).page, body.error404 {
     a {
         vertical-align: middle;
         margin-bottom:10px;
+        font-size:3rem!important;
+        width:3rem;
+        height:3rem;
+        display:inline-block;
+        overflow:hidden;
         &.post-edit-link, &.permalink {
-            display:block;
-            color:@black;
-            &:hover {
-              background:none;
-              color:@blue;
-            }
-            &:before {
-              margin-right:.6em;
-            }
+          color:white;
+          background:@blue;
+          border-radius:50px;
+          &:before {
+            margin-right:.25em;
+            margin-left:.25em;
+            position:relative;
+            top:.2em;
+            font-size:.7em;
+          }
+          &:hover {
+            color:white;
+            background:@black;
+          }
         }
         &.share {
             font-size:3rem;
@@ -904,29 +949,6 @@ body:not(.home).page, body.error404 {
               background:white;
             }
         }
-        @media screen and (min-width:1000px) {
-            font-size:3rem!important;
-            width:3rem;
-            height:3rem;
-            display:inline-block;
-            overflow:hidden;
-            &.post-edit-link, &.permalink {
-              color:white;
-              background:@blue;
-              border-radius:50px;
-              &:before {
-                margin-right:.25em;
-                margin-left:.25em;
-                position:relative;
-                top:.2em;
-                font-size:.7em;
-              }
-              &:hover {
-                color:white;
-                background:@black;
-              }
-            }
-        }
         .rtl & {
             direction:ltr;
         }
@@ -934,15 +956,40 @@ body:not(.home).page, body.error404 {
 }
 
 .post-navigation {
+  @media screen and (min-width:1000px) {
+    .grid(7);
+    .push(1);
+  }
+  .rtl & {
+    @media screen and (min-width:1000px) {
+      margin:0;
+      float:right;
+      .push-right(1);
+    }
+  }
+}
+
+
+.paging-navigation {
+  float:left;
+  width:100%;
+  position:relative;
+  background:@blue;
+}
+
+.paging-navigation .nav-links {
+  @media screen and (min-width:600px) {
+    max-width:800px;
+    margin:0 auto;
+  }
+}
+
+.post-navigation, .paging-navigation .nav-links {
     font-family: "DINWeb-CondBold";
     text-transform: uppercase;
     padding-top:5px;
     a {
       color:white;
-    }
-    @media screen and (min-width:1000px) {
-        .grid(7);
-        .push(1);
     }
     .font_size(8);
     .nav-previous {
@@ -956,17 +1003,13 @@ body:not(.home).page, body.error404 {
         .grid(5);
         float: right;
         text-align: right;
+        margin-right:0;
         a:before {
             float:right;
             content:"\2192";
         }
     }
     .rtl & {
-        @media screen and (min-width:1000px) {
-            margin:0;
-            float:right;
-            .push-right(1);
-        }
         .nav-previous {
             float:right;
             a:before {
@@ -1082,13 +1125,19 @@ form {
 
     label {
         font-family:"DINWeb-CondBold";
-        .grid(3);
-        text-align:right;
         text-transform:uppercase;
-        padding:.5em 0;
         font-size:1.5em;
         line-height:1.5em;
         vertical-align:middle;
+        margin-bottom:0;
+        box-sizing:border-box;
+        padding:0 .5em;
+        .grid(12);
+        @media screen and(min-width:600px){
+          .grid(3);
+          text-align:right;
+          padding:.5em 0;
+        }
     }
 
     input, textarea, select {
@@ -1096,8 +1145,11 @@ form {
         border:none;
         padding:.5em;
         font-size:1.5em;
-        .grid(9);
-        .last();
+        .grid(12);
+        @media screen and(min-width:600px){
+          .grid(9);
+          .last();
+        }
         &:focus {
             background: lighten(@blue,30%);
         }
