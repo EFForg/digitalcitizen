@@ -459,6 +459,9 @@ a:active {
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+h2 {
+  margin:.67em 0 .45em 0;
+}
 
 #content {
     .clearfix();
@@ -539,7 +542,6 @@ a:active {
       max-width: 1140px;
     }
     .entry-header {
-        //box-shadow:inset 0px -2px 5px rgba(0,0,0,.2);
         border-bottom:1px solid whiteSmoke;
         position:absolute;
         left:0;
@@ -595,7 +597,8 @@ a:active {
             float:right;
             position:relative;
             .toc_widget {
-                .grid-px(4, @total_width:1000px)
+                .grid-px(4, @total_width:1000px);
+                float:none;
             }
         }
     }
@@ -674,14 +677,16 @@ a:active {
 }
 
 body:not(.home).page, body.error404 {
+  @media screen and(min-width:600px){
     .entry-title, .page-title {
-        background:#EEEEEE;
         display:inline-block;
         font-size:32px;
-        padding-left:100%;
-        margin-left:-100%;
         padding-right:1em;
+        .grid(9.15);
+        .push(2.85);
+        margin-bottom:0;
     }
+  }
 }
 
 .blog {
@@ -1135,6 +1140,7 @@ form {
         .grid(12);
         @media screen and(min-width:600px){
           .grid(3);
+          margin:0 1.6% 0 1.2%;
           text-align:right;
           padding:.5em 0;
         }
@@ -1161,7 +1167,7 @@ form {
 
     input[type="submit"] {
         .grid(4);
-        .last();
+        margin-right:1%;
         float:right;
     }
 }
