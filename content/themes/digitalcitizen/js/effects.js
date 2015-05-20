@@ -53,18 +53,20 @@ jQuery(function($){
 
     $(window).load(function(){
         if( $(window).width() >= 1000 & $(".toc_widget").length ) {
-            var toc_offset = $(".entry-aside-inner").offset();
-            var social_offset = $("#social-bar").offset();
+            var toc_offset = $(".entry-aside-inner").offset().top;
+            var social_offset = $("#social-bar").offset().top;
+            var footer_offset = $(document).height() - $(".entry-footer").offset().top + $(".entry-aside-inner").height();
+            console.log(footer_offset)
             $(".entry-aside-inner").affix({
                 offset: {
-                    top:toc_offset.top,
-                    bottom:0
+                    top:toc_offset,
+                    bottom:footer_offset
                 }
             });
             $("#social-bar").affix({
               offset: {
-                top:social_offset.top,
-                bottom:0
+                top:social_offset,
+                bottom:footer_offset
               }
             });
         }

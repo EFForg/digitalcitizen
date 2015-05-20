@@ -131,6 +131,7 @@ body.rtl #language_menu--label:before{margin-left:10px}
 .widget{margin:0 0 1.5em}
 .widget select{max-width:100%}
 .widget_search .search-submit{display:none}
+h2{margin:.67em 0 .45em 0}
 #content{zoom:1;position:relative}#content:before,#content:after{content:" ";display:table}
 #content:after{clear:both}
 .hentry{margin:0 0 1.5em;position:relative;zoom:1}.hentry:before,.hentry:after{content:" ";display:table}
@@ -150,7 +151,7 @@ body.rtl #language_menu--label:before{margin-left:10px}
 .single .entry-summary,.home .entry-summary{font-size:1.75em;line-height:1.6em;text-align:justify;font-family:'DINWeb-COndBold';color:#00adee}.single .entry-summary span,.home .entry-summary span{color:#171717;border:none}
 .single .entry-content,.home .entry-content{padding-top:32px;position:relative}@media screen and (min-width:600px){.single .entry-content,.home .entry-content{float:left;min-height:1px;width:82.69999999999999%;margin-right:3.8%;margin-left:8.649999999999999%}}@media screen and (min-width:1000px){.single .entry-content,.home .entry-content{margin:0 auto 2em;margin-right:3.8%;float:left;min-height:1px;width:56.75%;float:right}}
 @media screen and (min-width:1000px){.single.rtl .entry-content,.home.rtl .entry-content{float:left;margin:0 2em 0 0}}
-@media screen and (min-width:1000px){.single .entry-aside,.home .entry-aside{margin-right:3.8%;float:left;min-height:1px;width:30.8%;margin-right:0;float:right;position:relative}.single .entry-aside .toc_widget,.home .entry-aside .toc_widget{margin-right:3.8%;float:left;min-height:1px;width:308px}}
+@media screen and (min-width:1000px){.single .entry-aside,.home .entry-aside{margin-right:3.8%;float:left;min-height:1px;width:30.8%;margin-right:0;float:right;position:relative}.single .entry-aside .toc_widget,.home .entry-aside .toc_widget{margin-right:3.8%;float:left;min-height:1px;width:308px;float:none}}
 .single.rtl .entry-aside,.home.rtl .entry-aside{float:left}
 @media screen and (min-width:1000px){.single .entry-aside-inner,.home .entry-aside-inner{margin-top:-50px;padding-top:200px}}@media screen and (min-width:1000px){.single .entry-aside-inner.affix,.home .entry-aside-inner.affix{position:fixed !important;top:50px}}
 @media screen and (min-width:1000px){.single.rtl .entry-aside-inner.affix,.home.rtl .entry-aside-inner.affix{margin-right:1.9%}}
@@ -162,7 +163,7 @@ body.rtl #language_menu--label:before{margin-left:10px}
 .blog #main,body:not(.home).page #main,body.error404 #main{margin-top:102px}@media screen and (min-width:768px){.blog #main,body:not(.home).page #main,body.error404 #main{margin-top:162px}}.blog #main>article,body:not(.home).page #main>article,body.error404 #main>article,.blog #main>section,body:not(.home).page #main>section,body.error404 #main>section{max-width:800px;margin:0 auto 25.6px auto}
 .blog .entry-header,body:not(.home).page .entry-header,body.error404 .entry-header{margin:0 0 10px 0}
 .blog.rtl .entry-title,body:not(.home).page.rtl .entry-title,body.error404.rtl .entry-title{padding-right:100%;margin-right:-100%;padding-left:1em}
-body:not(.home).page .entry-title,body.error404 .entry-title,body:not(.home).page .page-title,body.error404 .page-title{background:#eee;display:inline-block;font-size:32px;padding-left:100%;margin-left:-100%;padding-right:1em}
+@media screen and (min-width:600px){body:not(.home).page .entry-title,body.error404 .entry-title,body:not(.home).page .page-title,body.error404 .page-title{display:inline-block;font-size:32px;padding-right:1em;float:left;min-height:1px;width:75.34750000000001%;margin-right:3.8%;margin-left:24.652500000000003%;margin-bottom:0}}
 .blog #main article{border-bottom:2px solid #00adee;background:#f5f5f5;padding-left:2px;padding-right:2px}
 .blog .entry-header{height:200px;background-size:cover;position:relative}
 .blog .entry-summary{margin-left:8px;margin-right:8px;margin-bottom:15px}
@@ -226,7 +227,7 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 form *{font-family:"DINWeb-CondBold"}
 form div{margin-right:3.8%;float:left;min-height:1px;width:100%;margin-bottom:.5em}
-form label{font-family:"DINWeb-CondBold";text-transform:uppercase;font-size:1.5em;line-height:1.5em;vertical-align:middle;margin-bottom:0;box-sizing:border-box;padding:0 .5em;margin-right:3.8%;float:left;min-height:1px;width:100%}@media screen and (min-width:600px){form label{margin-right:3.8%;float:left;min-height:1px;width:22.150000000000002%;text-align:right;padding:.5em 0}}
+form label{font-family:"DINWeb-CondBold";text-transform:uppercase;font-size:1.5em;line-height:1.5em;vertical-align:middle;margin-bottom:0;box-sizing:border-box;padding:0 .5em;margin-right:3.8%;float:left;min-height:1px;width:100%}@media screen and (min-width:600px){form label{margin-right:3.8%;float:left;min-height:1px;width:22.150000000000002%;margin:0 1.6% 0 1.2%;text-align:right;padding:.5em 0}}
 form input,form textarea,form select{box-sizing:border-box;border:none;padding:.5em;font-size:1.5em;margin-right:3.8%;float:left;min-height:1px;width:100%}@media screen and (min-width:600px){form input,form textarea,form select{margin-right:3.8%;float:left;min-height:1px;width:74.05%;margin-right:0}}form input:focus,form textarea:focus,form select:focus{background:#88dfff}
 form input,form textarea{background:#eee}
-form input[type="submit"]{margin-right:3.8%;float:left;min-height:1px;width:30.8%;margin-right:0;float:right}
+form input[type="submit"]{margin-right:3.8%;float:left;min-height:1px;width:30.8%;margin-right:1%;float:right}
