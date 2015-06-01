@@ -229,5 +229,6 @@ form *{font-family:"DINWeb-CondBold"}
 form div{margin-right:3.8%;float:left;min-height:1px;width:100%;margin-bottom:.5em}
 form label{font-family:"DINWeb-CondBold";text-transform:uppercase;font-size:1.5em;line-height:1.5em;vertical-align:middle;margin-bottom:0;box-sizing:border-box;padding:0 .5em;margin-right:3.8%;float:left;min-height:1px;width:100%}@media screen and (min-width:600px){form label{margin-right:3.8%;float:left;min-height:1px;width:22.150000000000002%;margin:0 1.6% 0 1.2%;text-align:right;padding:.5em 0}}
 form input,form textarea,form select{box-sizing:border-box;border:none;padding:.5em;font-size:1.5em;margin-right:3.8%;float:left;min-height:1px;width:100%}@media screen and (min-width:600px){form input,form textarea,form select{margin-right:3.8%;float:left;min-height:1px;width:74.05%;margin-right:0}}form input:focus,form textarea:focus,form select:focus{background:#88dfff}
+form select{text-align:center}
 form input,form textarea{background:#eee}
-form input[type="submit"]{margin-right:3.8%;float:left;min-height:1px;width:30.8%;margin-right:1%;float:right}
+form input[type="submit"]{margin-right:3.8%;float:left;min-height:1px;width:30.8%;margin-right:1%;float:right;background:#00adee}
