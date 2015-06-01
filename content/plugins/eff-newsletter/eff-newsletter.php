@@ -121,7 +121,7 @@ function eff_newsletter_maybe_get_translations($post_id) {
 		$returnarr = [];
 		$post_ids = $polylang->model->get_translations('post', $post_id);
 		//This should be set by a plugin option
-		$lang_order = ['en','ar'];
+		$lang_order = ['en','ar','fr'];
 		if($post_ids) {
 			foreach($lang_order as $i=>$lang) {
 				$post = get_post($post_ids[$lang]);
