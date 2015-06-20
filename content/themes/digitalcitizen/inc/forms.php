@@ -12,22 +12,22 @@ function subscribe_form_callback( $form ) {
         ->add_element(
             WP_Form_Element::create('text')
                 ->set_name('first_name')
-                ->set_label('First Name')
+                ->set_label(__('First Name','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('text')
                 ->set_name('last_name')
-                ->set_label('Last Name')
+                ->set_label(__('Last Name','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('email')
                 ->set_name('email-Primary')
-                ->set_label('Email Address')
+                ->set_label(__('Email Address','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('submit')
                 ->set_name('_qf_Edit_next')
-                ->set_value('Submit')
+                ->set_value(__('Submit','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('hidden')
@@ -56,7 +56,7 @@ function subscribe_form_validator($submission, $form) {
         $submission->add_error('email', 'This field is required');
     }
     if(!filter_var($submission->get_value('email'), FILTER_VALIDATE_EMAIL) ) {
-        $submission->add_error('email', 'Please enter a valid email address');        
+        $submission->add_error('email', 'Please enter a valid email address');
     }
 }
 
@@ -65,22 +65,22 @@ function contribute_form_callback( $form ) {
         ->add_element(
             WP_Form_Element::create('text')
                 ->set_name('first_name')
-                ->set_label('First Name')
+                ->set_label(__('First Name','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('text')
                 ->set_name('last_name')
-                ->set_label('Last Name')
+                ->set_label(__('Last Name','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('email')
                 ->set_name('email')
-                ->set_label('Email Address')
+                ->set_label(__('Email Address','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('text')
                 ->set_name('url')
-                ->set_label('Submission URL')
+                ->set_label(__('Submission URL','digitalcitizen'))
         )
         ->add_element(
             WP_form_Element::create('select')
@@ -339,7 +339,7 @@ function contribute_form_callback( $form ) {
         ->add_element(
             WP_form_Element::create('submit')
                 ->set_name('submit')
-                ->set_value('Submit')
+                ->set_value(__('Submit','digitalcitizen'))
         )
         ->add_validator('contribute_form_validator', 10)
         ->add_processor('contribute_form_processor', 10 );
@@ -403,7 +403,7 @@ function create_my_post_types() {
                 'view_item'          => __( 'View Submission' ),
                 'search_items'       => __( 'Search Submission' ),
                 'not_found'          => __( 'No submissions found' ),
-                'not_found_in_trash' => __( 'No submissions found in the Trash' ), 
+                'not_found_in_trash' => __( 'No submissions found in the Trash' ),
                 'parent_item_colon'  => '',
                 'menu_name'          => 'Submissions'
             )
