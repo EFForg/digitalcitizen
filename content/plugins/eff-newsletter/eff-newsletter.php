@@ -79,6 +79,7 @@ function eff_newsletter_handler(){
 		  'json' => 1,
 		  'key' => EFF_CIVI_SITEKEY,
 		  'name' => "Digital Citizen: {$post->post_title}",
+		  'scheduled_date' => 'now',
 		  'scheduled_id' => 1766707,
 		  'subject' => "Digital Citizen: {$post->post_title}",
 		  'url_tracking' => 0,
