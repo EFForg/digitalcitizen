@@ -1,6 +1,9 @@
-wp-config.php
-wp
-email/test_emails/*
-content/uploads/*
-content/advanced-cache.php
-.htaccess
+etc
+docs/wp-config.php
+docs/wp-keys.php
+docs/wp
+docs/email/test_emails/*
+docs/content/uploads/*
+docs/content/advanced-cache.php
+docs/.htaccess
+logs
