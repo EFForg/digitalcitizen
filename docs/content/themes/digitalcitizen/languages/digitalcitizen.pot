@@ -1,14 +1,13 @@
-# Copyright (C) 2014 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-04-28 01:32:28+00:00\n"
+"Project-Id-Version: Digital Citizen 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/digitalcitizen\n"
+"POT-Creation-Date: 2015-12-09 21:23:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -93,7 +92,7 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: archive.php:66 sidebar.php:16
+#: archive.php:66 sidebar.php:15
 msgid "Archives"
 msgstr ""
 
@@ -141,91 +140,1117 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content-page.php:18 content-single.php:20 content.php:27
+#: content-page.php:14 content-single.php:66
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:23 content-single.php:60 content.php:61
+#: content-page.php:20 form.php:28 socialbar.php:14
 msgid "Edit"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: content-single.php:29 content-single.php:32 content.php:38 content.php:48
-msgid ", "
-msgstr ""
-
-#: content-single.php:37
+#: content-single.php:60
 msgid ""
-"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
+"<span>Digital Citizen</span> is a biweekly review of news, policy, and "
+"research on human rights in the Arab World."
 msgstr ""
 
-#: content-single.php:39
-msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+#: footer.php:22
+msgid "Some rights reserved"
 msgstr ""
 
-#: content-single.php:45
-msgid ""
-"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
+#: footer.php:24
+msgid "Follow us:"
 msgstr ""
 
-#: content-single.php:47
-msgid ""
-"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-
-#: content.php:24
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: content.php:42
-msgid "Posted in %1$s"
-msgstr ""
-
-#: content.php:52
-msgid "Tagged %1$s"
-msgstr ""
-
-#: content.php:58
-msgid "Leave a comment"
-msgstr ""
-
-#: content.php:58
-msgid "1 Comment"
-msgstr ""
-
-#: content.php:58
-msgid "% Comments"
-msgstr ""
-
-#: footer.php:15
+#: footer.php:31
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:15
+#: footer.php:31
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:17
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: functions.php:45 header.php:31
+#: functions.php:38
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:85
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:32
-msgid "Skip to content"
+#: header.php:33
+msgid "menu"
 msgstr ""
 
 #: inc/extras.php:63
 msgid "Page %s"
+msgstr ""
+
+#: inc/forms.php:15 inc/forms.php:68
+msgid "First Name"
+msgstr ""
+
+#: inc/forms.php:20 inc/forms.php:73
+msgid "Last Name"
+msgstr ""
+
+#: inc/forms.php:25 inc/forms.php:78
+msgid "Email Address"
+msgstr ""
+
+#: inc/forms.php:30 inc/forms.php:342
+msgid "Submit"
+msgstr ""
+
+#: inc/forms.php:83
+msgid "Submission URL"
+msgstr ""
+
+#: inc/forms.php:88
+msgid "Country"
+msgstr ""
+
+#: inc/forms.php:89
+msgid "Afghanistan"
+msgstr ""
+
+#: inc/forms.php:90
+msgid "Åland Islands"
+msgstr ""
+
+#: inc/forms.php:91
+msgid "Albania"
+msgstr ""
+
+#: inc/forms.php:92
+msgid "Algeria"
+msgstr ""
+
+#: inc/forms.php:93
+msgid "American Samoa"
+msgstr ""
+
+#: inc/forms.php:94
+msgid "Andorra"
+msgstr ""
+
+#: inc/forms.php:95
+msgid "Angola"
+msgstr ""
+
+#: inc/forms.php:96
+msgid "Anguilla"
+msgstr ""
+
+#: inc/forms.php:97
+msgid "Antarctica"
+msgstr ""
+
+#: inc/forms.php:98
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: inc/forms.php:99
+msgid "Argentina"
+msgstr ""
+
+#: inc/forms.php:100
+msgid "Armenia"
+msgstr ""
+
+#: inc/forms.php:101
+msgid "Aruba"
+msgstr ""
+
+#: inc/forms.php:102
+msgid "Australia"
+msgstr ""
+
+#: inc/forms.php:103
+msgid "Austria"
+msgstr ""
+
+#: inc/forms.php:104
+msgid "Azerbaijan"
+msgstr ""
+
+#: inc/forms.php:105
+msgid "Bahamas"
+msgstr ""
+
+#: inc/forms.php:106
+msgid "Bahrain"
+msgstr ""
+
+#: inc/forms.php:107
+msgid "Bangladesh"
+msgstr ""
+
+#: inc/forms.php:108
+msgid "Barbados"
+msgstr ""
+
+#: inc/forms.php:109
+msgid "Belarus"
+msgstr ""
+
+#: inc/forms.php:110
+msgid "Belgium"
+msgstr ""
+
+#: inc/forms.php:111
+msgid "Belize"
+msgstr ""
+
+#: inc/forms.php:112
+msgid "Benin"
+msgstr ""
+
+#: inc/forms.php:113
+msgid "Bermuda"
+msgstr ""
+
+#: inc/forms.php:114
+msgid "Bhutan"
+msgstr ""
+
+#: inc/forms.php:115
+msgid "Bolivia, Plurinational State of"
+msgstr ""
+
+#: inc/forms.php:116
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr ""
+
+#: inc/forms.php:117
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: inc/forms.php:118
+msgid "Botswana"
+msgstr ""
+
+#: inc/forms.php:119
+msgid "Bouvet Island"
+msgstr ""
+
+#: inc/forms.php:120
+msgid "Brazil"
+msgstr ""
+
+#: inc/forms.php:121
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: inc/forms.php:122
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: inc/forms.php:123
+msgid "Bulgaria"
+msgstr ""
+
+#: inc/forms.php:124
+msgid "Burkina Faso"
+msgstr ""
+
+#: inc/forms.php:125
+msgid "Burundi"
+msgstr ""
+
+#: inc/forms.php:126
+msgid "Cambodia"
+msgstr ""
+
+#: inc/forms.php:127
+msgid "Cameroon"
+msgstr ""
+
+#: inc/forms.php:128
+msgid "Canada"
+msgstr ""
+
+#: inc/forms.php:129
+msgid "Cape Verde"
+msgstr ""
+
+#: inc/forms.php:130
+msgid "Cayman Islands"
+msgstr ""
+
+#: inc/forms.php:131
+msgid "Central African Republic"
+msgstr ""
+
+#: inc/forms.php:132
+msgid "Chad"
+msgstr ""
+
+#: inc/forms.php:133
+msgid "Chile"
+msgstr ""
+
+#: inc/forms.php:134
+msgid "China"
+msgstr ""
+
+#: inc/forms.php:135
+msgid "Christmas Island"
+msgstr ""
+
+#: inc/forms.php:136
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: inc/forms.php:137
+msgid "Colombia"
+msgstr ""
+
+#: inc/forms.php:138
+msgid "Comoros"
+msgstr ""
+
+#: inc/forms.php:139
+msgid "Congo"
+msgstr ""
+
+#: inc/forms.php:140
+msgid "Congo, the Democratic Republic of the"
+msgstr ""
+
+#: inc/forms.php:141
+msgid "Cook Islands"
+msgstr ""
+
+#: inc/forms.php:142
+msgid "Costa Rica"
+msgstr ""
+
+#: inc/forms.php:143
+msgid "Côte d'Ivoire"
+msgstr ""
+
+#: inc/forms.php:144
+msgid "Croatia"
+msgstr ""
+
+#: inc/forms.php:145
+msgid "Cuba"
+msgstr ""
+
+#: inc/forms.php:146
+msgid "Curaçao"
+msgstr ""
+
+#: inc/forms.php:147
+msgid "Cyprus"
+msgstr ""
+
+#: inc/forms.php:148
+msgid "Czech Republic"
+msgstr ""
+
+#: inc/forms.php:149
+msgid "Denmark"
+msgstr ""
+
+#: inc/forms.php:150
+msgid "Djibouti"
+msgstr ""
+
+#: inc/forms.php:151
+msgid "Dominica"
+msgstr ""
+
+#: inc/forms.php:152
+msgid "Dominican Republic"
+msgstr ""
+
+#: inc/forms.php:153
+msgid "Ecuador"
+msgstr ""
+
+#: inc/forms.php:154
+msgid "Egypt"
+msgstr ""
+
+#: inc/forms.php:155
+msgid "El Salvador"
+msgstr ""
+
+#: inc/forms.php:156
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: inc/forms.php:157
+msgid "Eritrea"
+msgstr ""
+
+#: inc/forms.php:158
+msgid "Estonia"
+msgstr ""
+
+#: inc/forms.php:159
+msgid "Ethiopia"
+msgstr ""
+
+#: inc/forms.php:160
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: inc/forms.php:161
+msgid "Faroe Islands"
+msgstr ""
+
+#: inc/forms.php:162
+msgid "Fiji"
+msgstr ""
+
+#: inc/forms.php:163
+msgid "Finland"
+msgstr ""
+
+#: inc/forms.php:164
+msgid "France"
+msgstr ""
+
+#: inc/forms.php:165
+msgid "French Guiana"
+msgstr ""
+
+#: inc/forms.php:166
+msgid "French Polynesia"
+msgstr ""
+
+#: inc/forms.php:167
+msgid "French Southern Territories"
+msgstr ""
+
+#: inc/forms.php:168
+msgid "Gabon"
+msgstr ""
+
+#: inc/forms.php:169
+msgid "Gambia"
+msgstr ""
+
+#: inc/forms.php:170
+msgid "Georgia"
+msgstr ""
+
+#: inc/forms.php:171
+msgid "Germany"
+msgstr ""
+
+#: inc/forms.php:172
+msgid "Ghana"
+msgstr ""
+
+#: inc/forms.php:173
+msgid "Gibraltar"
+msgstr ""
+
+#: inc/forms.php:174
+msgid "Greece"
+msgstr ""
+
+#: inc/forms.php:175
+msgid "Greenland"
+msgstr ""
+
+#: inc/forms.php:176
+msgid "Grenada"
+msgstr ""
+
+#: inc/forms.php:177
+msgid "Guadeloupe"
+msgstr ""
+
+#: inc/forms.php:178
+msgid "Guam"
+msgstr ""
+
+#: inc/forms.php:179
+msgid "Guatemala"
+msgstr ""
+
+#: inc/forms.php:180
+msgid "Guernsey"
+msgstr ""
+
+#: inc/forms.php:181
+msgid "Guinea"
+msgstr ""
+
+#: inc/forms.php:182
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: inc/forms.php:183
+msgid "Guyana"
+msgstr ""
+
+#: inc/forms.php:184
+msgid "Haiti"
+msgstr ""
+
+#: inc/forms.php:185
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: inc/forms.php:186
+msgid "Holy See (Vatican City State)"
+msgstr ""
+
+#: inc/forms.php:187
+msgid "Honduras"
+msgstr ""
+
+#: inc/forms.php:188
+msgid "Hong Kong"
+msgstr ""
+
+#: inc/forms.php:189
+msgid "Hungary"
+msgstr ""
+
+#: inc/forms.php:190
+msgid "Iceland"
+msgstr ""
+
+#: inc/forms.php:191
+msgid "India"
+msgstr ""
+
+#: inc/forms.php:192
+msgid "Indonesia"
+msgstr ""
+
+#: inc/forms.php:193
+msgid "Iran, Islamic Republic of"
+msgstr ""
+
+#: inc/forms.php:194
+msgid "Iraq"
+msgstr ""
+
+#: inc/forms.php:195
+msgid "Ireland"
+msgstr ""
+
+#: inc/forms.php:196
+msgid "Isle of Man"
+msgstr ""
+
+#: inc/forms.php:197
+msgid "Israel"
+msgstr ""
+
+#: inc/forms.php:198
+msgid "Italy"
+msgstr ""
+
+#: inc/forms.php:199
+msgid "Jamaica"
+msgstr ""
+
+#: inc/forms.php:200
+msgid "Japan"
+msgstr ""
+
+#: inc/forms.php:201
+msgid "Jersey"
+msgstr ""
+
+#: inc/forms.php:202
+msgid "Jordan"
+msgstr ""
+
+#: inc/forms.php:203
+msgid "Kazakhstan"
+msgstr ""
+
+#: inc/forms.php:204
+msgid "Kenya"
+msgstr ""
+
+#: inc/forms.php:205
+msgid "Kiribati"
+msgstr ""
+
+#: inc/forms.php:206
+msgid "Korea, Democratic People's Republic of"
+msgstr ""
+
+#: inc/forms.php:207
+msgid "Korea, Republic of"
+msgstr ""
+
+#: inc/forms.php:208
+msgid "Kuwait"
+msgstr ""
+
+#: inc/forms.php:209
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: inc/forms.php:210
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: inc/forms.php:211
+msgid "Latvia"
+msgstr ""
+
+#: inc/forms.php:212
+msgid "Lebanon"
+msgstr ""
+
+#: inc/forms.php:213
+msgid "Lesotho"
+msgstr ""
+
+#: inc/forms.php:214
+msgid "Liberia"
+msgstr ""
+
+#: inc/forms.php:215
+msgid "Libya"
+msgstr ""
+
+#: inc/forms.php:216
+msgid "Liechtenstein"
+msgstr ""
+
+#: inc/forms.php:217
+msgid "Lithuania"
+msgstr ""
+
+#: inc/forms.php:218
+msgid "Luxembourg"
+msgstr ""
+
+#: inc/forms.php:219
+msgid "Macao"
+msgstr ""
+
+#: inc/forms.php:220
+msgid "Macedonia, the former Yugoslav Republic of"
+msgstr ""
+
+#: inc/forms.php:221
+msgid "Madagascar"
+msgstr ""
+
+#: inc/forms.php:222
+msgid "Malawi"
+msgstr ""
+
+#: inc/forms.php:223
+msgid "Malaysia"
+msgstr ""
+
+#: inc/forms.php:224
+msgid "Maldives"
+msgstr ""
+
+#: inc/forms.php:225
+msgid "Mali"
+msgstr ""
+
+#: inc/forms.php:226
+msgid "Malta"
+msgstr ""
+
+#: inc/forms.php:227
+msgid "Marshall Islands"
+msgstr ""
+
+#: inc/forms.php:228
+msgid "Martinique"
+msgstr ""
+
+#: inc/forms.php:229
+msgid "Mauritania"
+msgstr ""
+
+#: inc/forms.php:230
+msgid "Mauritius"
+msgstr ""
+
+#: inc/forms.php:231
+msgid "Mayotte"
+msgstr ""
+
+#: inc/forms.php:232
+msgid "Mexico"
+msgstr ""
+
+#: inc/forms.php:233
+msgid "Micronesia, Federated States of"
+msgstr ""
+
+#: inc/forms.php:234
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: inc/forms.php:235
+msgid "Monaco"
+msgstr ""
+
+#: inc/forms.php:236
+msgid "Mongolia"
+msgstr ""
+
+#: inc/forms.php:237
+msgid "Montenegro"
+msgstr ""
+
+#: inc/forms.php:238
+msgid "Montserrat"
+msgstr ""
+
+#: inc/forms.php:239
+msgid "Morocco"
+msgstr ""
+
+#: inc/forms.php:240
+msgid "Mozambique"
+msgstr ""
+
+#: inc/forms.php:241
+msgid "Myanmar"
+msgstr ""
+
+#: inc/forms.php:242
+msgid "Namibia"
+msgstr ""
+
+#: inc/forms.php:243
+msgid "Nauru"
+msgstr ""
+
+#: inc/forms.php:244
+msgid "Nepal"
+msgstr ""
+
+#: inc/forms.php:245
+msgid "Netherlands"
+msgstr ""
+
+#: inc/forms.php:246
+msgid "New Caledonia"
+msgstr ""
+
+#: inc/forms.php:247
+msgid "New Zealand"
+msgstr ""
+
+#: inc/forms.php:248
+msgid "Nicaragua"
+msgstr ""
+
+#: inc/forms.php:249
+msgid "Niger"
+msgstr ""
+
+#: inc/forms.php:250
+msgid "Nigeria"
+msgstr ""
+
+#: inc/forms.php:251
+msgid "Niue"
+msgstr ""
+
+#: inc/forms.php:252
+msgid "Norfolk Island"
+msgstr ""
+
+#: inc/forms.php:253
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: inc/forms.php:254
+msgid "Norway"
+msgstr ""
+
+#: inc/forms.php:255
+msgid "Oman"
+msgstr ""
+
+#: inc/forms.php:256
+msgid "Pakistan"
+msgstr ""
+
+#: inc/forms.php:257
+msgid "Palau"
+msgstr ""
+
+#: inc/forms.php:258
+msgid "Palestinian Territory, Occupied"
+msgstr ""
+
+#: inc/forms.php:259
+msgid "Panama"
+msgstr ""
+
+#: inc/forms.php:260
+msgid "Papua New Guinea"
+msgstr ""
+
+#: inc/forms.php:261
+msgid "Paraguay"
+msgstr ""
+
+#: inc/forms.php:262
+msgid "Peru"
+msgstr ""
+
+#: inc/forms.php:263
+msgid "Philippines"
+msgstr ""
+
+#: inc/forms.php:264
+msgid "Pitcairn"
+msgstr ""
+
+#: inc/forms.php:265
+msgid "Poland"
+msgstr ""
+
+#: inc/forms.php:266
+msgid "Portugal"
+msgstr ""
+
+#: inc/forms.php:267
+msgid "Puerto Rico"
+msgstr ""
+
+#: inc/forms.php:268
+msgid "Qatar"
+msgstr ""
+
+#: inc/forms.php:269
+msgid "Réunion"
+msgstr ""
+
+#: inc/forms.php:270
+msgid "Romania"
+msgstr ""
+
+#: inc/forms.php:271
+msgid "Russian Federation"
+msgstr ""
+
+#: inc/forms.php:272
+msgid "Rwanda"
+msgstr ""
+
+#: inc/forms.php:273
+msgid "Saint Barthélemy"
+msgstr ""
+
+#: inc/forms.php:274
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr ""
+
+#: inc/forms.php:275
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: inc/forms.php:276
+msgid "Saint Lucia"
+msgstr ""
+
+#: inc/forms.php:277
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: inc/forms.php:278
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: inc/forms.php:279
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: inc/forms.php:280
+msgid "Samoa"
+msgstr ""
+
+#: inc/forms.php:281
+msgid "San Marino"
+msgstr ""
+
+#: inc/forms.php:282
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: inc/forms.php:283
+msgid "Saudi Arabia"
+msgstr ""
+
+#: inc/forms.php:284
+msgid "Senegal"
+msgstr ""
+
+#: inc/forms.php:285
+msgid "Serbia"
+msgstr ""
+
+#: inc/forms.php:286
+msgid "Seychelles"
+msgstr ""
+
+#: inc/forms.php:287
+msgid "Sierra Leone"
+msgstr ""
+
+#: inc/forms.php:288
+msgid "Singapore"
+msgstr ""
+
+#: inc/forms.php:289
+msgid "Sint Maarten (Dutch part)"
+msgstr ""
+
+#: inc/forms.php:290
+msgid "Slovakia"
+msgstr ""
+
+#: inc/forms.php:291
+msgid "Slovenia"
+msgstr ""
+
+#: inc/forms.php:292
+msgid "Solomon Islands"
+msgstr ""
+
+#: inc/forms.php:293
+msgid "Somalia"
+msgstr ""
+
+#: inc/forms.php:294
+msgid "South Africa"
+msgstr ""
+
+#: inc/forms.php:295
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: inc/forms.php:296
+msgid "South Sudan"
+msgstr ""
+
+#: inc/forms.php:297
+msgid "Spain"
+msgstr ""
+
+#: inc/forms.php:298
+msgid "Sri Lanka"
+msgstr ""
+
+#: inc/forms.php:299
+msgid "Sudan"
+msgstr ""
+
+#: inc/forms.php:300
+msgid "Suriname"
+msgstr ""
+
+#: inc/forms.php:301
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: inc/forms.php:302
+msgid "Swaziland"
+msgstr ""
+
+#: inc/forms.php:303
+msgid "Sweden"
+msgstr ""
+
+#: inc/forms.php:304
+msgid "Switzerland"
+msgstr ""
+
+#: inc/forms.php:305
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: inc/forms.php:306
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: inc/forms.php:307
+msgid "Tajikistan"
+msgstr ""
+
+#: inc/forms.php:308
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: inc/forms.php:309
+msgid "Thailand"
+msgstr ""
+
+#: inc/forms.php:310
+msgid "Timor-Leste"
+msgstr ""
+
+#: inc/forms.php:311
+msgid "Togo"
+msgstr ""
+
+#: inc/forms.php:312
+msgid "Tokelau"
+msgstr ""
+
+#: inc/forms.php:313
+msgid "Tonga"
+msgstr ""
+
+#: inc/forms.php:314
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: inc/forms.php:315
+msgid "Tunisia"
+msgstr ""
+
+#: inc/forms.php:316
+msgid "Turkey"
+msgstr ""
+
+#: inc/forms.php:317
+msgid "Turkmenistan"
+msgstr ""
+
+#: inc/forms.php:318
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: inc/forms.php:319
+msgid "Tuvalu"
+msgstr ""
+
+#: inc/forms.php:320
+msgid "Uganda"
+msgstr ""
+
+#: inc/forms.php:321
+msgid "Ukraine"
+msgstr ""
+
+#: inc/forms.php:322
+msgid "United Arab Emirates"
+msgstr ""
+
+#: inc/forms.php:323
+msgid "United Kingdom"
+msgstr ""
+
+#: inc/forms.php:324
+msgid "United States"
+msgstr ""
+
+#: inc/forms.php:325
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: inc/forms.php:326
+msgid "Uruguay"
+msgstr ""
+
+#: inc/forms.php:327
+msgid "Uzbekistan"
+msgstr ""
+
+#: inc/forms.php:328
+msgid "Vanuatu"
+msgstr ""
+
+#: inc/forms.php:329
+msgid "Venezuela, Bolivarian Republic of"
+msgstr ""
+
+#: inc/forms.php:330
+msgid "Viet Nam"
+msgstr ""
+
+#: inc/forms.php:331
+msgid "Virgin Islands, British"
+msgstr ""
+
+#: inc/forms.php:332
+msgid "Virgin Islands, U.S."
+msgstr ""
+
+#: inc/forms.php:333
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: inc/forms.php:334
+msgid "Western Sahara"
+msgstr ""
+
+#: inc/forms.php:335
+msgid "Yemen"
+msgstr ""
+
+#: inc/forms.php:336
+msgid "Zambia"
+msgstr ""
+
+#: inc/forms.php:337
+msgid "Zimbabwe"
+msgstr ""
+
+#: inc/forms.php:396
+msgctxt "post type general name"
+msgid "Submission"
+msgstr ""
+
+#: inc/forms.php:397
+msgctxt "post type singular name"
+msgid "Submission"
+msgstr ""
+
+#: inc/forms.php:398
+msgctxt "submission"
+msgid "Add New"
+msgstr ""
+
+#: inc/forms.php:399
+msgid "Add New Submission"
+msgstr ""
+
+#: inc/forms.php:400
+msgid "Edit Submission"
+msgstr ""
+
+#: inc/forms.php:401
+msgid "New Submission"
+msgstr ""
+
+#: inc/forms.php:402
+msgid "All Submissions"
+msgstr ""
+
+#: inc/forms.php:403
+msgid "View Submission"
+msgstr ""
+
+#: inc/forms.php:404
+msgid "Search Submission"
+msgstr ""
+
+#: inc/forms.php:405
+msgid "No submissions found"
+msgstr ""
+
+#: inc/forms.php:406
+msgid "No submissions found in the Trash"
 msgstr ""
 
 #: inc/template-tags.php:21
@@ -233,11 +1258,11 @@ msgid "Posts navigation"
 msgstr ""
 
 #: inc/template-tags.php:25
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgid "Older posts"
 msgstr ""
 
 #: inc/template-tags.php:29
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts"
 msgstr ""
 
 #: inc/template-tags.php:52
@@ -246,48 +1271,51 @@ msgstr ""
 
 #: inc/template-tags.php:55
 msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgid "%title"
 msgstr ""
 
 #: inc/template-tags.php:56
 msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgid "%title"
 msgstr ""
 
 #: inc/template-tags.php:81
-msgid ""
-"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
-"%2$s</span>"
+msgid "<span class=\"posted-on\">%1$s</span>"
 msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr ""
 
-#: sidebar.php:23
+#: sidebar.php:22
 msgid "Meta"
 msgstr ""
 
+#: socialbar.php:10
+msgid ""
+"<a href=\"%1$s\" class=\"icon-link permalink\" rel=\"bookmark\">Permalink</a>"
+msgstr ""
+
 #. Theme Name of the plugin/theme
-msgid "_s"
+msgid "Digital Citizen"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
+msgid "http://www.digcit.org/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
-"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
-"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
-"theme out there. That's what I'm here for."
+msgid "Custom theme for EFF\\'s Digital Citizen"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Automattic"
+#. Template Name of the plugin/theme
+msgid "Home"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+#. Template Name of the plugin/theme
+msgid "Contribute Form"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Subscribe Form"
 msgstr ""
