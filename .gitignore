@@ -2,6 +2,7 @@ etc
 docs/wp-config.php
 docs/wp-keys.php
 docs/wp
+docs/wp-plugins
 docs/email/test_emails/*
 docs/content/uploads/*
 docs/content/advanced-cache.php
