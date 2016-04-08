@@ -56,8 +56,6 @@
 		<div class="entry-summary">
 			<?php if($post->post_excerpt): ?>
 				<?php the_excerpt(); ?>
-			<?php else: ?>
-				<p><?php _e( '<span>Digital Citizen</span> is a biweekly review of news, policy, and research on human rights in the Arab World.', 'digitalcitizen' ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php the_content(); ?>
