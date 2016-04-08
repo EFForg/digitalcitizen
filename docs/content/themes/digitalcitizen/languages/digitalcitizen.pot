@@ -148,12 +148,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: content-single.php:60
-msgid ""
-"<span>Digital Citizen</span> is a biweekly review of news, policy, and "
-"research on human rights in the Arab World."
-msgstr ""
-
 #: footer.php:22
 msgid "Some rights reserved"
 msgstr ""
