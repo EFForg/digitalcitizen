@@ -17,6 +17,7 @@
             <div class="logo-salad--item"><a class="access" href="http://accessnow.org">Access Now</a></div>
             <div class="logo-salad--item"><a class="gv" href="http://advocacy.globalvoicesonline.org">Global Voices Advocacy</a></div>
             <div class="logo-salad--item"><a class="smex" href="http://smex.org">Social Media Exchange</a></div>
+            <div class="logo-salad--item"><a class="apc" href="https://www.apc.org">Association for Progressive Communications</a></div>
         </div>
 		<div class="site-info">
 			<p><?php _e('Some rights reserved','digitalcitizen'); ?> <a href=""><span class="icon icon-cc">CC</span> <span class="icon icon-by">BY</span></a></p>
