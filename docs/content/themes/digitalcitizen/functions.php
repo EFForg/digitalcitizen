@@ -5,6 +5,10 @@
  * @package Digital Citizen
  */
 
+// Enable automatic updates.
+add_filter('auto_update_plugin', '__return_true');
+add_filter('auto_update_theme', '__return_true');
+
 if ( ! function_exists( 'digitalcitizen_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
