@@ -6,6 +6,7 @@ docs/wp-plugins
 docs/email/test_emails/*
 docs/content/uploads/*
 docs/content/advanced-cache.php
+docs/content/cache/config/master.php
 docs/content/plugins/akismet
 docs/content/plugins/members
 docs/content/plugins/polylang
@@ -20,5 +21,7 @@ doce/content/themes/twentyfifteen
 doce/content/themes/twentyfourteen
 doce/content/themes/twentythirteen
 doce/content/themes/twentytwelve
+docs/content/w3tc-config/master-admin.php
+docs/content/w3tc-config/master.php
 docs/.htaccess
 logs
