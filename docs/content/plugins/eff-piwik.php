@@ -31,13 +31,13 @@ add_action('wp_footer', 'eff_piwik_inject_tracker', 11);
 function eff_piwik_inject_tracker() {
 ?>
 <noscript>
-	<img src="https://anon-stats.eff.org/piwik.php?idsite=16&amp;rec=1&amp;action_name=<?php echo urlencode(wp_title('|',false,'right')); ?>" style="border:0" height="0" width="0" alt="" />
+	<img src="https://anon-stats.eff.org/js/?idsite=16&amp;rec=1&amp;action_name=<?php echo urlencode(wp_title('|',false,'right')); ?>" style="border:0" height="0" width="0" alt="" />
 </noscript>
 
 <div style="height: 0; width: 0" id="anon-stats"></div>
 
 <script type="text/javascript">
-	document.getElementById('anon-stats').innerHTML = '<img src="https://anon-stats.eff.org/piwik.php?idsite=16&amp;rec=1&amp;urlref=' + encodeURIComponent(document.referrer) + '&amp;action_name=' + encodeURIComponent(document.title) + '" style="border:0" height="0" width="0" alt="" />';
+	document.getElementById('anon-stats').innerHTML = '<img src="https://anon-stats.eff.org/js/?idsite=16&amp;rec=1&amp;urlref=' + encodeURIComponent(document.referrer) + '&amp;action_name=' + encodeURIComponent(document.title) + '" style="border:0" height="0" width="0" alt="" />';
 </script>
 
 <?php
